@@ -1,0 +1,14 @@
+//this is for a spell check plugin i'm using
+//https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+{
+    "cSpell.words": [
+        "Adithya",
+        "arraylist",
+        "haotian",
+        "Lable",
+        "Sripada",
+        "Sublist",
+        "Topbar",
+        "Xinya"
+    ]
+}
