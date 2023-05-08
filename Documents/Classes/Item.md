@@ -53,7 +53,7 @@ haotian - created docs
 ### **GetName()**-> String
 >returns the name 
 
-### **GetImage(String[])**-> String
+### **GetImage(String[] items)**-> String
 >returns a Image that matches the string array
 ### **GetMaxProcessTime(String x)** -> float
 >returns the process time for the type
