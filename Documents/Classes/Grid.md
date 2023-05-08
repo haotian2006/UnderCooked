@@ -6,6 +6,12 @@
 ```diff
 haotian - created docs
 ```
+### <span style="color:lightgreen;">Notes:</span>
+```diff
+-still a work in progress not sure how to implement it at the moment might be removed because Grid class is very similar
+
+!this will be added to as we make progress
+```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
 

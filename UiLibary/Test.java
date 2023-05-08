@@ -16,10 +16,10 @@ public class Test {
         fidk.setBounds(100, 100, 100, 100);
         fidk.setBackground(Color.green);
         ui.add(fidk,1);
-        Frame fidk2 = new Frame();
+        TextBox fidk2 = new TextBox("Eat This");
         
         fidk2.setBackground(Color.red);
-        fidk2.setBounds(0,0, 10, 10);
+        fidk2.setBounds(0,0, 1000, 100);
         fidk.add(fidk2);
         fidk.setBounds(100,20, 100, 100);
         bb.add(fidk);

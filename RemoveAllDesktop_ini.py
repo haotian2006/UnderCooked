@@ -1,5 +1,6 @@
 import os
-# destroy are desktop.ini cause they break github
+# ignore this
+# this is to destroy are desktop.ini cause they break github
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)
 for dirpath, dirnames, filenames in os.walk(parent_dir):

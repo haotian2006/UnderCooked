@@ -5,7 +5,7 @@ press ctrl-shift-v
 
 MAC:
 
-press cmd-k-v
+press cmd-shift-v
 
 ### or click on
 

@@ -1,31 +1,30 @@
-# FinalProject Class 
-
-#### status: <span style="color:red;">Not started</span>
+# Holdable Class 
+> a class to allow Item/Dish class to be in a var
+```java
+Holdable x = new Item();
+Holdable y = new Dish();
+```
+#### status: <span style="color:red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
-haotian - created docs
-```
-### <span style="color:lightgreen;">Notes:</span>
-```diff
-!this will be added to as we make progress
 
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
-
+5/7/2023 - created docs
+```
+### <span style="color:lightgreen;">Notes:</span>
+```diff
 ```
 ### <span style="color:red;">Bugs:</span>
 ```diff
-
 ```
 ## <span style="color:green;">Attributes</span>
 
 
-
 ## <span style="color:yellow;">Methods</span>
 
-### **main(String[] args)**-> init
->init everything start the game
+
 
 
