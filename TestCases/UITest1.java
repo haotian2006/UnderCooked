@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import UiClasses.*;
+import easingTypes.*;
 public class UITest1 {
     public static void main(String[] args) {
         ScreenGui ui = new ScreenGui("UnderCooked");
@@ -50,7 +51,9 @@ public class UITest1 {
                 while (true){
                     try {
                         Thread.sleep(100);
-                        b2.LerpXSize(200, x);
+                        int lx = (int) Bounce.easeOut((float) x, 0f, 200f, 1f);
+                        b2.setSize(lx, b2.getSize().height);
+                        //b2.LerpXSize(200, x);
                         x +=.1;
                         if (x >= 1.1){
                             x = 0;
