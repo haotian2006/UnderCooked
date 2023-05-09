@@ -8,7 +8,7 @@ Period 5
 ### <span style="color:lightgreen;">Updates:</span>
 ```diff
 5/7/2023 - Ui class is done | most of the classes document's are done 
-
+5/8/2023 - all of the docs are done except for display and grid. those will be finished as we work
 ```
 ### <span style="color:lightgreen;">Tasks:</span>
 ```diff

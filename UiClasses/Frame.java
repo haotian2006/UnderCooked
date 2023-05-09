@@ -1,4 +1,5 @@
 package UiClasses;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;
@@ -23,6 +24,11 @@ public class Frame extends JPanel {
         }
     }
     */ //found out there is already a pre made method that handles this 
+    public void LerpPosition(int x,int y,double t){
+        x = (int) (x*t);
+        y = (int) (y*t);
+        setLocation(x,y);
+    }
     public void LerpXSize(int x,double t){
         x = (int) (x*t);
         setSize(x,getSize().height);

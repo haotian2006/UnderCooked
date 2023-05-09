@@ -65,7 +65,11 @@ public class ImageLable extends JLabel{
         Point loc = getLocation();
         return new Point(size.width/2+loc.x, size.height/2+loc.y);
     }
-
+    public void LerpPosition(int x,int y,double t){
+        x = (int) (x*t);
+        y = (int) (y*t);
+        setLocation(x,y);
+    }
     public ImageLable Clone(){// creates a new imagelable with similar properties 
         ImageLable newi = new ImageLable();
         newi.setBackground(getBackground());

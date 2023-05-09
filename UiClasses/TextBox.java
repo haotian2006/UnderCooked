@@ -12,6 +12,11 @@ public class TextBox extends JTextArea{
         y = (int) Math.ceil(y*t);
         setSize(getSize().width,y);
     }
+    public void LerpPosition(int x,int y,double t){
+        x = (int) (x*t);
+        y = (int) (y*t);
+        setLocation(x,y);
+    }
     public TextBox(String Text){
         super(Text);
         setLineWrap(false);

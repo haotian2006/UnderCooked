@@ -5,7 +5,7 @@ import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import UiClasses.*;
-public class Test {
+public class UITest1 {
     public static void main(String[] args) {
         ScreenGui ui = new ScreenGui("UnderCooked");
         Frame bb = new Frame(null);
@@ -66,15 +66,8 @@ public class Test {
         ui.add(fidk3,1);
         fidk3.add(b2);
 
-        ImageLable idk = new ImageLable("Images/red.jpg");
-        idk.setBounds(100, 150, 40, 40);
-        idk.SetImageSize(20, 20);
-        ImageLable idk2 = idk.Clone();
-        idk2.SetImage("Images/green.jpg");
-        idk2.setLocation(102, 162);
-        idk2.setSize(15, 15);
-        ui.add(idk,1);
-        ui.add(idk2,1);
+
+
         ui.add(bb,0);
         ui.setBackground(Color.BLACK);
         ui.FullScreen();

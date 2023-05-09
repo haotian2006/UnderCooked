@@ -30,34 +30,32 @@ public class ScreenGui extends JFrame{
         Topbar = x;
     }
     private void ExitButton(){//creates a red X on the top right corner 
-        Frame x = new Frame();//the x frame is just a red frame 
-        TextLable y = new TextLable("X");// the y frame is a red background and has "X" written on it and is 5 pixels above the x so that the "X" is centered 
-        //x and y frames might be replaced by a image instead 
-        TextLable name = new TextLable("UnderCooked");
+        ImageLable name = new ImageLable("assets/Images/SubTitle.png");
+        ImageLable Close = new ImageLable("assets/Images/Close.png");
+
+        Frame ClickAble = new Frame();
+        
         Frame z = new Frame(null);
+        z.setBackground(Color.gray);
         Point s = new ScreenSize().Get(); 
-        name.SetEditable();
         z.setBounds(0, 0, s.x, 20);
         Topbar = z;
-        y.SetEditable();
-        y.setBounds(s.x-17, -5, 20, 25);
-        y.SetFont(new Font("Impact", Font.PLAIN, 20));
-        y.SetEditable();
-        y.setBackground(Color.red);
-        x.setBackground(Color.red);
-        x.setBounds(s.x-20, 0, 20, 20);
+        Close.setBounds(s.x-20, 0, 20, 20);
+        ClickAble.setBounds(s.x-20, 0, 20, 20);
+        ClickAble.setBackground(Color.gray);
+        ClickAble.setOpaque(false);
         MouseAdapter exit = new MouseAdapter() { // listens when a mouse clicked on the frame
             public void mousePressed(MouseEvent e) {
                 System.exit(0);
             }
         };
+        Close.SetImageSize(20, 20);
         name.setBounds(0, 0, s.x, 20);
-        name.setOpaque(false);
-        x.addMouseListener(exit);
-        y.addMouseListener(exit);
+        name.SetImageSize(120, 20);
+        ClickAble.addMouseListener(exit);
         z.add(name);
-        z.add(y,null,0);
-        z.add(x,null,-1);
+        z.add(ClickAble, 0);
+        z.add(Close,1);
         add(z);
     }
     public void FullScreen(){

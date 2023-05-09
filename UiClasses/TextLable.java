@@ -18,7 +18,7 @@ public class TextLable extends JTextPane{
     private boolean editable = true;
     public TextLable(String Text){
         setText(Text);
-        
+        SetEditable();
     }
     public void SetEditable(){//allows highlighting/editing 
         editable= false;
@@ -29,6 +29,11 @@ public class TextLable extends JTextPane{
         editable = x;
         setEditable(x);
         setFocusable(x);
+    }
+    public void LerpPosition(int x,int y,double t){
+        x = (int) (x*t);
+        y = (int) (y*t);
+        setLocation(x,y);
     }
     public void SetFont(Font font){
         SimpleAttributeSet fontAttributes = new SimpleAttributeSet();

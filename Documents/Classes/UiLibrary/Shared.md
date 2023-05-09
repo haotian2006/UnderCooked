@@ -23,8 +23,11 @@ haotian - created docs and class
 ### **LerpXSize(int x,double t)** -> void
 > Lerps the X size to the Target 
 
-### **LerpYSize(int u,double t)** -> void
+### **LerpYSize(int y,double t)** -> void
 > Lerps the Y size to the Target 
+
+### **LerpPosition(int x,int y,double t)** -> void
+> Lerp the Position to the Targeted
 
 
 
