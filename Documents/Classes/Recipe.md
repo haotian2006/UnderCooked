@@ -20,6 +20,8 @@ haotian - made document
 ```diff
 ```
 ## <span style="color:green;">Attributes</span>
+### **Time** - private double
+>This is how long the order has to be made before the time runs out
 
 ### **Ingredients** - private Item[]
 >an Item Array defining the ingredients needed to make
@@ -41,6 +43,11 @@ haotian - made document
 ### **GetIngredients()** ->Item[]
 >returns the Ingredients List
 
+### **GetTime()** ->double
+>returns the time
+
+### **SetTime(double x)** ->
+>sets the time 
 ## <span style="color:lightblue;">Subclasses</span>
 > ## <span style="color:lightgreen;">Example</span>   
 ```java

@@ -20,6 +20,12 @@ haotian - created docs and class
 ### **Clone()** -> Object
 >Clones a Object with similar attributes 
 
+### **LerpXSize(int x,double t)** -> void
+> Lerps the X size to the Target 
+
+### **LerpYSize(int u,double t)** -> void
+> Lerps the Y size to the Target 
+
 
 
 

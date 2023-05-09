@@ -26,10 +26,10 @@ haotian - created docs
 
 ### **Images** - private Hashmap <String[],String>
 > what image should be displayed 
- ### **maxProcessTime** - private Hashmap <String,float>
+ ### **maxProcessTime** - private Hashmap <String,double>
 >how long should each process take (in seconds)
 
-### **ProcessedTime** - private float
+### **ProcessedTime** - private double
 >How long has its been Processed 
 
 >ex: if its been into a pot for 4 seconds ProcessedTime would be 4
@@ -56,7 +56,7 @@ haotian - created docs
 
 ### **GetImage(String[] items)**-> String
 >returns a Image that matches the string array
-### **GetMaxProcessTime(String x)** -> float
+### **GetMaxProcessTime(String x)** -> double
 >returns the process time for the type
 
 ### **IsPlate()** -> boolean
@@ -93,7 +93,7 @@ class Tomato extends Item{
         put(new String[]{}, "/assets/tomato.png");//empty Array so a normal tomato 
         put(new String[]{"Chopped"}, "/assets/ChoppedTomato.png");//Array  with a Chopped string so a Chopped tomato 
     }}
-    private HashMap<String, float> maxProcessTime = new HashMap<String, float>(){{
+    private HashMap<String, double> maxProcessTime = new HashMap<String, double>(){{
         put("Chopping", 3);//should take 3 seconds to chop
         put("Frying", 4);//should take 4 second to fry
     }}

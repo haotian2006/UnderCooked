@@ -35,5 +35,11 @@ Haotian - created docs and class
 ### **SetImageSize(int x,int y)**-> void
 >Sets Image Size
 
+### **LerpImageXSize(int x,double t)** ->void
+>lerps the image X size
+
+### **LerpImageYSize(int y,double t)** ->void
+>lerps the image Y size
+
 
 

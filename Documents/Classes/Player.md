@@ -27,7 +27,7 @@
 >The name of the player
 
 
-### **Timer** - private float
+### **Timer** - private double
 >How long the player has until the round ends
 
 ### **Level** - private Int

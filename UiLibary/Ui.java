@@ -62,7 +62,7 @@ class ScreenGui extends JFrame{
         Frame x = new Frame();//the x frame is just a red frame 
         TextLable y = new TextLable("X");// the y frame is a red background and has "X" written on it and is 5 pixels above the x so that the "X" is centered 
         //x and y frames might be replaced by a image instead 
-        TextLable name = new TextLable("Cooking Game Idk");
+        TextLable name = new TextLable("UnderCooked");
         Frame z = new Frame(null);
         Point s = new ScreenSize().Get(); 
         z.setBounds(0, 0, s.x, 20);
@@ -116,6 +116,14 @@ class Frame extends JPanel {
         }
     }
     */ //found out there is already a pre made method that handles this 
+    public void LerpXSize(int x,double t){
+        x = (int) (x*t);
+        setSize(x,getSize().height);
+    }
+    public void LerpYSize(int y,double t){
+        y = (int) (y*t);
+        setSize(getSize().width,y);
+    }
     public Frame(FlowLayout x){
         super(x);
     }
@@ -150,6 +158,14 @@ class Frame extends JPanel {
 }
 class TextBox extends JTextArea{
     private boolean editable = true;
+    public void LerpXSize(int x,double t){
+        x = (int) Math.ceil(x*t);
+        setSize(x,getSize().height);
+    }
+    public void LerpYSize(int y,double t){
+        y = (int) Math.ceil(y*t);
+        setSize(getSize().width,y);
+    }
     public TextBox(String Text){
         super(Text);
         setLineWrap(false);
@@ -191,6 +207,22 @@ class TextBox extends JTextArea{
     }
 }
 class ImageLable extends JLabel{
+    public void LerpXSize(int x,double t){
+        x = (int) Math.ceil(x*t);
+        setSize(x,getSize().height);
+    }
+    public void LerpYSize(int y,double t){
+        y = (int) Math.ceil(y*t);
+        setSize(getSize().width,y);
+    }
+    public void LerpImageXSize(int x,double t){
+        x = (int) Math.ceil(x*t);
+        SetImageSize(x,this.sizey);
+    }
+    public void LerpImageYSize(int y,double t){
+        y = (int) Math.ceil(y*t);
+        SetImageSize(this.sizex,y);
+    }
     private ImageIcon image;
     private int sizex,sizey;
     public ImageLable(String image){
@@ -243,6 +275,14 @@ class ImageLable extends JLabel{
     }
 }
 class TextLable extends JTextPane{
+    public void LerpXSize(int x,double t){
+        x = (int) Math.ceil(x*t);
+        setSize(x,getSize().height);
+    }
+    public void LerpYSize(int y,double t){
+        y = (int) Math.ceil(y*t);
+        setSize(getSize().width,y);
+    }
     private boolean editable = true;
     public TextLable(String Text){
         setText(Text);
