@@ -4,7 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import UiClasses.*;
 public class Test {
     public static void main(String[] args) {
         ScreenGui ui = new ScreenGui("UnderCooked");

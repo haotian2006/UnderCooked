@@ -1,3 +1,4 @@
+package UiClasses;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -65,6 +66,7 @@ class ScreenGui extends JFrame{
         TextLable name = new TextLable("UnderCooked");
         Frame z = new Frame(null);
         Point s = new ScreenSize().Get(); 
+        name.SetEditable();
         z.setBounds(0, 0, s.x, 20);
         Topbar = z;
         y.SetEditable();
