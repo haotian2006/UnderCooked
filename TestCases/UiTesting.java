@@ -9,12 +9,11 @@ import PremadeElements.*;
 import UiClasses.*;
 public class UiTesting {
     public static void main(String[] args) {
-        LoadingScreen x = new LoadingScreen();
+        StartScreen x = new StartScreen();
         ScreenGui ui = new ScreenGui("UnderCooked");
         ui.FullScreen();
         ui.setBackground(new Color(187, 255, 177));
         ui.add(x);
-        x.WaitTillLoaded();
         System.out.println("Done");
         
     }
