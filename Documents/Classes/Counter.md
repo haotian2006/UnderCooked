@@ -27,7 +27,7 @@ will also be added as we work
 >The Image It should Display
 
 ### **Duration** - private int
->How long should it take an Dish to be processed
+>How long should it take an Dish to be processed 
 
 ### **Interact** - private MouseEvent
 >what happens when the player clicks on it
@@ -38,7 +38,14 @@ will also be added as we work
 
 ## <span style="color:yellow;">Methods</span>
 
-### **OnInteract()**-> void
+### **newCounter(String Type)**-> Counter
+>returns a new Counter Subclass with the type
+
+### **OnInteract(Player player)**-> void
 >Invokes the events in Interact
 
 
+## <span style="color:lightblue;">Subclasses</span>
+> ## <span style="color:lightgreen;">Example</span>   
+```java 
+```

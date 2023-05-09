@@ -38,7 +38,12 @@ public class ScreenGui extends JFrame{
         Frame z = new Frame(null);
         z.setBackground(Color.gray);
         Point s = new ScreenSize().Get(); 
-        z.setBounds(0, 0, s.x, 20);
+        String osName = System.getProperty("os.name");
+        if (osName.startsWith("Mac")) {
+            z.setBounds(20, 0, s.x, 20);
+        } else {
+            z.setBounds(0, 0, s.x, 20);  
+        }
         Topbar = z;
         Close.setBounds(s.x-20, 0, 20, 20);
         ClickAble.setBounds(s.x-20, 0, 20, 20);
@@ -51,7 +56,7 @@ public class ScreenGui extends JFrame{
         };
         Close.SetImageSize(20, 20);
         name.setBounds(0, 0, s.x, 20);
-        name.SetImageSize(120, 20);
+        name.SetImageSize(140, 20);
         ClickAble.addMouseListener(exit);
         z.add(name);
         z.add(ClickAble, 0);

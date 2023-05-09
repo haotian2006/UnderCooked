@@ -1,5 +1,5 @@
 # Holdable Class 
-> a class to allow Item/Dish class to be in a var
+> a class to allow Item/Dish class to be in the same variable
 ```java
 Holdable x = new Item();
 Holdable y = new Dish();

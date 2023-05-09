@@ -23,7 +23,7 @@
 ### **Orders** - private ArrayList<Recipe.>
 >What orders the player needs to do
 
-### **Name** - private String
+### **name** - private String
 >The name of the player
 
 

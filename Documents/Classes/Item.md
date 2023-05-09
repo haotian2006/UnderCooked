@@ -46,7 +46,7 @@ haotian - created docs
 ### **Dirty** - private boolean
 > is it Dirty (plates)
 
-### **Name** - private String
+### **name** - private String
 >name of item 
 
 ## <span style="color:yellow;">Methods</span>
@@ -79,10 +79,10 @@ haotian - created docs
 ### **CanHold()**-> boolean
 >Can a player hold it or does it have to be in a plate (subclasses)*return true by default
 
-### **Item(String name)** -> constructor 
+### **newItem(String name)** -> Item 
 > creates a Item with the template of a subclass with the same name
 
-### **Item(String name,boolean Cooked,boolean Fried, boolean Chopped)** -> constructor 
+### **newItem(String name,boolean Cooked,boolean Fried, boolean Chopped)** -> Item 
 > creates a Item with the template of a subclass with the same name and given attributes
 
 ## <span style="color:lightblue;">Subclasses</span>

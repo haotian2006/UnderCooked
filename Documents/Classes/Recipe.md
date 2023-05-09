@@ -34,7 +34,7 @@ haotian - made document
 
 ## <span style="color:yellow;">Methods</span>
 
-### **Recipe(String name)**-> Constructor
+### **newRecipe(String name)**-> Recipe
 >creates a Recipe object from a sub class with the name
 
 ### **DishMatchesRecipe(Dish x)** -> boolean
