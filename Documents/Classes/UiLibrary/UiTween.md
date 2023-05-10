@@ -32,16 +32,16 @@ haotian - created docs and class
 ### **UiTween(JComponent Frame,EaseFunc Func,EaseType Type)**-> Constructor
 >Creates the tween
 
-### **TweenSize(Dimension Start,Dimension goal,double time)**-> Dimension
+### **TweenSize(Dimension Start,Dimension goal,double duration)**-> Dimension
 >Tweens the size
 
-### **TweenSizeFromCenter(Dimension Start,Dimension goal,double time)**-> Dimension
+### **TweenSizeFromCenter(Dimension Start,Dimension goal,double duration)**-> Dimension
 >Tweens the size while keeping the center the same
 
-### **TweenBackgroundColor(Color Start,Color goal,double time)**-> Color
+### **TweenBackgroundColor(Color Start,Color goal,double alpha)**-> Color
 >Tweens the Background color
 
-### **TweenLocation(Point Start,Point goal,double time)**-> Point
+### **TweenLocation(Point Start,Point goal,double alpha)**-> Point
 >Tweens the location
 
 * all of these methods automatically update the frame so you don't need to update the frame with the returned values
@@ -49,8 +49,8 @@ haotian - created docs and class
 ### **SetDuration(double x)**-> void
 >sets how long the tween should take
 
-### **Play(TweenProperty x,Object Start, Object End,double time)**-> void
->Tweens the given property in the given time without needing another for loop
+### **Play(TweenProperty x,Object Start, Object End,double duration)**-> void
+>Tweens the given property in the given duration without needing another for loop
 
 
 

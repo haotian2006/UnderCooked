@@ -44,7 +44,7 @@ haotian - created docs and class
 ### **Reset(float start,float end)**-> void
 >re-sets the start and end value 
 
-### **GetValue(double time)**-> double
+### **GetValue(double alpha)**-> double
 >returns the tweened/lerped value 
 
 
