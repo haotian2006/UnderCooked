@@ -4,7 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;
 import javax.swing.*;
-public class Frame extends JPanel {
+import easingTypes.*;
+public class Frame extends JPanel implements UiElement {
     /* 
     private ArrayList<JComponent> children = new ArrayList<JComponent>();
     public boolean InsertChildren(JComponent x){//the children would be Frames,TextLabels,ImageLabels,etc..
@@ -37,11 +38,16 @@ public class Frame extends JPanel {
         y = (int) (y*t);
         setSize(getSize().width,y);
     }
+
+    public void TweenSize(EaseFunc func,EaseType type,int x,int y,double t){
+        
+        setSize(getSize().width,y);
+    }
     public Frame(FlowLayout x){
         super(x);
     }
     public Frame(){
-    }
+    } 
     public void SetCenter(Point p){
         Dimension size = getSize();
         int[] half = new int[]{size.width/2, size.height/2};

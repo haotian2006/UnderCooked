@@ -17,8 +17,8 @@ public class UITest1 {
         fidk.setBounds(100, 100, 100, 100);
         fidk.setBackground(Color.green);
         ui.add(fidk,1);
-        TextBox fidk2 = new TextBox("Eat This");
-        
+        TextBox fidk2 = new TextBox("Test");
+        fidk2.setOpaque(false);
         fidk2.setBackground(Color.red);
         fidk2.setBounds(0,0, 1000, 100);
         fidk.add(fidk2);
@@ -45,6 +45,8 @@ public class UITest1 {
 
         b2.setBackground(Color.green);
         b2.setSize(0, 40);
+        UiTween abd = new UiTween(b2,EaseFunc.Linear , EaseType.easeOut);
+        UiTween txt = new UiTween(fidk,EaseFunc.Linear , EaseType.easeOut);
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 double x = 0.1;
@@ -52,7 +54,10 @@ public class UITest1 {
                     try {
                         Thread.sleep(100);
                         int lx = (int) Bounce.easeOut((float) x, 0f, 200f, 1f);
-                        b2.setSize(lx, b2.getSize().height);
+                        //b2.setSize(lx, b2.getSize().height);
+                        txt.TweenBackgroundColor(Color.RED, Color.orange, x);
+                        txt.TweenSizeFromCenter(new Dimension(100, 100), new Dimension(200, 200), x);
+                        abd.TweenSize(new Dimension(0, 40), new Dimension(200, 40), x);
                         //b2.LerpXSize(200, x);
                         x +=.1;
                         if (x >= 1.1){

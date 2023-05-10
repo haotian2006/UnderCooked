@@ -2,8 +2,12 @@ package UiClasses;
 import java.awt.Dimension;
 import java.awt.Point;
 import javax.swing.*;
-public class TextBox extends JTextArea{
+public class TextBox extends JTextArea implements UiElement{
     private boolean editable = true;
+    public Point GetCenterRelativeToFrame(){//deprecated 
+        Dimension size = getSize();
+        return new Point(size.width/2, size.height/2);
+    }
     public void LerpXSize(int x,double t){
         x = (int) Math.ceil(x*t);
         setSize(x,getSize().height);

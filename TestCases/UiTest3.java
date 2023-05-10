@@ -7,20 +7,13 @@ import java.awt.event.MouseEvent;
 
 import PremadeElements.*;
 import UiClasses.*;
-public class UiTesting {
+public class UiTest3 {
     public static void main(String[] args) {
-        LoadingScreen x = new LoadingScreen();
+        StartScreen x = new StartScreen();
         ScreenGui ui = new ScreenGui("UnderCooked");
         ui.FullScreen();
         ui.setBackground(new Color(187, 255, 177));
         ui.add(x);
-        x.WaitTillLoaded();
-        x.CloseAnimation();
-        ui.remove(x);
-        x = null;
-        ui.repaint();
-        System.out.println("Done");
-        StartScreen y = new StartScreen();
-        ui.add(y);
+
     }
 }

@@ -22,6 +22,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 // A ui class made by hao 
 // It acts similar to how the GUI classes in roblox work
+
+//the classes has been put in their own files because of problems with having them in sub folders
 class ScreenSize{
     public Point Get(){
         Dimension screenDimension = Toolkit.getDefaultToolkit().getScreenSize();

@@ -6,7 +6,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import javax.swing.*;
-public class TextLable extends JTextPane{
+public class TextLable extends JTextPane implements UiElement{
     public void LerpXSize(int x,double t){
         x = (int) Math.ceil(x*t);
         setSize(x,getSize().height);

@@ -17,4 +17,19 @@ public class Expo {
 		return c/2 * (-(float)Math.pow(2, -10 * --t) + 2) + b;
 	}
 
+	public static float  easeIn(float t,float b , float c) {
+		return (t==0) ? b : c * (float)Math.pow(2, 10 * (t/1 - 1)) + b;
+	}
+	
+	public static float  easeOut(float t,float b , float c) {
+		return (t==1) ? b+c : c * (-(float)Math.pow(2, -10 * t/1) + 1) + b;	
+	}
+	
+	public static float  easeInOut(float t,float b , float c) {
+		if (t==0) return b;
+		if (t==1) return b+c;
+		if ((t/=1/2) < 1) return c/2 * (float)Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-(float)Math.pow(2, -10 * --t) + 2) + b;
+	}
+
 }

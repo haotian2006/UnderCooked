@@ -8,7 +8,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-public class ImageLable extends JLabel{
+public class ImageLable extends JLabel  implements UiElement{
+    public Point GetCenterRelativeToFrame(){//deprecated 
+        Dimension size = getSize();
+        return new Point(size.width/2, size.height/2);
+    }
     public void LerpXSize(int x,double t){
         x = (int) Math.ceil(x*t);
         setSize(x,getSize().height);

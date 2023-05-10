@@ -15,4 +15,17 @@ public class Cubic {
 		return c/2*((t-=2)*t*t + 2) + b;
 	}
 
+	public static float easeIn (float t,float b , float c) {
+		return c*(t/=1)*t*t + b;
+	}
+	
+	public static float easeOut (float t,float b , float c) {
+		return c*((t=t/1-1)*t*t + 1) + b;
+	}
+	
+	public static float easeInOut (float t,float b , float c) {
+		if ((t/=1/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	}
+
 }

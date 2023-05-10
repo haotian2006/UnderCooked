@@ -30,8 +30,8 @@ public class ScreenGui extends JFrame{
         Topbar = x;
     }
     private void ExitButton(){//creates a red X on the top right corner 
-        ImageLable name = new ImageLable("assets/Images/SubTitle.png");
-        ImageLable Close = new ImageLable("assets/Images/Close.png");
+        ImageLable name = new ImageLable("assets/Images/TopBar/SubTitle.png");
+        ImageLable Close = new ImageLable("assets/Images/TopBar/Close.png");
 
         Frame ClickAble = new Frame();
         
