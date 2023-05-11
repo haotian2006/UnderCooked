@@ -70,6 +70,15 @@ haotian - created docs
 ### **IsChopped()**-> boolean
 >is it Chopped
 
+### **SetCooked(boolean x)**-> void
+>is it cooked
+### **SetFried(boolean x)**-> void
+>is it cooked
+### **SetDirty(boolean x)**-> void
+>is it cooked
+### **SetChopped()(boolean x)**-> void
+>is it cooked
+
 ### **CanBeChopped()**-> boolean
 >Can it? (subclasses) *return false by default
 ### **CanBeCooked()**-> boolean
@@ -79,10 +88,13 @@ haotian - created docs
 ### **CanHold()**-> boolean
 >Can a player hold it or does it have to be in a plate (subclasses)*return true by default
 
-### **newItem(String name)** -> Item 
+### **equals(Item other)**-> boolean
+>returns true if the item matches the other item 
+
+### **static newItem(String name)** -> Item 
 > creates a Item with the template of a subclass with the same name
 
-### **newItem(String name,boolean Cooked,boolean Fried, boolean Chopped)** -> Item 
+### **static newItem(String name,boolean Cooked,boolean Fried, boolean Chopped)** -> Item 
 > creates a Item with the template of a subclass with the same name and given attributes
 
 ## <span style="color:lightblue;">Subclasses</span>

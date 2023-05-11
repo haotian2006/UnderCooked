@@ -21,6 +21,6 @@
     "java.project.sourcePaths": [
         "TestCases",
         "assets",
-        "."
+        ".",
     ]
 }

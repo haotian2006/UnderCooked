@@ -3,7 +3,7 @@
 #### status: <span style="color:red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
-```diff
+```diff 
 haotian - created docs
 ```
 ### <span style="color:lightgreen;">Notes:</span>
@@ -38,7 +38,7 @@ will also be added as we work
 
 ## <span style="color:yellow;">Methods</span>
 
-### **newCounter(String Type)**-> Counter
+### **static newCounter(String Type)**-> Counter
 >returns a new Counter Subclass with the type
 
 ### **OnInteract(Player player)**-> void

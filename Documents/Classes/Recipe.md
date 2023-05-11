@@ -6,14 +6,14 @@
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
 haotian - made document
-
+ 
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
 5/7/2023 - created docs
 ```
 ### <span style="color:lightgreen;">Notes:</span>
-```diff
+```diff 
 
 ```
 ### <span style="color:red;">Bugs:</span>
@@ -34,8 +34,11 @@ haotian - made document
 
 ## <span style="color:yellow;">Methods</span>
 
-### **newRecipe(String name)**-> Recipe
+### **static newRecipe(String name)**-> Recipe
 >creates a Recipe object from a sub class with the name
+
+### **static GetRecipeFromDish(Dish dish)**-> Recipe
+>creates a Recipe sub-object from the dish
 
 ### **DishMatchesRecipe(Dish x)** -> boolean
 > if the given Dish matches the recipe 

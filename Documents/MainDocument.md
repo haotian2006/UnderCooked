@@ -11,6 +11,7 @@ Period 5
 5/8/2023 - all of the docs are done except for display and grid. those will be finished as we work
 5/9/2023 - added a Cookware document
 5/9/2023 - added a easingTypes Library | added UiTween Class
+5/10/2023 - Level class is done | created a few methods for some classes
 ```
 ### <span style="color:lightgreen;">Tasks:</span>
 ```diff
@@ -18,7 +19,6 @@ Period 5
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff
-we can probably start working on this on Wednesday if you want once I finish the final few documents for classes - hao
 ```
 
 

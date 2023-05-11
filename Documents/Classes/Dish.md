@@ -6,7 +6,7 @@
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
 
-```
+``` 
 ### <span style="color:yellow;">Updates:</span>
 ```diff
 5/7/2023 - created docs
@@ -27,13 +27,16 @@
 ## <span style="color:yellow;">Methods</span>
 
 ### **AddItem(Item x)**-> void
->adds an Item into the dish
+> adds an Item into the dish
 
 ### **GetItems()**-> ArrayList<Item.>
->Get the Item arrayList
+> Get the Item arrayList
 
 ### **RemoveItem(Item x)**-> void
->Removes an Item From the ArrayList
+> Removes an Item From the ArrayList
+### **GetIcon()** -> String
+> returns the image of the dish (Uses Recipe.GetRecipeFromDish)
+
 
 
 

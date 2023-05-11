@@ -1,13 +1,14 @@
 # Level Class 
 > this is a template class for levels 
-#### status: <span style="color:Yellow;">In Progress</span>
+#### status: <span style="color:lightgreen;">Done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
+haotian - finished class
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
-5/10/2023 - created docs
+5/10/2023 - created docs and class
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff
@@ -17,7 +18,7 @@
 ```
 ## <span style="color:green;">Attributes</span>
 
-### **Grid** - private Grid
+### **GridLayout** - private Grid
 >The Level Layout
 
 ### **Orders** - private Recipe[]
@@ -37,11 +38,17 @@
 ### **GetGrid()**-> Grid
 >returns the grid
 
-### **Orders()**-> Recipe[]
+### **GetOrders()**-> Recipe[]
 >returns the possible recipes
 
 ### **GetImage()**-> String
 >returns the background image path
+
+### **GetRequirements(int difficulty)**-> int[]
+>returns the array of point requirements for given difficulty
+
+### **GetRequirements(int difficulty,int score)**-> int
+>returns the amount of stars for the given difficulty and score
 
 ## <span style="color:lightblue;">Subclasses</span>
 > ## <span style="color:lightgreen;">Example</span>   

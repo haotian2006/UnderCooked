@@ -4,7 +4,7 @@
 Holdable x = new Item();
 Holdable y = new Dish();
 ```
-#### status: <span style="color:red;">Not Started</span>
+#### status: <span style="color:lightgreen;">Done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
@@ -12,7 +12,7 @@ Holdable y = new Dish();
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
-5/7/2023 - created docs
+5/9/2023 - created docs
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff

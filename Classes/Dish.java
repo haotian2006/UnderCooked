@@ -1,4 +1,4 @@
 package Classes;
-public class Dish {
+public class Dish extends Holdable{
     
 }
