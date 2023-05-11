@@ -1,12 +1,16 @@
 package Classes;
 
+import java.awt.List;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Level {
     private Grid GridLayout;
     private Recipe[] Orders;
     private String BackgroundImage;
     private int[][] StartRequirements;
+    private ArrayList<HashMap<String,Integer>> MaxIngredients;
 
     public static Level newLayout(String x){
         try {
@@ -45,6 +49,17 @@ public class Level {
         }
         return stars;
         
+    }
+    public HashMap<String,Integer> GetMaxIngredients(int difficulty){
+        int len = MaxIngredients.size();
+        if (len >=difficulty){ return new HashMap<String,Integer>();}
+        return MaxIngredients.get(difficulty);
+    }
+    public int GetMaxIngredients(int difficulty,String ingredient){
+        HashMap<String,Integer> data = GetMaxIngredients(difficulty);
+        if (data.containsKey(ingredient)){
+            return data.get(ingredient);
+        }else{ return 0;}
     }
 }
  

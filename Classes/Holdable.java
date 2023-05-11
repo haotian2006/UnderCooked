@@ -1,4 +1,4 @@
 package Classes;
-public class Holdable {
-    
+public interface Holdable {
+    public String GetType();
 }

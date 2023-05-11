@@ -1,6 +1,6 @@
 # Item Class 
 > A class to define items like tomatoes,plates 
-##  <span style="color:lightblue;">extends from Holdable</span>
+##  <span style="color:lightblue;">implements Holdable</span>
 #### status: <span style="color:Red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->

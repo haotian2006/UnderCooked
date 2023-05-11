@@ -1,4 +1,4 @@
-# Holdable Class 
+# Holdable Interface 
 > a class to allow Item/Dish class to be in the same variable
 ```java
 Holdable x = new Item();
@@ -24,6 +24,8 @@ Holdable y = new Dish();
 
 
 ## <span style="color:yellow;">Methods</span>
+### **GetType()** ->string
+>returns what type of class it is 
 
 
 

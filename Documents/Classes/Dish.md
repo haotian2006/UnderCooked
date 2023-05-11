@@ -1,6 +1,6 @@
 # Dish Class 
 > a class to display a dish
-##  <span style="color:lightblue;">extends from Holdable</span>
+##  <span style="color:lightblue;">implements Holdable</span>
 #### status: <span style="color:red;">Not started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->

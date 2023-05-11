@@ -16,6 +16,12 @@ public class Counter {
         }
         return null;
     }
+    public static Counter newCounter(String name,Holdable holding){
+        Counter x = newCounter(name);
+        if (x == null) return null;
+        x.SetHolding(holding);
+        return x;
+    }
 }
 
  

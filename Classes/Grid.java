@@ -12,6 +12,11 @@ public class Grid {
         grid[x][y] = c;
         return true;
     }
+    public boolean put(String c, int x,int y){
+        if (!InBounds(x,y)) return false;
+        grid[x][y] = Counter.newCounter(c);
+        return true;
+    }
     public Dimension GetSize(){
         return new Dimension(grid.length,grid[0].length);
     }

@@ -2,7 +2,7 @@ package Classes;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class Cookware extends Holdable{
+public class Cookware implements Holdable{
     public static Cookware newCookware(String name){
         try {
             Class<?> myClass = Class.forName(("Cookware."+name));//gets the class in assets/Cookware/name
@@ -16,5 +16,6 @@ public class Cookware extends Holdable{
         }
         return null;
     }
+    public String GetType() {return "Cookware";}
 }
  

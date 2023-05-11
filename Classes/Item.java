@@ -2,7 +2,7 @@ package Classes;
 
 import java.lang.reflect.InvocationTargetException;
  
-public class Item extends Holdable{
+public class Item implements Holdable{
     public boolean equals(Item other){
         
     }
@@ -27,4 +27,5 @@ public class Item extends Holdable{
 
         return x;
     }
+    public String GetType() {return "Item";}
 }

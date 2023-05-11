@@ -27,6 +27,11 @@ haotian - created docs and class
 ### **put(Counter c, int x,int y)**-> Void
 > puts a Counter at  x,y returns false if out of bounds
 
+### **put(String c, int x,int y)**-> Void
+> creates a Counter object and puts at x,y. returns false if out of bounds
+
+
+
 ### **GetSize()** -> Dimension
 > return the grid size Dimension
 ### **GetGrid()**-> Counter[][]

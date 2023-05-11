@@ -30,6 +30,9 @@ haotian - finished class
 ### **StarRequirements** - private Int[][]
 >how many points for each difficulty and star
 
+### **MaxIngredients** - ArrayList<HashMap<String,Integer>>
+>how many ingredients do they get per difficulty
+
 ## <span style="color:yellow;">Methods</span>
 
 ### **newLayout(String x)**-> Level
@@ -50,9 +53,49 @@ haotian - finished class
 ### **GetRequirements(int difficulty,int score)**-> int
 >returns the amount of stars for the given difficulty and score
 
+### **GetMaxIngredients(int difficulty)**-> HashMap<String,Integer>
+>returns the amount of ingredients hashmap
+
+### **GetMaxIngredients(int difficulty,String ingredient)**-> int
+>returns the max amount for the given ingredient
+
 ## <span style="color:lightblue;">Subclasses</span>
 > ## <span style="color:lightgreen;">Example</span>   
 ```java
+public class Template extends Level {
+    private Grid GridLayout = new Grid(800,800){
+        {
+            put("Counter", 0, 0);//adds a counter at 0,0
+        }
+    };
+    private Recipe[] Orders = {// the game will select a random recipe from here
+         Recipe.newRecipe("recipe1"),
+         Recipe.newRecipe("recipe2")
+    };
+    
+    private int[][] StarRequirements = {
+        {60,100,120}, //easy
+        {80,120,140}, //normal
+        {100,140,160}//hard
+    };
+
+    private ArrayList<HashMap<String,Integer>> MaxIngredients= new ArrayList<HashMap<String,Integer>>(){
+        {
+            
+           add(new HashMap<String,Integer>(){{ //easy
+                put("Item1", 100);
+            }});
+            add(new HashMap<String,Integer>(){{ // normal
+                put("Item1", 50);
+            }});
+            add(new HashMap<String,Integer>(){{ // hard
+                put("Item1", 20);
+            }});
+        }
+    };
+    
+}
+
 ```
 
 

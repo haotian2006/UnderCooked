@@ -26,20 +26,26 @@ will also be added as we work
 ### **ImagePath** - private String
 >The Image It should Display
 
-### **Duration** - private int
->How long should it take an Dish to be processed 
 
 ### **Interact** - private MouseEvent
 >what happens when the player clicks on it
 
-### **Holding** - private Item 
->what Item is currently on the Counter
+### **Holding** - private Holdable 
+>what Object is currently on the Counter
 
 
 ## <span style="color:yellow;">Methods</span>
 
 ### **static newCounter(String Type)**-> Counter
->returns a new Counter Subclass with the type
+>returns a new Counter Subclass from type
+
+### **static newCounter(String Type,Holdable holding)**-> Counter
+>returns a new Counter Subclass from type thats holding something
+
+### **static SetHolding(Holdable obj)**-> void
+>sets holding
+
+
 
 ### **OnInteract(Player player)**-> void
 >Invokes the events in Interact
