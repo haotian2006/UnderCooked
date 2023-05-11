@@ -1,7 +1,7 @@
 # Recipe Class 
 > a class to define what a dish is made out of 
 ##  <span style="color:lightblue;">extends from Yes</span>
-#### status: <span style="color:red;">not started</span>
+#### status: <span style="color:yellow;">In Progress</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
@@ -11,6 +11,7 @@ haotian - made document
 ### <span style="color:yellow;">Updates:</span>
 ```diff
 5/7/2023 - created docs
+5/10/2023 - Started working on it
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff 

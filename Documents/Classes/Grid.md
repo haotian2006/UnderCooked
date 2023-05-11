@@ -1,28 +1,36 @@
 # Grid Class 
 > a class to store the tiles
-#### status: <span style="color:Red;">Not Started</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
-haotian - created docs
+haotian - created docs and class
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff
--still a work in progress not sure how to implement it at the moment might be removed because Grid class is very similar
-!this will be added to as we make progress
+!this will be added to as we make progress (done)
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
+5/10/2023 - made changes to the class | class is done
 ```
 ### <span style="color:red;">Bugs:</span>
 ```diff
 ```
 ## <span style="color:green;">Attributes</span>
-### **Grid** - private 2D ArrayList (Tile)
+### **Grid** - private Counter[][]
 >where the Tiles are stored 
 ## <span style="color:yellow;">Methods</span>
 
 ### **Grid(int x,int y)**-> Constructor
-> Creates an 2D arraylist with the size of x and y
-### **Insert(Tile tile, int x,int y)**-> Void
-> Inserts a tile at  x ,y
+> Creates an 2D array with the size of x and y
+### **put(Counter c, int x,int y)**-> Void
+> puts a Counter at  x,y returns false if out of bounds
+
+### **GetSize()** -> Dimension
+> return the grid size Dimension
+### **GetGrid()**-> Counter[][]
+> returns the grid array
+
+### **GetAt(int x,int y)**-> Counter
+> returns the counter at x,y
