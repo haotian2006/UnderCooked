@@ -21,15 +21,15 @@ haotian - created docs
 ```
 ## <span style="color:green;">Attributes</span>
 
-### **Grid** - private 2D ArrayList (Tile)
->where the Tiles are stored 
+### **Grid** - private 2D ArrayList (Counter)
+>where the Counter are stored 
 
 ## <span style="color:yellow;">Methods</span>
 
 ### **Grid(int x,int y)**-> Constructor
 > Creates an 2D arraylist with the size of x and y
 
-### **Insert(Tile tile, int x,int y)**-> Void
-> Inserts a tile at  x ,y
+### **Insert(Counter tile, int x,int y)**-> Void
+> Inserts a counter at  x ,y
 
 

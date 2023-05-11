@@ -1,4 +1,4 @@
-# Tile Class 
+# Tile Class **<span style="color:Red;">(Deprecated)</span>**
 >what Object is currently on this tile
 #### status: <span style="color:Red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
@@ -8,7 +8,7 @@ haotian - created docs
 ```
 ### <span style="color:yellow;">Updates::</span>
 ```diff
-
+5/10/2023 Deprecated because Counter Class exists 
 ```
 
 ### <span style="color:red;">Bugs:</span>
