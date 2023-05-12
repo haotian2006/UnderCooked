@@ -4,8 +4,9 @@ import java.awt.Point;
 import java.awt.Toolkit;
 // A ui class made by hao 
 // It acts similar to how the GUI classes in roblox work
+import java.io.Serializable;
 
-public class ScreenSize{
+public class ScreenSize implements Serializable{
     public Point Get(){
         Dimension screenDimension = Toolkit.getDefaultToolkit().getScreenSize();
         int jFrameWidth = screenDimension.width;

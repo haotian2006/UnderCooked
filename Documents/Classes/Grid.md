@@ -30,6 +30,8 @@ haotian - created docs and class
 ### **put(String c, int x,int y)**-> Void
 > creates a Counter object and puts at x,y. returns false if out of bounds
 
+### **put(String c, int x,int y,Holdable Item)**-> Void
+> creates a Counter object with an Item and puts at x,y. returns false if out of bounds
 
 
 ### **GetSize()** -> Dimension

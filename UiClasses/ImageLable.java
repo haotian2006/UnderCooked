@@ -58,6 +58,9 @@ public class ImageLable extends JLabel  implements UiElement{
         sizey = y;
         setIcon(scaledIcon);
     }
+    public void SetImageSize(Dimension x){
+        SetImageSize(x.width, x.height);
+    }
     public void SetCenter(Point p){
         Dimension size = getSize();
         int[] half = new int[]{size.width/2, size.height/2};

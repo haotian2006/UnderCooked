@@ -9,11 +9,11 @@ import easingTypes.*;
 public class UITest1 {
     public static void main(String[] args) {
         ScreenGui ui = new ScreenGui("UnderCooked");
-        Frame bb = new Frame(null);
+        Frame bb = new Frame();
         bb.setOpaque(true);
         bb.setLocation(60, 60);
         bb.setSize(800, 820);
-        Frame fidk = new Frame(null);
+        Frame fidk = new Frame();
         fidk.setBounds(100, 100, 100, 100);
         fidk.setBackground(Color.green);
         ui.add(fidk,1);
@@ -38,10 +38,10 @@ public class UITest1 {
         mousefinder.addMouseMotionListener(t);
 
 
-        Frame fidk3 = new Frame(null);
+        Frame fidk3 = new Frame();
         fidk3.setBounds(900, 900, 200, 40);
         fidk3.setBackground(Color.red);
-        Frame b2 = new Frame(null);
+        Frame b2 = new Frame();
 
         b2.setBackground(Color.green);
         b2.setSize(0, 40);

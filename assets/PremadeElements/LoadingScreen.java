@@ -12,7 +12,7 @@ public class LoadingScreen extends Frame{
     private boolean PressedPlay = false;
     private Thread thread;
     public LoadingScreen(){
-        super(null);
+        super();
         ScreenSize ScreenSize = new ScreenSize();
         Point Center = ScreenSize.GetCenter();
 

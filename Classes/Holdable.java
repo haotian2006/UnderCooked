@@ -1,4 +1,7 @@
 package Classes;
-public interface Holdable {
+
+import java.io.Serializable;
+
+public interface Holdable extends Serializable{
     public String GetType();
 }

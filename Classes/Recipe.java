@@ -1,7 +1,8 @@
 package Classes;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
  
-public class Recipe {
+public class Recipe implements Serializable{
     private double time;
     private Item[] ingredients;
     private String name;

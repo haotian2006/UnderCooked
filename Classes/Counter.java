@@ -1,8 +1,9 @@
 package Classes;
 
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 
-public class Counter {
+public class Counter implements Serializable {
     public static Counter newCounter(String name){
         try {
             Class<?> myClass = Class.forName(("Counters."+name));//gets the class in assets/Counters/name

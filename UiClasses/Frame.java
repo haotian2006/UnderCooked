@@ -47,7 +47,12 @@ public class Frame extends JPanel implements UiElement {
         super(x);
     }
     public Frame(){
-    } 
+        super(null);
+    }  
+    public Frame(String name){
+        super(null);
+        setName(name);
+    }  
     public void SetCenter(Point p){
         Dimension size = getSize();
         int[] half = new int[]{size.width/2, size.height/2};

@@ -16,11 +16,11 @@ haotian - created docs and class
 ```
 ## <span style="color:green;">Attributes</span>
 
-### **Player** - Public Player
+### **player** - Public Player
 >The Player Who is playing
 
-### **Display** - Public Display
->The Display object currently used
+### **kitchen** - Public Kitchen
+>The Kitchen object currently used
 
 
 

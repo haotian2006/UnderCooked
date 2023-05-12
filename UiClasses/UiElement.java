@@ -1,8 +1,9 @@
 package UiClasses;
 
 import java.awt.Point;
+import java.io.Serializable;
 
-interface UiElement {
+interface UiElement extends Serializable {
     public Point GetCenter();
     public Point GetCenterRelativeToFrame();
     public void SetCenter(Point p);

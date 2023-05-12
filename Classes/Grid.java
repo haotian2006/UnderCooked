@@ -1,8 +1,9 @@
 package Classes;
 
 import java.awt.Dimension;
+import java.io.Serializable;
 
-public class Grid {
+public class Grid implements Serializable{
     private Counter[][] grid;
     public Grid(int x,int y){
         grid = new Counter[x][y];
@@ -23,8 +24,8 @@ public class Grid {
     public Counter[][] GetGrid(){
         return grid;
     }
-    public boolean InBounds(int x,int y){
-        return (x >= GetSize().width || y >= GetSize().height);
+    public boolean InBounds(int x,int y){// if the given values are in the bounds of the array
+        return !(x >= GetSize().width || y >= GetSize().height);
     }
     public Counter GetAt(int x,int y){
         if (!InBounds(x,y)) return null;

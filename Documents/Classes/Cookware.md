@@ -23,6 +23,9 @@
 ### **Inventory** - private ArrayList<Item.>
 > what is currently stored
 
+### **Image** - private String
+> the icon of the cookware
+
 ### **CurrentlyOn** - private Counter
 > what counter is it on
 
@@ -41,13 +44,22 @@
 >returns Inventory 
 
 ### **Add(Item x)**-> boolean
->Adds x into the ArrayList returns false if x is not in PossibleItems
+>Adds x into the ArrayList returns false if x is not in possible
+
+### **CanAdd(Item x)**-> boolean
+>Can it be added. (sub class method) returns true by default
 
 ### **PlaceOn(Counter x)** -> boolean
 >Sets CurrentlyOn to x if it can be placed on it. return false if it cannot
 
 ### **OnInteract(Player player)** -> void
 >what to do when the player interacts with it
+
+### **GetImage()** -> String
+>Returns the image 
+
+### **GetName()** -> String
+>Returns the name 
 
 ### **static newCookware(string name)** -> cookware
 >creates a new sub cookware object

@@ -2,13 +2,14 @@ package UiClasses;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import javax.swing.JComponent;
 import easingTypes.*;
 
-public class UiTween{
+public class UiTween implements Serializable{
     private JComponent frame;
     private EaseFunc func;
     private EaseType type;

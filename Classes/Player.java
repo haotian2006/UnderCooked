@@ -1,4 +1,7 @@
 package Classes;
-public class Player {
+
+import java.io.Serializable;
+
+public class Player implements Serializable{
     
 }

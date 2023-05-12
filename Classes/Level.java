@@ -1,11 +1,12 @@
 package Classes;
 
 import java.awt.List;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Level {
+public class Level implements Serializable{
     private Grid GridLayout;
     private Recipe[] Orders;
     private String BackgroundImage;

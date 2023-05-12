@@ -7,7 +7,7 @@ import UiClasses.*;
 import easingTypes.*;; 
 public class StartScreen extends Frame{
     public StartScreen(){
-        super(null); 
+        super(); 
         ScreenSize ScreenSize = new ScreenSize();
         Point Center = ScreenSize.GetCenter();
 
