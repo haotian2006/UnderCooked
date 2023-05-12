@@ -7,9 +7,12 @@ import java.util.HashMap;
 import Classes.*;
 
 public class Template extends Level {
+    private String name = "Template";
     private Grid GridLayout = new Grid(800,800){
         {
-            put("Counter", 0, 0);
+            put("Counter", 0, 0); // creates a counter at 0,0
+            put(Counter.newCounter("Counter",Item.newItem("Tomato") ), 0, 1);
+             // creates a counter at 0,1 with a tomato on top
         }
     };
     private Recipe[] Orders = {

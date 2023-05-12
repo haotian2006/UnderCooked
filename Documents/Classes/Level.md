@@ -63,26 +63,28 @@ haotian - finished class
 > ## <span style="color:lightgreen;">Example</span>   
 ```java
 public class Template extends Level {
-    private Grid GridLayout = new Grid(800,800){
+    private String name = "Template";
+    private Grid GridLayout = new Grid(800,800){//creates a grid with the size of 800x800
         {
-            put("Counter", 0, 0);//adds a counter at 0,0
+            put("Counter", 0, 0); // creates a counter at 0,0
+            put(Counter.newCounter("Counter",Item.newItem("Tomato") ), 0, 1);
+             // creates a counter at 0,1 with a tomato on top
         }
     };
-    private Recipe[] Orders = {// the game will select a random recipe from here
+    private Recipe[] Orders = {
          Recipe.newRecipe("recipe1"),
          Recipe.newRecipe("recipe2")
     };
     
     private int[][] StarRequirements = {
-        {60,100,120}, //easy
+        {60,100,120}, //easy 1 star 
         {80,120,140}, //normal
-        {100,140,160}//hard
+        {100,140,160} //hard
     };
 
     private ArrayList<HashMap<String,Integer>> MaxIngredients= new ArrayList<HashMap<String,Integer>>(){
         {
-            
-           add(new HashMap<String,Integer>(){{ //easy
+            add(new HashMap<String,Integer>(){{ //easy
                 put("Item1", 100);
             }});
             add(new HashMap<String,Integer>(){{ // normal
@@ -95,6 +97,7 @@ public class Template extends Level {
     };
     
 }
+
 
 ```
 

@@ -20,8 +20,8 @@ will also be added as we work
 ```
 ## <span style="color:green;">Attributes</span>
 
-### **Type** - private String
->The Type of counter
+### **name** - private String
+>The name of counter
 
 ### **ImagePath** - private String
 >The Image It should Display
@@ -42,7 +42,7 @@ will also be added as we work
 ### **static newCounter(String Type,Holdable holding)**-> Counter
 >returns a new Counter Subclass from type thats holding something
 
-### **static SetHolding(Holdable obj)**-> void
+### **public SetHolding(Holdable obj)**-> void
 >sets holding
 
 

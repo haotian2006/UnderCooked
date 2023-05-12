@@ -52,6 +52,7 @@
 ### **static newCookware(string name)** -> cookware
 >creates a new sub cookware object
 
+
 ## <span style="color:lightblue;">Subclasses</span>
 > ## <span style="color:lightgreen;">Example</span>   
 ```java

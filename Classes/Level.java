@@ -43,8 +43,8 @@ public class Level {
         int[] list = GetRequirements(difficulty);
         int stars = 0;
         for (int i =0;i<list.length;i++){
-            if (score <= list[i]){
-                score = i;
+            if (list[i] <= score){
+                stars = i;
             }
         }
         return stars;
