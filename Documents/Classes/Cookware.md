@@ -29,16 +29,14 @@
 ### **CurrentlyOn** - private Counter
 > what counter is it on
 
-### **CannotPlaceOn** -private Counter[]
-> what types of counter can it not be placed on
-
 ### **name** - private String
 > name of the Cookware
 
-### **PossibleItems** - private Item[]
-> what items can the cookware store
 
 ## <span style="color:yellow;">Methods</span>
+
+### **GetPercentage()**-> double[]
+>returns what percentage is the item being cooked,chopped,etc in this format: double[processedTime,needed] 
 
 ### **GetInventory()**-> ArrayList<Item.>
 >returns Inventory 
@@ -60,6 +58,9 @@
 
 ### **GetName()** -> String
 >Returns the name 
+
+### **Update()** -> void
+>Updates the inventory value (sub class method)
 
 ### **static newCookware(string name)** -> cookware
 >creates a new sub cookware object

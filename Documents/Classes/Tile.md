@@ -1,5 +1,7 @@
-# Tile Class **<span style="color:Red;">(Deprecated)</span>**
->what Object is currently on this tile
+# Tile Class **<span style="color:Red;">(Destroyed)</span>**
+>what Object is currently on this tile 
+
+> has been destroyed. not needed any more
 #### status: <span style="color:Red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
@@ -8,6 +10,7 @@ haotian - created docs
 ```
 ### <span style="color:yellow;">Updates::</span>
 ```diff
+5/11/2023 - destroyed
 ```
 ### <span style="color:red;">Bugs:</span>
 ```diff

@@ -22,7 +22,7 @@ haotian - created docs
 ```
 ## <span style="color:green;">Attributes</span>
 
-### **TileSize** - private int
+### **TileSize** - public static int
 >how many pixels per tile
 
 ### **grid** - private Grid

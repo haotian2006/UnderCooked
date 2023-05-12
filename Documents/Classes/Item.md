@@ -54,8 +54,11 @@ haotian - created docs
 ### **GetName()**-> String
 >returns the name 
 
-### **GetImage(String[] items)**-> String
->returns a Image that matches the string array
+### **public GetPercentage()**-> double[]
+>returns double[processedTime,needed]
+
+### **GetImage()**-> String
+>returns a Image 
 ### **GetMaxProcessTime(String x)** -> double
 >returns the process time for the type
 

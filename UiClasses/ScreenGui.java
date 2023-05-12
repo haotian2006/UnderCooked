@@ -35,7 +35,7 @@ public class ScreenGui extends JFrame{
 
         Frame ClickAble = new Frame();
         
-        Frame z = new Frame(null);
+        Frame z = new Frame();
         z.setBackground(Color.gray);
         Point s = new ScreenSize().Get(); 
         String osName = System.getProperty("os.name");

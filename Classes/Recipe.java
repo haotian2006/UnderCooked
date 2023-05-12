@@ -32,7 +32,17 @@ public class Recipe implements Serializable{
         time = x;
     }
     public boolean DishMatchesRecipe(Dish x){
-        if ()
+        Item[] y = (Item[]) x.getItems().toArray();
+        Item[] z = (Item[]) ingredients.clone();
+        while(y.length != 0 || z.length != 0){
+            for (int i = 0; i < y.length; i++) {
+                
+            }
+            for (int i = 0; i < z.length; i++) {
+                
+            }
+        }
+        return false;
     }
 
 }

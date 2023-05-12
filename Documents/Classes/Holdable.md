@@ -27,6 +27,9 @@ Holdable y = new Dish();
 ### **GetType()** ->string
 >returns what type of class it is 
 
+### **GetImage()** -> string
+> returns the image
+
 
 
 

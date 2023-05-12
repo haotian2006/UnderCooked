@@ -44,8 +44,18 @@ will also be added as we work
 
 ### **public SetHolding(Holdable obj)**-> void
 >sets holding
+### **public GetHolding()**-> Holdable
+>returns the holding object
+
+### **public GetImage()**-> string
+>returns the image
+
+### **public GetPercentage()**-> double[]
+>returns what percentage is the item being cooked,chopped,etc in this format: double[processedTime,needed] 
 
 
+### **public CanPlace(Holdable obj)**-> boolean
+>can the object be placed on the counter (subclass method) return true by default
 
 ### **OnInteract(Player player)**-> void
 >Invokes the events in Interact

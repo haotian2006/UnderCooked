@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 import UiClasses.*;
 public class Kitchen implements Serializable{
-    private int TileSize =4; // how many pixels per tile
+    public static int TileSize =4; // how many pixels per tile
     private Grid grid;
     private Frame[][] UiGrid;
     private Frame BackgroundFrame;

@@ -35,7 +35,7 @@
 
 ### **RemoveItem(Item x)**-> void
 > Removes an Item From the ArrayList
-### **GetIcon()** -> String
+### **GetImage()** -> String
 > returns the image of the dish (Uses Recipe.GetRecipeFromDish)
 
 

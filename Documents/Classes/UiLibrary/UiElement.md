@@ -1,5 +1,6 @@
 # UiElement Interface
 >Methods/attributes that the Frame,TextLable,ImageLable,etc.. all have
+##  <span style="color:lightblue;">extends from Serializable</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
@@ -24,13 +25,13 @@ haotian - created docs and class
 >Clones a Object with similar attributes 
 
 ### **LerpXSize(int x,double t)** -> void **<span style="color:Red;">Deprecated</span>**
-> Lerps the X size to the Target | Replaced by UiTween
+> Lerps the X size to the Target | Replaced by UiTween Class
 
 ### **LerpYSize(int y,double t)** -> void **<span style="color:Red;">Deprecated</span>**
-> Lerps the Y size to the Target | Replaced by UiTween
+> Lerps the Y size to the Target | Replaced by UiTween Class
 
 ### **LerpPosition(int x,int y,double t)** -> void **<span style="color:Red;">Deprecated</span>**
-> Lerp the Position to the Targeted | Replaced by UiTween
+> Lerp the Position to the Targeted | Replaced by UiTween Class
 
 
 
