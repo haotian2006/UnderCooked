@@ -1,7 +1,9 @@
-# Tile Class **<span style="color:Red;">(Destroyed)</span>**
+# Tile Class **<span style="color:Red;">(Deprecated)</span>**
 >what Object is currently on this tile 
 
 > has been destroyed. not needed any more
+
+>decided it was useless
 #### status: <span style="color:Red;">Not Started</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->

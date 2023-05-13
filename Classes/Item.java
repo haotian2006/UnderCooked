@@ -31,7 +31,7 @@ public class Item implements Holdable{
                 state = state.toLowerCase();
                 if (
                     //apparently it is recommended to use the equals method instead of == 
-                    //found it while looking thru the string documents 
+                    //found it while looking through the string documents 
                     (state.equals("chopped") && !isChopped())
                 || ((state.equals("fried") && !isFried())) 
                 || ((state.equals("cooked") && !isCooked()))

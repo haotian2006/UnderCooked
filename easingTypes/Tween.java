@@ -32,6 +32,8 @@ public class Tween{
             Class<?> myClass = Class.forName(("easingTypes."+f.name()));
             Object obj = myClass.getDeclaredConstructor().newInstance();
             Method method = myClass.getMethod(t.name(), float.class, float.class,float.class,float.class);
+            //Float value = (float) method.invoke(obj,time2,s,e,dur);(old script) -- this one line caused me 30 minuets of pain
+            //and the fix was 2 characters
             Float value = (float) method.invoke(obj,time2,s,e-s,dur);
             return (double) value.doubleValue();
         } catch (ClassNotFoundException e) {
