@@ -1,15 +1,21 @@
 import Classes.*;
 public class Testcase {
     public static void main(String[] args) {
-        Grid x = new Grid(800,800){
-            {
-                put((new Counter()), 0, 1);
-                 // creates a counter at 0,1 with a tomato on top
+        //clones both arrays
+        int[] y = {1,2};
+        int[] z = {2,1};
+        if (y.length != z.length){ return;}
+        boolean found = true;
+        for (int yy =0;yy<y.length;yy++){
+            found = false;
+            for (int zz =0;zz<z.length;zz++){
+                if (y[yy] == z[zz] && y[yy] != 0){ // if it equals but not equal to null then
+                    z[zz] = 0; // set them to null
+                    found = true; break;
+                }
             }
-        };
-        Grid x2 = DeepCopy.copy(x);
-        System.out.println(x2);
-        System.out.println(x.GetAt(0, 1));
+        }
+      System.out.println(found);
     }
     
 }

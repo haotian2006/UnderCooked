@@ -3,12 +3,12 @@
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
-
+Adithya - created the class and methods/attributes 
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
 5/7/2023 - created docs
-5/12/2023 - Finished first verson
+5/12/2023 - Finished first version
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff

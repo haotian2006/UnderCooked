@@ -2,6 +2,7 @@ package Classes;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.Map;
  
 public class Item implements Holdable{
     private String name;
@@ -10,8 +11,8 @@ public class Item implements Holdable{
     private boolean chopped;
     private boolean fried;
     private boolean dirty;
-    private HashMap Images;
-    private HashMap maxProcessTime;
+    private HashMap<String[],String> Images;
+    private HashMap<String,Double> maxProcessTime;
     private double processedTime;
 
     
@@ -22,7 +23,28 @@ public class Item implements Holdable{
         return new double[2];
     }
     public String getImage() {
-        return Image;
+        for (Map.Entry<String[],String> entry : Images.entrySet()) {
+            String[] states = entry.getKey();
+            String image = entry.getValue();
+            boolean match = true;
+            for (String state : states){
+                state = state.toLowerCase();
+                if (
+                    //apparently it is recommended to use the equals method instead of == 
+                    //found it while looking thru the string documents 
+                    (state.equals("chopped") && !isChopped())
+                || ((state.equals("fried") && !isFried())) 
+                || ((state.equals("cooked") && !isCooked()))
+                || ((state.equals("dirty") && !isDirty()))  
+                ){ 
+                    //if this passes it means that it didn't match
+                    match = false;
+                    break;
+                }
+            }
+            if (match) return image;
+        }
+        return "";
     }
     public double getMaxProcessTime(String x) {
 

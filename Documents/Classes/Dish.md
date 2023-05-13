@@ -26,7 +26,7 @@
 
 
 ## <span style="color:yellow;">Methods</span>
-
+> do note that this does not include plates 
 ### **AddItem(Item x)**-> void
 > adds an Item into the dish
 

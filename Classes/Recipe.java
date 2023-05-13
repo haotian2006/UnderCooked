@@ -32,17 +32,21 @@ public class Recipe implements Serializable{
         time = x;
     }
     public boolean DishMatchesRecipe(Dish x){
+        //clones both arrays
         Item[] y = (Item[]) x.getItems().toArray();
         Item[] z = (Item[]) ingredients.clone();
-        while(y.length != 0 || z.length != 0){
-            for (int i = 0; i < y.length; i++) {
-                
-            }
-            for (int i = 0; i < z.length; i++) {
-                
+        if (y.length != z.length)return false; // if the lengths do not match
+        boolean found = true;
+        for (int yy =0;yy<y.length;yy++){
+            found = false;
+            for (int zz =0;zz<z.length;zz++){
+                if (y[yy] == z[zz] && y[yy] != null){ // if it equals but not equal to null then
+                    z[zz] = null; // set them to null so it won't be found again
+                    found = true; break;
+                }
             }
         }
-        return false;
+        return found;
     }
 
 }

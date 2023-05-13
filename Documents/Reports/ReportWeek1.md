@@ -16,6 +16,7 @@ Period 5
 >Cookware class done
 !Next weeks goals:
 >Finish other "easy" classes
+>start complex classes
 -Challenges/Concerns:
 >no
 ```

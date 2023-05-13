@@ -8,7 +8,7 @@ Holdable y = new Dish();
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
-
+haotian - created docs and interface
 ```
 ### <span style="color:yellow;">Updates:</span>
 ```diff
