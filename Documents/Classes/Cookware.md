@@ -33,6 +33,9 @@ haotian - created docs and class
 ### **name** - private String
 > name of the Cookware
 
+### **ProcessedTime** - private double 
+>how long has it been processed
+
 
 ## <span style="color:yellow;">Methods</span>
 

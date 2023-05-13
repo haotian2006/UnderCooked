@@ -13,16 +13,15 @@ public class Item implements Holdable{
     private boolean dirty;
     private HashMap<String[],String> Images;
     private HashMap<String,Double> maxProcessTime;
-    private double processedTime;
 
     
     public String getName() {
         return name;
     }
     public double[] getPercentage() {
-        return new double[2];
+        return new double[]{0,0};
     }
-    public String getImage() {
+    public String GetImage() {
         for (Map.Entry<String[],String> entry : Images.entrySet()) {
             String[] states = entry.getKey();
             String image = entry.getValue();
@@ -47,7 +46,8 @@ public class Item implements Holdable{
         return "";
     }
     public double getMaxProcessTime(String x) {
-
+        Double val = maxProcessTime.get(x);
+        return val != null ? val :0;
     }
     public boolean isPlate() {
 

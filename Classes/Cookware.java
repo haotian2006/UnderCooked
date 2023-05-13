@@ -8,6 +8,7 @@ public class Cookware implements Holdable{
     private String Image;
     private Counter CurrentlyOn;
     private String name;
+    private double ProcessedTime;
 
     public double[] GetPercentage(){
         return new double[2];

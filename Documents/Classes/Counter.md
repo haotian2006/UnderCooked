@@ -33,6 +33,9 @@ will also be added as we work
 ### **Holding** - private Holdable 
 >what Object is currently on the Counter
 
+### **ProcessedTime** - private double 
+>how long has it been processed
+
 
 ## <span style="color:yellow;">Methods</span>
 
@@ -53,6 +56,8 @@ will also be added as we work
 ### **public GetPercentage()**-> double[]
 >returns what percentage is the item being cooked,chopped,etc in this format: double[processedTime,needed] 
 
+### **public Update()** ->void
+>subclass method
 
 ### **public CanPlace(Holdable obj)**-> boolean
 >can the object be placed on the counter (subclass method) return true by default
