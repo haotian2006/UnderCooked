@@ -5,6 +5,9 @@ import java.lang.reflect.InvocationTargetException;
 
 public class Counter implements Serializable {
     public static Counter newCounter(String name){
+        if (true){
+            return new Counter();
+        }
         try {
             Class<?> myClass = Class.forName(("Counters."+name));//gets the class in assets/Counters/name
             return (Counter) myClass.getDeclaredConstructor().newInstance();//creates a new class and convert it to an Counter   

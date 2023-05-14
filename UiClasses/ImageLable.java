@@ -37,6 +37,7 @@ public class ImageLable extends JLabel  implements UiElement{
     public ImageLable(){// makes it so sending an image is optional 
     }
     public void SetImage(String imagePath) {
+        if (imagePath.equals("") || imagePath == null){return;}
         try {
             File path = new File(imagePath);
             FileInputStream fis = new FileInputStream(path);  
@@ -78,12 +79,12 @@ public class ImageLable extends JLabel  implements UiElement{
         setLocation(x,y);
     }
     public ImageLable Clone(){// creates a new imagelable with similar properties 
-        ImageLable newi = new ImageLable();
-        newi.setBackground(getBackground());
-        newi.setBounds(getBounds());
-        newi.setIcon(image);
-        newi.image = image;
-        newi.SetImageSize(sizex, sizey);
-        return newi;
+        ImageLable newI = new ImageLable();
+        newI.setBackground(getBackground());
+        newI.setBounds(getBounds());
+        newI.setIcon(image);
+        newI.image = image;
+        newI.SetImageSize(sizex, sizey);
+        return newI;
     }
 }

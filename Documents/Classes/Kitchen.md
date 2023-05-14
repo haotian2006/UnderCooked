@@ -28,6 +28,9 @@ haotian - created docs and class
 ### **grid** - private Grid
 >The Grid
 
+### **maxBurnTime** - private double[]
+>max burn time for each difficulty
+
 ### **UiGrid** - private Frame[][]
 >grid location for the ui 
 
@@ -56,6 +59,12 @@ haotian - created docs and class
 
 ### **UpdateHolding()** -> void
 > updates what there player is holding
+
+### **GetMaxBurnTime(int difficulty)** -> double
+> returns how long should something burn before losing from given difficulty
+
+### **GetMaxBurnTime()** -> double
+> returns how long should something burn before losing 
 
 ### **GetGrid()**-> Grid
 > returns the grid

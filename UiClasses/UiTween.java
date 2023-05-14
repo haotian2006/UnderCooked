@@ -5,7 +5,9 @@ import java.awt.Point;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.swing.JComponent;
 import easingTypes.*;
 
@@ -62,31 +64,37 @@ public class UiTween implements Serializable{
         duration = (float) x;
     }
     public void Play(TweenProperty x,Object Start, Object End,double time){
-        duration =(float) time/2;
+        duration =(float) 1;
         Thread thread = new Thread(() -> {
-            for (double i = 0;i<= duration;i+=.001){
+            long start = System.nanoTime();
+            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+            final double[] i = {0};
+            long interval = 10;
+            executor.scheduleAtFixedRate(() -> {
+                i[0] += 0.01/time;
                 switch (x){
                     case TweenLocation:
-                    TweenLocation((Point) Start, (Point) End, i);
+                    TweenLocation((Point) Start, (Point) End, i[0]);
                     break;
                 case TweenBackgroundColor:
-                    TweenBackgroundColor((Color) Start, (Color) End, i);
+                    TweenBackgroundColor((Color) Start, (Color) End, i[0]);
                     break;
                 case TweenSizeFromCenter:
-                    TweenSizeFromCenter((Dimension) Start, (Dimension) End, i);
+                    TweenSizeFromCenter((Dimension) Start, (Dimension) End, i[0]);
                     break;
                 case TweenSize:
-                    TweenSize((Dimension) Start, (Dimension) End, i);
+                    TweenSize((Dimension) Start, (Dimension) End, i[0]);
                     break;
                 default:
                     throw new IllegalArgumentException("Invalid tween property: " + x);
                 }
-                try{
-                    Thread.sleep(1);
-                }catch (InterruptedException e){
-                    
-                }
-            }
+            }, 
+            0, interval, TimeUnit.MILLISECONDS);
+            try {
+                executor.awaitTermination((long)(time*1000), TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {}
+            executor.shutdown();
+            System.out.println("Took " + (System.nanoTime() - start) / 1_000_000_000.0 + " seconds."+time);
         });
         thread.start();
         

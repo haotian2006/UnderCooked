@@ -7,7 +7,9 @@ public class Recipe implements Serializable{
     private Item[] ingredients;
     private String name;
     private String image;
-
+    public Recipe(String Name,String Image,Item[] Ingredients){
+        name = Name;image = Image;ingredients = Ingredients;
+    }
     public static Recipe newRecipe(String name){
         try {
             Class<?> myClass = Class.forName(("Recipes."+name));//gets the class in assets/Recipes/name

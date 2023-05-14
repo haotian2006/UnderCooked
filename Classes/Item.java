@@ -13,7 +13,10 @@ public class Item implements Holdable{
     private boolean dirty;
     private HashMap<String[],String> Images;
     private HashMap<String,Double> maxProcessTime;
-
+    public Item(){}
+    public Item(String Name,HashMap<String[], String> Image,HashMap<String,Double> MaxProcessTime){//super constructor 
+        name = Name;Images = Image;maxProcessTime = MaxProcessTime;
+    }
     
     public String getName() {
         return name;
@@ -22,6 +25,7 @@ public class Item implements Holdable{
         return new double[]{0,0};
     }
     public String GetImage() {
+        if (Images == null) return"";
         for (Map.Entry<String[],String> entry : Images.entrySet()) {
             String[] states = entry.getKey();
             String image = entry.getValue();
