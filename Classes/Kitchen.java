@@ -54,7 +54,7 @@ public class Kitchen implements Serializable{
         return 1;
     }
     public double GetMaxBurnTime(){
-        return 5;
+        return 15;
     }
     public void Draw(){
         Color Bg = level.GetColor(0);   Bg = Bg != null ?Bg : new Color(0, 153, 0);
