@@ -27,20 +27,23 @@ public class TileElement extends Frame {
         Counter = new ImageLable();
         Counter.setSize(size);
         //Counter.SetImage(x.GetImage());
-        Counter.SetImageSize(size);
+        //Counter.SetImageSize(size);
         Counter.setOpaque(false);
         Counter.setName("counter");
-        add(Counter,0);
+        add(Counter);
 
         UpdateIcons();
 
         
     }
+    public Counter getCounter(){
+        return counter;
+    }
     public void AddItem(HoldableElement x){
         RemoveItem();
         x.SetParent(this);
         Item = x;
-        add(Item,1);
+        add(Item,0);
     }
     public void RemoveItem(){
         if (Item != null){
