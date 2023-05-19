@@ -22,6 +22,15 @@ public class Grid implements Serializable{
         grid[x][y] = Counter.newCounter(c);
         return true;
     }
+    public boolean put(String c, int x,int y,Holdable cookware){
+        x -=1;
+        y-=1;
+        if (!InBounds(x,y)) return false;
+        Counter count = Counter.newCounter(c);
+        count.SetHolding(cookware);
+        grid[x][y] = count;
+        return true;
+    }
     public Dimension GetSize(){
         return new Dimension(grid.length,grid[0].length);
     }

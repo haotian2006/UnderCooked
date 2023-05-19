@@ -6,16 +6,15 @@ import java.util.HashMap;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import Classes.*;
-public class Template extends Counter{
-    static String name = "Template";
-    static String ImagePath = "Template.png";
+public class counter extends Counter{
+    static String name = "Counter";
+    static String ImagePath = "assets/Images/Counters/Counter.jpg";
     static Holdable holding;
     public void OnInteract(Player plr){
-        plr.setHolding(new Item());
+        // plr.setHolding(new Item());
     }
-    public Template(){
-        super();
+    public counter(){
+        super(name,ImagePath);
     }
     
-}
 }

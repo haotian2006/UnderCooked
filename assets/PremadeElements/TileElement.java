@@ -26,8 +26,8 @@ public class TileElement extends Frame {
 
         Counter = new ImageLable();
         Counter.setSize(size);
-        //Counter.SetImage(x.GetImage());
-        //Counter.SetImageSize(size);
+        Counter.SetImage(x.GetImage());
+        Counter.SetImageSize(size);
         Counter.setOpaque(false);
         Counter.setName("counter");
         add(Counter);
@@ -53,7 +53,7 @@ public class TileElement extends Frame {
         }
     }
     public void UpdateIcons(){
-        Holdable x = new Item();//counter.GetHolding();
+        Holdable x = counter.GetHolding();
         if (Item == null){
             Item = new HoldableElement();
             AddItem(Item);
@@ -61,6 +61,8 @@ public class TileElement extends Frame {
         Item.UpdateItem(x);
     }
     public void Update(){
-
+        if (Item != null){
+            Item.Update();
+        }
     }
 }

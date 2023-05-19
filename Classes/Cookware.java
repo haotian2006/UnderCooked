@@ -9,14 +9,27 @@ public class Cookware implements Holdable{
     private Counter CurrentlyOn;
     private String name;
     private double ProcessedTime;
+    private String TypeOfCooking;
 
+    public void UpdateProcessedTime(double x){
+        ProcessedTime = x;
+    }
+    public double GetProcessedTime(){
+        return ProcessedTime;
+    }
     public double[] GetPercentage(){
-        return new double[2];
+        double Needed = 0;
+        for (int n =0;n<Inventory.size();n++){
+            Needed += Inventory.get(n).getMaxProcessTime(TypeOfCooking);
+        }
+        return new double[]{ProcessedTime,Needed};
     }
     public ArrayList<Item> GetInventory(){
         return Inventory;
     }
-    public boolean Add(Item x){
+    public boolean Add(Holdable y){
+        if (y.GetType() != "Item") return false;
+        Item x = (Item) y;
         if (CanAdd(x)){
             Inventory.add(x);
             return true;
@@ -30,7 +43,7 @@ public class Cookware implements Holdable{
         CurrentlyOn = x;
         return true;
     }
-    public void OnIntereact(Player player){
+    public void OnInteract(Player player){
         
     }
     public String GetImage(){
@@ -41,6 +54,11 @@ public class Cookware implements Holdable{
     }
     public void Update(){
         
+    }
+    public Cookware(String Name,String Image,String TypeOfCooking){
+        this.name = Name; this.Image = Image;
+        this.TypeOfCooking = TypeOfCooking;
+        Inventory = new ArrayList<Item>();
     }
     public static Cookware newCookware(String name){
         try {

@@ -94,7 +94,6 @@ public class UiTween implements Serializable{
                 executor.awaitTermination((long)(time*1000), TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {}
             executor.shutdown();
-            System.out.println("Took " + (System.nanoTime() - start) / 1_000_000_000.0 + " seconds."+time);
         });
         thread.start();
         

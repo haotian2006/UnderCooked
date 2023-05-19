@@ -11,9 +11,35 @@ public class Player implements Serializable{
     private int level;
     private int difficulty;
     private Holdable holding;
+    private Counter InteractingCounter;
+    private Boolean InGame;
 
+
+    public void SetInGame(boolean x){
+        InGame = x;
+    }
+    public boolean GetInGame(){ return InGame;}
+
+    public void SetTimer(double x){
+        timer = x;
+    }
+    public double GetTimer(){
+        return timer;
+    }
+    public void SetCounter(Counter x){
+        InteractingCounter = x;
+    }
+    public Counter GetCounter(){
+        return InteractingCounter;
+    }
     public Player(String n){
         name = n;
+    }
+    public void setHolding(Holdable x){
+        holding = x;
+    }
+    public Holdable getHolding(){
+        return holding;
     }
     public String getName(){
         return name;
@@ -32,8 +58,6 @@ public class Player implements Serializable{
         return orders;
     }
     public void removeOrder(Recipe removed){
-        boolean isin = false;
-
         if(orders.contains(removed)== true){
             orders.remove(removed);
         }
@@ -47,8 +71,5 @@ public class Player implements Serializable{
     public int getDifficulty(){
         return difficulty;
     }
-    public static void main(String[] args) {
-        Player g = new Player("bob");
-        
-    }
+    
 }

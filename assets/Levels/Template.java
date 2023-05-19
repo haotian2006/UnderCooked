@@ -9,16 +9,16 @@ import Classes.*;
 
 public class Template extends Level {
     private static String PreviewImage = "";
-    private static Integer TimeLimit = 10;
+    private static Integer TimeLimit = 10000;
     private static Grid GridLayout = new Grid(13,10){
         {
-            put("Counter", 1, 1); // creates a counter at 1,1
-            put("Counter", 2, 1);
-            put("Counter", 3, 1);
-            put("Counter", 4, 1);
+            put("Trashcan", 1, 1); // creates a counter at 1,1
+            put("Stove", 2, 1,Cookware.newCookware("Pot"));
+            put("Stove", 3, 1);
+            put("counter", 4, 1);
 
-            put("Counter", 1, 2);
-            put("Counter", 1,3);
+            put("Carrot", 1, 2);
+            put("CuttingBoard", 1,3);
             //put(Counter.newCounter("Counter",Item.newItem("Tomato") ), 0, 1);
              // creates a counter at 0,1 with a tomato on top
             // put("Counter", 0, 1);
@@ -38,7 +38,7 @@ public class Template extends Level {
     private static Color[] Colors = {
         new Color(0, 153, 0),
         new Color(182, 91, 0),
-        Color.WHITE,
+        Color.white,
         Color.black,
     };//0 - background
     //1 - wall 

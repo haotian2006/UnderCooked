@@ -29,29 +29,12 @@ public class HoldableElement extends Frame{
         setBackground(Color.red);
         bar = new CookedPercentage();
         add(bar);
-
-        
-        Thread thread = new Thread(() -> {
-            long start = System.nanoTime();
-            ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-            final double[] i = {0};
-            long interval = 10;
-            executor.scheduleAtFixedRate(() -> {
-                i[0] += 0.01;
-                bar.UpdatePercentage(i[0],2);
-            }, 0, interval, TimeUnit.MILLISECONDS);
-            try {
-            executor.awaitTermination((long)(2*1000+Memory.Kitchen.GetMaxBurnTime()*1000), TimeUnit.MILLISECONDS);
-            } catch (InterruptedException e) {
-            }
-            executor.shutdown();
-            System.out.println("Took " + (System.nanoTime() - start) / 1_000_000_000.0 + " seconds.");
-        });
-        thread.start();
         ImageFrame = new ImageLable();
-        ImageFrame.setSize(size);
-        ImageFrame.SetImageSize(size);
+        ImageFrame.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
+        ImageFrame.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
+        ImageFrame.SetCenter(GetCenterRelativeToFrame());
         add(ImageFrame);
+        setVisible(false);
     }
     public void SetParent(TileElement x){
         Parent = x;
@@ -59,19 +42,28 @@ public class HoldableElement extends Frame{
     public void UpdateItem(Holdable x){
         item = x;
         UpdateIcons();
+        TileElement p = Parent;
+        Parent = null;
         Update();
+        Parent = p;
     }
     public void Update(){
-
+        if (item == null)return;
+        double[] percent = item.GetPercentage();
+        if (Parent == null){
+            bar.UpdatePercentage(percent[0] > percent[1] ?percent[1] : percent[0], percent[1]);
+            return;
+        }
+        bar.UpdatePercentage(percent[0], percent[1]);
     }
     public void UpdateIcons(){
         if (item == null){
             setVisible(false);
         }else{
             setVisible(true);
-            ImageFrame.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
-            //ImageFrame.SetImage(item.GetImage());
-            ImageFrame.SetImageSize( new Dimension(Kitchen.TileSize, Kitchen.TileSize));
+            //ImageFrame.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
+            ImageFrame.SetImage(item.GetImage());
+            ImageFrame.SetImageSize( new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         }
     }
 }

@@ -7,6 +7,7 @@ public class Recipe implements Serializable{
     private Item[] ingredients;
     private String name;
     private String image;
+    
     public Recipe(String Name,String Image,Item[] Ingredients){
         name = Name;image = Image;ingredients = Ingredients;
     }
@@ -23,7 +24,17 @@ public class Recipe implements Serializable{
         }
         return null;
     }
+    public void UpdateProcessedTime(double x){
+       
+    }
+    public double GetProcessedTime(){
+       return 0;
+    }
     
+    public static Recipe GetRecipeFromDish(Dish d){
+        
+    }
+
     public Item[] GetIngredients(){
         return ingredients;
     }

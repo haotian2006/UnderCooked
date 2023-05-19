@@ -50,7 +50,7 @@ public class CookedPercentage extends Frame{
     public double UpdatePercentage(double current,double target){
         double maxOvercook = Memory.Kitchen.GetMaxBurnTime();
         double percent = current/target;
-        if (percent>1){
+        if (percent>1.01){
             percent = 1+(current-target)/maxOvercook;
             double interval = GetFlashSpeed(percent);
            // System.out.println(percent);
@@ -60,7 +60,7 @@ public class CookedPercentage extends Frame{
             }else if(percent >= 1.99999){
                 Caution.SetImage("assets/Images/Other/Fire.png");
                 Caution.setVisible( CaVisible = true);
-                //end round
+                Memory.player.SetInGame(false);
             }
         }
 
