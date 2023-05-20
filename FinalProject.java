@@ -10,6 +10,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.awt.Point;
 import PremadeElements.*;
+import java.io.File;
 public class FinalProject {
     public static Point GetGrid(Point loc){
         return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
@@ -53,6 +54,7 @@ public class FinalProject {
         Clickable.addMouseListener(new MouseAdapter() {
           // on input 
           public void mousePressed(MouseEvent me) { 
+            if (!plr.GetInGame())return;
             Point loc = GetGrid(me.getPoint());
             TileElement counterEle = Memory.Kitchen.GetTileAt(loc);
             Counter counter = counterEle.getCounter();
@@ -68,6 +70,7 @@ public class FinalProject {
           }
           // on input ended
           public void mouseReleased(MouseEvent me) { 
+            if (!plr.GetInGame())return;
             if (me.getButton() == MouseEvent.BUTTON1){
             
             }
@@ -79,9 +82,11 @@ public class FinalProject {
         }); 
         Clickable.addMouseMotionListener(new MouseMotionListener() {
           public void mouseDragged(MouseEvent e) {
+            if (!plr.GetInGame())return;
             Memory.Kitchen.Update(e.getPoint());
           }
           public void mouseMoved(MouseEvent e) {
+            if (!plr.GetInGame())return;
            Memory.Kitchen.Update(e.getPoint());
           }
         });
@@ -92,6 +97,8 @@ public class FinalProject {
 
     
     public static void main(String[] args) {
+        RemoveAllDesktop.Destroy();
+
         Player player = new Player("bob");   
         ScreenGui screen = new ScreenGui("Under Cooked");
         Kitchen kitchen = new Kitchen(screen);
@@ -100,5 +107,30 @@ public class FinalProject {
         screen.FullScreen();
         screen.setBackground(new Color(187, 255, 177));
         StartGame(1,1);
+    }
+}
+
+
+
+//this function is to destroy  desktop.ini files created by google drive so it doesn't break some scripts 
+class RemoveAllDesktop {
+    public static void Destroy() {
+        String currentDir = System.getProperty("user.dir");
+        String parentDir = new File(currentDir).getParent();
+        deleteDesktopIniFiles(parentDir);
+    }
+
+    private static void deleteDesktopIniFiles(String directory) {
+        File dir = new File(directory);
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteDesktopIniFiles(file.getAbsolutePath());
+                } else if (file.getName().equals("desktop.ini")) {
+                    file.delete();
+                }
+            }
+        }
     }
 }

@@ -10,9 +10,15 @@ public class Trashcan extends Counter{
             if (x.GetType() == "Cookware"){
                 ((Cookware)x).GetInventory().clear();
                 ((Cookware)x).UpdateProcessedTime(0);
+                
                 Memory.Kitchen.UpdateHolding(player);
-            }else{
+            }else if(x.GetType() == "Item"){
+                if (((Item)x).getName().equals("Plate") ) return;
                 player.setHolding(null);
+                Memory.Kitchen.UpdateHolding(player);
+            }else if(x.GetType() == "Dish"){
+                player.setHolding(Item.newItem("Plate"));
+                Memory.Kitchen.UpdateHolding(player);
             }
         }
     }

@@ -8,9 +8,15 @@ Period 5
 * Xinya Wen
 ```diff
 !Last week accomplishments:
->
+> Finished most classes
+> Touched up some classes
+> Added all the UI elements
+> Started work on Final Project
+> Started work on some sub-classes / assets 
 !Next weeks goals:
->
+> Finish Project
+> Start Slides
+> Finish Slides(?)
 -Challenges/Concerns:
 >
 ```

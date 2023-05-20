@@ -41,6 +41,16 @@ public class Level implements Serializable{
         }
         return null;
     }
+    public Counter FindFirstCounter(String name){
+        for (int x =0;x<GridLayout.GetGrid().length;x++){
+            for (Counter c: GridLayout.GetGrid()[x] ){
+                if (c.GetName().equals(name)){
+                    return c;
+                }
+            }
+        }
+        return null;
+    }
     public Grid getGrid(){
         return GridLayout;
     }

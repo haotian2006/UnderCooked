@@ -9,11 +9,11 @@ public class Carrot extends Item{
     static String name = "Carrot";
     static HashMap<String[], String> Images = new HashMap<String[], String>(){{
         put(new String[]{}, "assets/Images/Items/Carrot/Carrot.png");
-        put(new String[]{"Chopped"}, "assets/Images/Items/Carrot/Sliced.png");
+        put(new String[]{"Chop"}, "assets/Images/Items/Carrot/Sliced.png");
     }};
     static HashMap<String, Double> maxProcessTime = new HashMap<String, Double>(){{
-        put("Chopping", 3.);
-        put("Cooking", 5.);
+        put("Chop", 3.);
+        put("Cook", 5.);
     }};
     public boolean canBeChopped(){ 
         return !isChopped();

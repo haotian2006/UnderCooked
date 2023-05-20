@@ -19,9 +19,9 @@ public class CuttingBoard extends Counter{
             if (hold == null ||!hold.GetType().equals("Item")) return;
             Item item = (Item) hold;
             if (!item.canBeChopped()) return;
-            double maxTime = item.getMaxProcessTime("Chopping");
+            double maxTime = item.getMaxProcessTime("Chop");
             double currentTime = item.GetProcessedTime();
-            if (currentTime <= maxTime){
+            if (currentTime <= maxTime || false){//|| false is for debugging 
                 hold.UpdateProcessedTime(currentTime+0.01);
             }else{
                 item.setChopped(true);

@@ -26,9 +26,19 @@ public class Item implements Holdable{
     public Item(String Name,HashMap<String[], String> Image){//super constructor without MPT
         name = Name;
         Images = Image;
+        maxProcessTime = new HashMap<String,Double>();
         
     }
-    
+    public boolean equals(Item obj){
+        if (obj == null) return false;
+        return (
+            cooked == obj.isCooked() &&
+            fried == obj.isFried() &&
+            chopped == obj.isChopped() &&
+            dirty == obj.isDirty() &&
+            name == obj.getName() 
+        );
+    }
     public String getName() {
         return name;
     }
@@ -40,6 +50,47 @@ public class Item implements Holdable{
     }
     public double[] GetPercentage() {
         return new double[]{ProcessedTime,getMaxProcessTime(LastAction)};
+    }
+    public boolean isModified(){
+        return (isChopped()||isCooked()||isFried());
+    }
+    public boolean canBeState(String x){
+        x = x.toLowerCase();
+        switch (x){
+            case "chop":
+                return canBeChopped();
+            case "cook":
+                return canBeCooked();
+            case "fry":
+                return canBeFried();
+            default:
+                return false;
+        }
+    }
+    public void setState(String x,boolean y){
+        x = x.toLowerCase();
+        switch (x){
+            case "chop":
+                setChopped(y);
+                break;
+            case "cook":
+                setCooked(y);
+                break;
+            case "fry":
+                setFried(y);
+                break;
+            default:
+                return;
+        }
+    }
+    public boolean isState(String x){
+        x = x.toLowerCase();
+        return
+
+        (x.equals("chop") && !isChopped())
+        || ((x.equals("fry") && !isFried())) 
+        || ((x.equals("cook") && !isCooked()))
+        || ((x.equals("dirty") && !isDirty()))  ;
     }
     public String GetImage() {
         if (Images == null) return"";
@@ -55,9 +106,9 @@ public class Item implements Holdable{
                 if (
                     //apparently it is recommended to use the equals method instead of == 
                     //found it while looking through the string documents 
-                    (state.equals("chopped") && !isChopped())
-                || ((state.equals("fried") && !isFried())) 
-                || ((state.equals("cooked") && !isCooked()))
+                    (state.equals("chop") && !isChopped())
+                || ((state.equals("fry") && !isFried())) 
+                || ((state.equals("cook") && !isCooked()))
                 || ((state.equals("dirty") && !isDirty()))  
                 ){ 
                     //if this passes it means that it didn't match

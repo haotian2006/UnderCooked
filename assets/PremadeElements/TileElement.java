@@ -52,6 +52,9 @@ public class TileElement extends Frame {
             repaint();
         }
     }
+    public HoldableElement GetItem(){
+        return Item;
+    }
     public void UpdateIcons(){
         Holdable x = counter.GetHolding();
         if (Item == null){

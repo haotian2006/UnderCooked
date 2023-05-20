@@ -69,6 +69,50 @@ public class Counter implements Serializable {
     public void LeftClick(Player player){
         Holdable plrHolding = player.getHolding();
         Kitchen kit = Memory.Kitchen;
+
+        if (plrHolding != null  && GetHolding() != null){
+            String PHN = plrHolding.getName();
+            String HN = GetHolding().getName();
+            String PHT = plrHolding.GetType();
+            String HT = GetHolding().GetType();
+            if (PHN.equals("Plate") ||HN.equals("Plate") || PHT.equals("Dish")|| HT.equals("Dish")){
+                Dish newD = null;
+                if (PHN.equals("Plate") ||HN.equals("Plate") ){
+                    newD = new Dish("");
+                }else if(PHT.equals("Dish")){
+                    newD = (Dish)plrHolding;
+                }else if (HT.equals("Dish")){
+                    newD = (Dish)GetHolding();
+                }
+                Boolean Condition = false;
+                Holdable plrHold = newD;
+                Holdable countHold = newD;
+
+                // we have to have two conditions for the first two because Plate is an Item so we need to check if the Item the player is holding is not a Plate
+                if (PHT.equals("Item") && !PHN.equals("Plate")){
+                    plrHold = null;
+                    Condition = newD.AddItem((Item) plrHolding);
+                }else if((HT.equals("Item")) && !HN.equals("Plate")) {
+                    countHold = null;
+                    Condition = newD.AddItem((Item) GetHolding());
+                }else if (PHT.equals("Cookware")){
+                    plrHold = (Cookware)plrHolding;
+                    Condition = ((Cookware) plrHolding).OnDish(newD);
+                }else if((HT.equals("Cookware"))) {
+                    countHold = (Cookware)GetHolding();
+                    Condition = ((Cookware) GetHolding()).OnDish(newD);
+                }
+
+                if (Condition){
+                    player.setHolding(plrHold);
+                    kit.UpdateHolding(player);
+                    SetHolding(countHold);
+                    CounterFrame.UpdateIcons();
+                    return;
+                }
+            }  
+        }
+
         if (plrHolding != null && GetHolding() == null){
             if (!CanPlace(plrHolding)) return;
             SetHolding(plrHolding);
@@ -78,12 +122,23 @@ public class Counter implements Serializable {
             player.setHolding(GetHolding());
             SetHolding(null);
             CounterFrame.UpdateIcons();
+        }else if(plrHolding != null && GetHolding() != null && plrHolding.GetType() == "Dish" && GetHolding().GetType() == "Cookware"){
+            player.setHolding(GetHolding());
+            SetHolding(plrHolding);
+            CounterFrame.UpdateIcons();
+            Memory.Kitchen.UpdateHolding(player);
         }else if(plrHolding != null && GetHolding() != null && GetHolding().GetType() == "Cookware"){
             Cookware cookware = (Cookware) GetHolding();
             if (cookware.Add(plrHolding)){
                 player.setHolding(null);
                 CounterFrame.UpdateIcons();
             }
+        }else if (plrHolding != null && GetHolding() != null){
+            player.setHolding(GetHolding());
+            SetHolding(plrHolding);
+            CounterFrame.UpdateIcons();
+            Memory.Kitchen.UpdateHolding(player);
+
         }
     }
     public void RightClick(Player player){

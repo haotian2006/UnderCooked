@@ -8,4 +8,5 @@ public interface Holdable extends Serializable{
     public double[] GetPercentage();
     public void UpdateProcessedTime(double x);
     public double GetProcessedTime();
+    public String getName();
 }

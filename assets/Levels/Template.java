@@ -15,13 +15,13 @@ public class Template extends Level {
             put("Trashcan", 1, 1); // creates a counter at 1,1
             put("Stove", 2, 1,Cookware.newCookware("Pot"));
             put("Stove", 3, 1);
-            put("counter", 4, 1);
 
             put("Carrot", 1, 2);
             put("CuttingBoard", 1,3);
-            //put(Counter.newCounter("Counter",Item.newItem("Tomato") ), 0, 1);
-             // creates a counter at 0,1 with a tomato on top
-            // put("Counter", 0, 1);
+            
+            put("counter", 4, 1,Item.newItem("Plate"));
+            put("counter", 5, 1);
+            put("counter", 6, 1);
         }
     };
     private static Recipe[] Orders = {
@@ -38,8 +38,10 @@ public class Template extends Level {
     private static Color[] Colors = {
         new Color(0, 153, 0),
         new Color(182, 91, 0),
-        Color.white,
-        Color.black,
+       // Color.white,
+        //Color.black,
+        new Color(186,184,184),
+        new Color(186,184,184)
     };//0 - background
     //1 - wall 
     //2 - white tile

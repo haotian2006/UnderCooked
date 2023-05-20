@@ -113,6 +113,9 @@ public class Kitchen implements Serializable{
     public void UpdateFrame(HoldableElement x){
         Holding = x;
     }
+    public Frame GetBackgroundFrame(){
+        return BackgroundFrame;
+    }
     public void UpdateHolding(Player x){
         if (Holding != null){
             Holding.UpdateItem(x.getHolding()); 

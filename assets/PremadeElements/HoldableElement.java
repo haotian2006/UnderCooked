@@ -18,6 +18,8 @@ public class HoldableElement extends Frame{
    private Holdable item;
    private CookedPercentage bar;
    private TileElement Parent;
+   private ItemsElement elements; 
+   private ImageLable Plate;
     public HoldableElement(Holdable x){
         UpdateItem(x);
     }
@@ -29,16 +31,26 @@ public class HoldableElement extends Frame{
         setBackground(Color.red);
         bar = new CookedPercentage();
         add(bar);
+        Plate = new ImageLable();
+        Plate.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));;
+        Plate.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
+        Plate.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
+        Plate.SetCenter(GetCenterRelativeToFrame());
+        Plate.setVisible(false);
         ImageFrame = new ImageLable();
         ImageFrame.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         ImageFrame.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         ImageFrame.SetCenter(GetCenterRelativeToFrame());
+        elements = new ItemsElement(this);
+        add(elements);
         add(ImageFrame);
+        add(Plate);
         setVisible(false);
     }
     public void SetParent(TileElement x){
         Parent = x;
     }
+    public Holdable GetItem(){return item;}
     public void UpdateItem(Holdable x){
         item = x;
         UpdateIcons();
@@ -57,13 +69,21 @@ public class HoldableElement extends Frame{
         bar.UpdatePercentage(percent[0], percent[1]);
     }
     public void UpdateIcons(){
+        elements.Reset();
         if (item == null){
+            Plate.setVisible(false);
             setVisible(false);
         }else{
+            if(item.GetType() == "Dish"){
+                Plate.setVisible(true);
+            }else{
+                Plate.setVisible(false);
+            }
             setVisible(true);
             //ImageFrame.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
             ImageFrame.SetImage(item.GetImage());
             ImageFrame.SetImageSize( new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
+            elements.UpdateFrame();
         }
     }
 }
