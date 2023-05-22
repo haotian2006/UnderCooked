@@ -9,7 +9,7 @@ public class Pot extends Cookware{
     static String name = "Pot";
     static String Image = "assets/Images/Cookware/Pot/Pot.png";
     static String TypeOfCooking = "Cook";
-    static int max = 1;
+    static int max = 3;
     public String GetImage(){
         if (GetInventory().size() >0){
             switch (GetInventory().get(0).getName()){

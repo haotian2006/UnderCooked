@@ -28,7 +28,7 @@ public class FinalProject {
                 MainLoop.shutdown();
                 System.out.println("End");System.out.println("End");
               }
-
+              Memory.Kitchen.Update(Memory.player.GetMouse());
               Memory.player.SetTimer(timeLeft[0]);
               timeLeft[0] -= .01;
 
@@ -83,11 +83,13 @@ public class FinalProject {
         Clickable.addMouseMotionListener(new MouseMotionListener() {
           public void mouseDragged(MouseEvent e) {
             if (!plr.GetInGame())return;
-            Memory.Kitchen.Update(e.getPoint());
+            plr.SetMouse(e.getPoint());
+            //Memory.Kitchen.Update(e.getPoint());
           }
           public void mouseMoved(MouseEvent e) {
             if (!plr.GetInGame())return;
-           Memory.Kitchen.Update(e.getPoint());
+            plr.SetMouse(e.getPoint());
+           //Memory.Kitchen.Update(e.getPoint());
           }
         });
         plr.SetInGame(true);

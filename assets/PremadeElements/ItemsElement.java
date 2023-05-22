@@ -21,7 +21,7 @@ public class ItemsElement extends Frame {
         setLocation(0, 0);
     }
     public ImageLable newIcon(Item it){
-        ImageLable x = new ImageLable(it.GetImage());
+        ImageLable x = new ImageLable(it.GetImage(true));
         x.setSize(sizeOfIcon, sizeOfIcon);
         x.SetImageSize(sizeOfIcon,sizeOfIcon);
         return x;

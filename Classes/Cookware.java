@@ -44,7 +44,7 @@ public class Cookware implements Holdable{
         return false;
     }
     public boolean CanAdd(Item x){
-        if (GetInventory().size() == 0 ||GetInventory().get(0).getName() == x.getName() && GetInventory().size() < maxAmount){
+        if (GetInventory().size() == 0 ||GetInventory().get(0).getName() == x.getName() && GetInventory().size() < getMaxAmount()){
             return x.canBeState(TypeOfCooking);
         }
         return false;
@@ -56,23 +56,33 @@ public class Cookware implements Holdable{
     public void OnInteract(Player player){
         
     }
+    public int getMaxAmount(){
+        return maxAmount;
+    }
+
+    //what to do when a dish clicks on it 
     public boolean OnDish(Dish x){
         double[] p = GetPercentage();
         //if the cooked percentage is bigger then 1 and max amount is reached 
-        if (Inventory.size() == maxAmount && p[0]/p[1] >= 1){
+        if (Inventory.size() == getMaxAmount() && p[0]/p[1] >= 1){
             ArrayList<Item> added = new ArrayList<Item>();
             for (int n = 0;n<Inventory.size();n++){
                 Item itm = Inventory.get(n);
-                itm.setState(TypeOfCooking, true);
-                if (!x.AddItem(itm)){
-                    for (int z = 0;z<added.size();z++){
+                itm.setState(TypeOfCooking, true);//sets the state
+                if (n == Inventory.size()-1 && !x.AddItem(itm)){
+                    System.out.println("b");
+                    for (int z = 0;z<added.size();z++){//if it does not make a recipe then remove the items from the recipe 
                         x.RemoveItem(added.get(z));
                     }
                     added = null;
                     return false;
+                }else if(n != Inventory.size()-1){
+                    System.out.println("a");
+                    x.getItems().add(itm);
                 }
                 added.add(itm);
             }
+            //if everything passes then reset the values  
             ProcessedTime = 0;
             Inventory.clear();
             return true;

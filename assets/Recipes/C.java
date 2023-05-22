@@ -8,7 +8,7 @@ public class C extends Recipe {
         Item.newItem("Carrot"),
     };
     static String Image = "assets/Images/Items/Carrot/Carrot.png";
-    static String name = "Carrot Soup";
+    static String name = "C";
     public C(){
      super(name,Image,ingredients);   
     }

@@ -12,6 +12,9 @@ import PremadeElements.*;
 public class Kitchen implements Serializable{
     public static int TileSize =70; // how many pixels per tile
     public static int ItemSize = 55; // how many pixels are the items.
+    public static int MaxOrders =20; //how many orders should be on screen
+    public static int OrderLasts = 20;//how many seconds do orders last
+
     private Grid grid;
     private TileElement[][] UiGrid;
     private Frame BackgroundFrame;
@@ -20,17 +23,16 @@ public class Kitchen implements Serializable{
     private Frame Clickable;
     private Level level;
     public HoldableElement Holding;
+    private OrdersBar OrdersBar;
     private double[] maxBurnTime = {
 
     };
 
     public Kitchen(ScreenGui x){
         display = x;
+        OrdersBar = new OrdersBar();
         Memory.SetKitchen(this);
     } 
-    public Kitchen(){
-        Memory.SetKitchen(this);
-    }
     public ScreenGui GetDisplay(){
         return display;
     }
@@ -47,7 +49,7 @@ public class Kitchen implements Serializable{
         BackgroundFrame.SetCenter(new ScreenSize().GetCenter());
         BackgroundFrame.setBackground(Color.DARK_GRAY);
         Holding = new HoldableElement();
-        display.add(BackgroundFrame, 0);
+        display.add(BackgroundFrame, 1);
         Clickable = new Frame("Clickable");
         Clickable.setSize((x.getGrid().GetSize().width)*TileSize,(x.getGrid().GetSize().height)*TileSize);
         Clickable.setLocation(TileSize, TileSize);
@@ -56,6 +58,8 @@ public class Kitchen implements Serializable{
         BackgroundFrame.add(Clickable, 0);
         BackgroundFrame.add(Holding,1);
         Draw();
+        display.add(OrdersBar,1);
+        display.repaint();
         
     }
     public Frame getClickFrame(){
@@ -102,7 +106,6 @@ public class Kitchen implements Serializable{
                 UiGrid[x][y] = tile;
             }
         }
-        display.repaint();
     }
     public Level GetLevel(){
         return level;
@@ -134,6 +137,9 @@ public class Kitchen implements Serializable{
                 c.Update();
             }
         }
+    }
+    public void ClearAll(){
+
     }
 
 }

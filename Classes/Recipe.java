@@ -2,13 +2,16 @@ package Classes;
 import java.io.File;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
- import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.File;
 public class Recipe implements Serializable{
     private double time;
     private Item[] ingredients;
     private String name;
     private String image;
-    
+    public static ArrayList<Recipe> Recipes = new ArrayList<Recipe>();
+
     public Recipe(String Name,String Image,Item[] Ingredients){
         name = Name;image = Image;ingredients = Ingredients;
     }
@@ -36,10 +39,18 @@ public class Recipe implements Serializable{
         return image;
     }
     public static Recipe GetRecipeFromDish(Dish d){
-        for (File file : new File("assets/Recipes").listFiles()) {
-            Recipe rp = newRecipe(file.getName().replace(".java", ""));
-            if (rp.DishMatchesRecipe(d)){
-               return rp;
+        //if this is the first time then loop thru the recipes file, create the recipe and insert them into the recipes arraylist
+        if (Recipes.size() == 0){
+            for (File file : new File("assets/Recipes").listFiles()) {
+                Recipe rp = newRecipe(file.getName().replace(".java", ""));
+                Recipes.add(rp);
+            }
+        }
+        //this will loop thru the arraylist checking if the recipe matches 
+        for (int n = 0;n<Recipes.size();n++){
+            Recipe rp = Recipes.get(n);
+            if (rp.DishMatchesRecipe(d)){     
+                return rp;
             }
         }
         return null;
@@ -68,6 +79,7 @@ public class Recipe implements Serializable{
                     found = true; break;
                 }
             }
+            if (!found) return false;
         }
         return found;
     }

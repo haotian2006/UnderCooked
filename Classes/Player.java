@@ -2,7 +2,7 @@ package Classes;
 
 import java.io.Serializable;
 import java.util.*;
-
+import java.awt.Point;
 public class Player implements Serializable{
     private int score;
     private ArrayList<Recipe> orders;
@@ -13,7 +13,12 @@ public class Player implements Serializable{
     private Holdable holding;
     private Counter InteractingCounter;
     private Boolean InGame;
+    private Point CurrentMouse = new Point(0, 0);
 
+    public void SetMouse(Point x){
+        CurrentMouse = x;
+    }
+    public Point GetMouse(){ return CurrentMouse;}
 
     public void SetInGame(boolean x){
         InGame = x;

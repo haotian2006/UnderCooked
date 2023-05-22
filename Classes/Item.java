@@ -120,6 +120,19 @@ public class Item implements Holdable{
         }
         return NormalImage;
     }
+    //returns the default image instead of a modified one if given a boolean
+    public String GetImage(boolean x) {
+        if (Images == null) return"";
+        String NormalImage = "";
+        for (Map.Entry<String[],String> entry : Images.entrySet()) {
+            String[] states = entry.getKey();
+            String image = entry.getValue();
+            boolean IsEmpty = states.length == 0;
+            if (IsEmpty)return image;
+
+        }
+        return NormalImage; 
+    }
     public double getMaxProcessTime(String x) {
         Double val = maxProcessTime.get(x);
         LastAction= x;
