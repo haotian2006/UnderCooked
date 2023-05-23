@@ -1,7 +1,7 @@
 # Recipe Class 
 > a class to define what a dish is made out of 
 ##  <span style="color:lightblue;">extends from Yes</span>
-#### status: <span style="color:yellow;">In Progress</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff

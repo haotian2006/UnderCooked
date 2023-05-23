@@ -1,5 +1,5 @@
 # Kitchen Class 
-#### status: <span style="color:Red;">Not Started</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
@@ -24,6 +24,16 @@ haotian - created docs and class
 
 ### **TileSize** - public static int
 >how many pixels per tile
+### **ItemSize** - public static int
+>how many pixels per Item
+### **MaxOrders** - public static int
+>how many Orders can be on screen
+### **TileSize** - public static int
+>how many pixels per tile
+### **Rate** - public static int[]
+>Chance of order per .01 second 
+### **OrderLasts** - public static int[]
+>How long you have until an order expires
 
 ### **grid** - private Grid
 >The Grid
@@ -54,6 +64,8 @@ haotian - created docs and class
 ### **Draw()** -> void
 > draws the counters
 
+### **GetTileFromName(String x)** -> TileElement
+> returns a tile on screen, returns null if not found
 ### **UpdateAt(int x,int y)** -> void
 > updates the counter/icon at given position
 
@@ -68,6 +80,9 @@ haotian - created docs and class
 
 ### **GetGrid()**-> Grid
 > returns the grid
+
+### **UpdateAll()** -> void
+> updates all tile elements 
 
 
 

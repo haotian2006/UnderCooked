@@ -15,7 +15,10 @@ Period 5
 5/18/2023 - most classes are done except for recipe 
 5/18/2023 - made a few sub-classes 
 5/21/2023 - got dishes to work and recipe
-/21/2023 - made a order ui element 
+5/21/2023 - made a order ui element 
+5/23/2023 - made a few more counters
+5/23/2023 - you can play the game | still need to work on the timer ui and score
+5/23/2023 - Updated some docs for some classes
 ```
 ### <span style="color:lightgreen;">Tasks:</span>
 ```diff
@@ -23,7 +26,7 @@ Period 5
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff
-- most of the classes are not up to date
+- some of the classes document's are not up to date
 ```
 
 

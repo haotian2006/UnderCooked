@@ -17,6 +17,7 @@ public class FinalProject {
     }
     public static ScheduledExecutorService MainLoop;
     public static void StartMainLoop(double seconds){
+      Memory.player.first = false;
       // this creates a loop that will update every counter every .01 seconds 
       // using this type of loop because sleep has some yielding issue and weird delay
         Thread thread = new Thread(() -> {
@@ -26,13 +27,14 @@ public class FinalProject {
           MainLoop.scheduleAtFixedRate(() -> {
               if (!Memory.player.GetInGame()){//if the game ended then stop the loop
                 MainLoop.shutdown();
-                System.out.println("End");System.out.println("End");
+                System.out.println("End");
               }
               Memory.Kitchen.Update(Memory.player.GetMouse());
               Memory.player.SetTimer(timeLeft[0]);
               timeLeft[0] -= .01;
-
               Memory.Kitchen.UpdateAll();
+              Memory.player.Update();
+
 
           }, 0, interval, TimeUnit.MILLISECONDS);
           try {
@@ -46,7 +48,7 @@ public class FinalProject {
       });
       thread.start();
     }
-    public static void StartGame(int difficulty, int levelNum){
+    public static void StartLevel(int difficulty, int levelNum){
         Level level = new Template();
         Memory.Kitchen.LoadLevel(level);
         Frame Clickable = Memory.Kitchen.getClickFrame();
@@ -57,6 +59,7 @@ public class FinalProject {
             if (!plr.GetInGame())return;
             Point loc = GetGrid(me.getPoint());
             TileElement counterEle = Memory.Kitchen.GetTileAt(loc);
+            if (counterEle == null){ return;}
             Counter counter = counterEle.getCounter();
             if (counter == null) {return;}
             if (me.getButton() == MouseEvent.BUTTON1){
@@ -108,7 +111,7 @@ public class FinalProject {
         Memory.SetKitchen(kitchen);
         screen.FullScreen();
         screen.setBackground(new Color(187, 255, 177));
-        StartGame(1,1);
+        StartLevel(1,1);
     }
 }
 
@@ -135,4 +138,4 @@ class RemoveAllDesktop {
             }
         }
     }
-}
+} 

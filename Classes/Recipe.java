@@ -4,13 +4,17 @@ import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.io.File;
 public class Recipe implements Serializable{
     private double time;
     private Item[] ingredients;
     private String name;
     private String image;
+    public boolean IsDestroyed;
+    public boolean IsDone;
     public static ArrayList<Recipe> Recipes = new ArrayList<Recipe>();
+    public static Random Random = new Random();
 
     public Recipe(String Name,String Image,Item[] Ingredients){
         name = Name;image = Image;ingredients = Ingredients;
@@ -29,17 +33,11 @@ public class Recipe implements Serializable{
         }
         return null;
     }
-    public void UpdateProcessedTime(double x){
-       
-    }
-    public double GetProcessedTime(){
-       return 0;
-    }
     public String GetImage(){
         return image;
     }
     public static Recipe GetRecipeFromDish(Dish d){
-        //if this is the first time then loop thru the recipes file, create the recipe and insert them into the recipes arraylist
+        //if this is the first time then loop thru the recipes file, create the recipe object and insert them into the recipes arraylist
         if (Recipes.size() == 0){
             for (File file : new File("assets/Recipes").listFiles()) {
                 Recipe rp = newRecipe(file.getName().replace(".java", ""));
@@ -65,8 +63,11 @@ public class Recipe implements Serializable{
     public void SetTime(double x){
         time = x;
     }
+    public static String GetRandomRecipeFromTable(String[] Orders){
+        return Orders[Random.nextInt(Orders.length)];// simple formula 
+    }
     public boolean DishMatchesRecipe(Dish x){
-        //clones both arrays
+        //clones/converts them into arrays
         Item[] y = x.getItems().toArray(new Item[x.getItems().size()]);
         Item[] z = (Item[]) ingredients.clone();
         if (y.length != z.length)return false; // if the lengths do not match

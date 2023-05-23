@@ -33,7 +33,7 @@ public class HoldableElement extends Frame{
         add(bar);
         Plate = new ImageLable();
         Plate.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));;
-        Plate.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
+        Plate.SetImage("assets/Images/Other/Plate.png");
         Plate.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         Plate.SetCenter(GetCenterRelativeToFrame());
         Plate.setVisible(false);

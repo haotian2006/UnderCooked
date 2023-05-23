@@ -12,9 +12,23 @@ import PremadeElements.*;
 public class Kitchen implements Serializable{
     public static int TileSize =70; // how many pixels per tile
     public static int ItemSize = 55; // how many pixels are the items.
-    public static int MaxOrders =20; //how many orders should be on screen
-    public static int OrderLasts = 20;//how many seconds do orders last
+    public static int MaxOrders =8; //how many orders should be on screen
+    public static int[] Rate = {
 
+    };
+    public static int[] OrderLasts = {
+
+    };//how many seconds do orders last
+
+    public double[] maxBurnTime = {
+
+    };
+    public static int GetRate(){
+        return 750;
+    }
+    public static int GetMaxTime(){
+        return 60;
+    }
     private Grid grid;
     private TileElement[][] UiGrid;
     private Frame BackgroundFrame;
@@ -24,13 +38,10 @@ public class Kitchen implements Serializable{
     private Level level;
     public HoldableElement Holding;
     private OrdersBar OrdersBar;
-    private double[] maxBurnTime = {
 
-    };
 
     public Kitchen(ScreenGui x){
         display = x;
-        OrdersBar = new OrdersBar();
         Memory.SetKitchen(this);
     } 
     public ScreenGui GetDisplay(){
@@ -57,10 +68,14 @@ public class Kitchen implements Serializable{
         Clickable.setOpaque(false);
         BackgroundFrame.add(Clickable, 0);
         BackgroundFrame.add(Holding,1);
+        OrdersBar = new OrdersBar();
         Draw();
         display.add(OrdersBar,1);
         display.repaint();
         
+    }
+    public OrdersBar getOrdersBar(){
+        return OrdersBar;
     }
     public Frame getClickFrame(){
         return Clickable;
@@ -74,6 +89,16 @@ public class Kitchen implements Serializable{
     public TileElement GetTileAt(Point loc){
         return UiGrid[loc.x+1][loc.y+1];
     }
+    public TileElement GetTileFromName(String x){
+        for (int xx = 0;xx<UiGrid.length;xx++){
+            for (TileElement TE: UiGrid[xx]){
+                if (TE!= null && TE.getCounter() != null && TE.getCounter().GetName().equals(x)){
+                    return TE;
+                }
+            }
+        }
+        return null;
+    }
     public void Draw(){
         //this defines the colors
         Color Bg = level.GetColor(0);   Bg = Bg != null ?Bg : new Color(0, 153, 0);
@@ -85,9 +110,8 @@ public class Kitchen implements Serializable{
         for (int x = 0;x<grid.GetSize().width+2;x++){
             for (int y = 0;y<grid.GetSize().height+2;y++){
                 Counter counter = grid.GetAt(x, y);
-                TileElement tile; 
-                if (counter == null) {
-                    tile = new TileElement();
+                {
+                    TileElement tile = new TileElement();
                     if (x ==0 || y==0 ||x == grid.GetSize().width+1 || y == grid.GetSize().height+1){
                         //if its the outline then create a wall with the color
                         tile.setBackground(wall);
@@ -97,13 +121,16 @@ public class Kitchen implements Serializable{
                     }
                     BackgroundFrame.add(tile);
                     tile.setLocation((x)*TileSize, (y)*TileSize);
-                }else{
-                    tile = new TileElement(counter);
+                }
+
+                if (counter != null){
+                    //if there is a counter on the tile then load the counter 
+                    TileElement tile = new TileElement(counter);
                     BackgroundFrame.add(tile,2);
                     tile.setLocation((x)*TileSize, (y)*TileSize);
                     counter.SetFrame(tile);
+                    UiGrid[x][y] = tile;
                 }   
-                UiGrid[x][y] = tile;
             }
         }
     }
@@ -137,9 +164,6 @@ public class Kitchen implements Serializable{
                 c.Update();
             }
         }
-    }
-    public void ClearAll(){
-
     }
 
 }

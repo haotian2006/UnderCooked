@@ -1,7 +1,7 @@
 # Item Class 
 > A class to define items like tomatoes,plates 
 ##  <span style="color:lightblue;">implements Holdable</span>
-#### status: <span style="color:Red;">Not Started</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff
@@ -60,6 +60,8 @@ Xinya - created most of the methods and attributes
 
 ### **GetImage()**-> String
 >returns a Image 
+### **GetImage(boolean x)**-> String
+>returns a Image of the Item that is NOT modified if an boolean value is given
 ### **GetMaxProcessTime(String x)** -> double
 >returns the process time for the type
 
@@ -73,15 +75,20 @@ Xinya - created most of the methods and attributes
 >is it Dirty
 ### **IsChopped()**-> boolean
 >is it Chopped
+### **IsState(String sate)**-> boolean
+>is the given state true or false 
 
 ### **SetCooked(boolean x)**-> void
->is it cooked
+>set cooked
 ### **SetFried(boolean x)**-> void
->is it cooked
+>set cooked
 ### **SetDirty(boolean x)**-> void
->is it cooked
+>set cooked
 ### **SetChopped()(boolean x)**-> void
->is it cooked
+>set cooked
+### **SetState()(String state,boolean x)**-> void
+>set the given state
+
 
 ### **CanBeChopped()**-> boolean
 >Can it? (subclasses) *return false by default
@@ -91,6 +98,8 @@ Xinya - created most of the methods and attributes
 >Can it? (subclasses)*return false by default
 ### **CanHold()**-> boolean
 >Can a player hold it or does it have to be in a plate (subclasses)*return true by default
+### **canBeState(String state)** -> boolean
+> check if the state can be "done"
 
 ### **equals(Item other)**-> boolean
 >returns true if the item matches the other item 

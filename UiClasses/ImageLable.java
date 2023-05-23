@@ -51,12 +51,12 @@ public class ImageLable extends JLabel  implements UiElement{
         }
     }
     public void SetImageSize(int x,int y){
+        sizex = x;
+        sizey = y;
         if (this.image == null) return;
         Image scaledImage = image.getImage().getScaledInstance(x, y, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         image = scaledIcon;
-        sizex = x;
-        sizey = y;
         setIcon(scaledIcon);
     }
     public void SetImageSize(Dimension x){

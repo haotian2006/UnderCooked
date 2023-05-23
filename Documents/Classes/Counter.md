@@ -1,10 +1,11 @@
 # Counter Class 
 > a class for pots,counters,fryer
-#### status: <span style="color:red;">Not Started</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff 
-haotian - created docs
+haotian - created docs and some parts of class
+Xinya - worked on class
 ```
 ### <span style="color:lightgreen;">Notes:</span>
 ```diff
@@ -62,8 +63,14 @@ will also be added as we work
 ### **public CanPlace(Holdable obj)**-> boolean
 >can the object be placed on the counter (subclass method) return true by default
 
-### **OnInteract(Player player)**-> void
->Invokes the events in Interact
+### **LeftClick(Player player)**-> void
+>What to do when Left clicked 
+
+### **RightClick(Player player)**-> void
+>What to do when Right clicked 
+
+### **OnInteract(Player player,String key)**-> void
+>What to do when the player left/right clicked 
 
 
 ## <span style="color:lightblue;">Subclasses</span>

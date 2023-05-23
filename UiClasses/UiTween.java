@@ -55,9 +55,11 @@ public class UiTween implements Serializable{
     }
 
     public Point TweenLocation(Point Start,Point goal,double time){
+        if (time >1) time = 1;
         Tween x = new Tween(func, type, Start.x, goal.x,duration);
         Tween y = new Tween(func, type, Start.y, goal.y,duration);
         frame.setLocation((int) x.GetValue(time), (int) y.GetValue(time));
+        //.out.println(y.GetValue(time)+"|"+time);
         return frame.getLocation();
     }
     public void SetDuration(double x){

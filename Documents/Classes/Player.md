@@ -1,5 +1,5 @@
 # Player Class 
-#### status: <span style="color:red;">Not Started</span>
+#### status: <span style="color:lightgreen;">done</span>
 ### <span style="color:cyan;">Contributors:</span>
 <!--put your names here between the ``` if you worked on it, and put what you did-->
 ```diff

@@ -70,6 +70,7 @@ public class Counter implements Serializable {
         Holdable plrHolding = player.getHolding();
         Kitchen kit = Memory.Kitchen;
 
+        //checks if it is a plate
         if (plrHolding != null  && GetHolding() != null){
             String PHN = plrHolding.getName();
             String HN = GetHolding().getName();
@@ -77,7 +78,8 @@ public class Counter implements Serializable {
             String HT = GetHolding().GetType();
             if (PHN.equals("Plate") ||HN.equals("Plate") || PHT.equals("Dish")|| HT.equals("Dish")){
                 Dish newD = null;
-                if (PHN.equals("Plate") ||HN.equals("Plate") ){
+
+                if ((PHN.equals("Plate") && !((Item)plrHolding).isDirty()) ||(HN.equals("Plate") && !((Item)GetHolding()).isDirty()) ){
                     newD = new Dish("");
                 }else if(PHT.equals("Dish")){
                     newD = (Dish)plrHolding;
@@ -113,6 +115,7 @@ public class Counter implements Serializable {
             }  
         }
 
+        //everything else 
         if (plrHolding != null && GetHolding() == null){
             if (!CanPlace(plrHolding)) return;
             SetHolding(plrHolding);

@@ -22,6 +22,7 @@ public class Cookware implements Holdable{
     }
     public double[] GetPercentage(){
         double Needed = 0;
+        //adds up all of the maxProcessTime in Inventory 
         for (int n =0;n<Inventory.size();n++){
             Needed += Inventory.get(n).getMaxProcessTime(TypeOfCooking);
         }

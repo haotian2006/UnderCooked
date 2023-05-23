@@ -23,6 +23,7 @@ public class Grid implements Serializable{
         return true;
     }
     public boolean put(String c, int x,int y,Holdable cookware){
+        // subtracting here because the input its from [1,x] but for the table to set we need [0,x-1]
         x -=1;
         y-=1;
         if (!InBounds(x,y)) return false;

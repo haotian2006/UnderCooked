@@ -18,15 +18,22 @@ public class Template extends Level {
 
             put("Carrot", 1, 2);
             put("CuttingBoard", 1,3);
-            
+            Item dirtyPlate = Item.newItem("Plate");
+            dirtyPlate.setDirty(true);
             put("counter", 4, 1,Item.newItem("Plate"));
-            put("counter", 5, 1);
-            put("counter", 6, 1);
+            put("counter", 5, 1,dirtyPlate);
+            put("counter", 6, 1,DeepCopy.copy(dirtyPlate));
+
+            put("Sink", 7, 1);
+
+            put("CleanDishCounter",8,1);
+
+            put("Receive", 12, 1);
+            put("Server",13,1);
         }
     };
-    private static Recipe[] Orders = {
-        //  Recipe.newRecipe("recipe1"),
-        //  Recipe.newRecipe("recipe2")
+    private static String[] Orders = {
+          "CarrotSoup","CC","C"
     };
     
     private static int[][] StarRequirements = {

@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Level implements Serializable{
     private Grid GridLayout;
-    private Recipe[] Orders;
+    private String[] Orders;
     private int TimeLimit;
     private int[][] StarRequirements;
     private String PreviewImage;
@@ -20,11 +20,11 @@ public class Level implements Serializable{
         Color.black,
     };
     private ArrayList<HashMap<String,Integer>> MaxIngredients;
-    public Level(String PreviewImage,Grid grid,Recipe[] orders,int bg,int[][] startReq,Color[] Colors,ArrayList<HashMap<String,Integer>> MaxIng){//super constructor
+    public Level(String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors,ArrayList<HashMap<String,Integer>> MaxIng){//super constructor
         this.Colors = Colors;
         this.PreviewImage = PreviewImage;GridLayout = grid;Orders = orders; TimeLimit = bg; StarRequirements = startReq;MaxIngredients = MaxIng;
     }
-    public Level(String PreviewImage,Grid grid,Recipe[] orders,int bg,int[][] startReq,Color[] Colors){//super constructor
+    public Level(String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors){//super constructor
         this.Colors = Colors;
         this.PreviewImage = PreviewImage;GridLayout = grid;Orders = orders; TimeLimit = bg; StarRequirements = startReq;
     }
@@ -54,7 +54,7 @@ public class Level implements Serializable{
     public Grid getGrid(){
         return GridLayout;
     }
-    public Recipe[] GetOrders(){
+    public String[] GetOrders(){
         return Orders;
     }
     public int GetTimeLimit(){

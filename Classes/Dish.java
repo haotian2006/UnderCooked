@@ -5,13 +5,13 @@ public class Dish implements Holdable{
     private ArrayList<Item> items ;
     private String name;
 
-    public void UpdateProcessedTime(double x){};//these two functions are here so that the interface is met 
+    //these three functions are here so that the interface is met 
+    public void UpdateProcessedTime(double x){};
     public double GetProcessedTime(){return 0;};
+    public double[] GetPercentage(){return new double[2];}
+
     public String getName(){
         return name;
-    }
-    public double[] GetPercentage(){
-        return new double[]{0,0};
     }
     public Dish(String name) {
         this.name = name;
@@ -29,6 +29,7 @@ public class Dish implements Holdable{
         return this.items;
     }
 
+    //deprecated 
     public void RemoveItem(Item x) {
         Item itemFound = null;
         for (Item item : this.items) {
