@@ -50,6 +50,13 @@ public class TextLable extends JTextPane implements UiElement{
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
     }
+    public void RightAlignText() {
+        StyledDocument doc = getStyledDocument();
+        SimpleAttributeSet right = new SimpleAttributeSet();
+        StyleConstants.setAlignment(right, StyleConstants.ALIGN_RIGHT);
+        doc.setParagraphAttributes(0, doc.getLength(), right, false);
+    }
+    
     public void SetCenter(Point p){
         Dimension size = getSize();
         int[] half = new int[]{size.width/2, size.height/2};

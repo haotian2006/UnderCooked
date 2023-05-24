@@ -11,8 +11,14 @@ public class Level implements Serializable{
     private Grid GridLayout;
     private String[] Orders;
     private int TimeLimit;
-    private int[][] StarRequirements;
+    private int[][] StarRequirements= {
+        {60,100,120}, 
+        {80,120,140},
+        {100,140,160}
+    };
     private String PreviewImage;
+    private String name;
+
     private Color[] Colors=  {
         new Color(0, 153, 0),
         new Color(182, 91, 0),
@@ -20,13 +26,18 @@ public class Level implements Serializable{
         Color.black,
     };
     private ArrayList<HashMap<String,Integer>> MaxIngredients;
-    public Level(String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors,ArrayList<HashMap<String,Integer>> MaxIng){//super constructor
+    public Level(String Name,String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors,ArrayList<HashMap<String,Integer>> MaxIng){//super constructor
+        name = Name;
         this.Colors = Colors;
         this.PreviewImage = PreviewImage;GridLayout = grid;Orders = orders; TimeLimit = bg; StarRequirements = startReq;MaxIngredients = MaxIng;
     }
-    public Level(String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors){//super constructor
+    public Level(String Name,String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors){//super constructor
         this.Colors = Colors;
+        name = Name;
         this.PreviewImage = PreviewImage;GridLayout = grid;Orders = orders; TimeLimit = bg; StarRequirements = startReq;
+    }
+    public String GetName(){
+        return name;
     }
     public static Level newLayout(String x){
         try {
@@ -69,7 +80,7 @@ public class Level implements Serializable{
     }
     public int[] GetRequirements(int difficulty){
         int len = StarRequirements.length;
-        if (len >=difficulty){ return new int[3];}
+        if (len <=difficulty){ return new int[3];}
         return StarRequirements[difficulty];
     }
     public int GetRequirements(int difficulty,int score){
@@ -77,7 +88,7 @@ public class Level implements Serializable{
         int stars = 0;
         for (int i =0;i<list.length;i++){
             if (list[i] <= score){
-                stars = i;
+                stars = i+1;
             }
         }
         return stars;

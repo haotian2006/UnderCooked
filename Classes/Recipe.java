@@ -11,14 +11,21 @@ public class Recipe implements Serializable{
     private Item[] ingredients;
     private String name;
     private String image;
+    private int Score = 20;
+
     public boolean IsDestroyed;
     public boolean IsDone;
+
     public static ArrayList<Recipe> Recipes = new ArrayList<Recipe>();
     public static Random Random = new Random();
 
     public Recipe(String Name,String Image,Item[] Ingredients){
         name = Name;image = Image;ingredients = Ingredients;
     }
+    public Recipe(String Name,String Image,Item[] Ingredients,int score){
+        name = Name;image = Image;ingredients = Ingredients;Score = score;
+    }
+    public int GetScore(){ return Score;}
     public String GetName(){return name;}
     public static Recipe newRecipe(String name){
         try {

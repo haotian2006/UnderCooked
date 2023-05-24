@@ -16,6 +16,7 @@ public class FinalProject {
         return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
     }
     public static ScheduledExecutorService MainLoop;
+    public static ScreenGui screen;
     public static void StartMainLoop(double seconds){
       Memory.player.first = false;
       // this creates a loop that will update every counter every .01 seconds 
@@ -24,10 +25,11 @@ public class FinalProject {
           MainLoop = Executors.newScheduledThreadPool(1);
           long interval = 10;
           double[] timeLeft ={seconds};//just doing seconds-=0.01 causes a scope error so we have to make it into a array
+          boolean[] Lost = new boolean[1];//we have to use a array here because you can't get outside vars from inside of a new thread
           MainLoop.scheduleAtFixedRate(() -> {
-              if (!Memory.player.GetInGame()){//if the game ended then stop the loop
+              if (!Memory.player.GetInGame() || false){//if the game ended then stop the loop
+                Lost[0] = true;
                 MainLoop.shutdown();
-                System.out.println("End");
               }
               Memory.Kitchen.Update(Memory.player.GetMouse());
               Memory.player.SetTimer(timeLeft[0]);
@@ -43,7 +45,19 @@ public class FinalProject {
           }
           MainLoop.shutdown();
           Memory.player.SetInGame(false);
-          System.out.println("End");
+          if (Lost[0]){
+            LoseScreen ws = new LoseScreen();
+            screen.add(ws,0);
+            screen.repaint();
+          }else{
+            WinScreen ws = new WinScreen();
+            screen.add(ws,0);
+            screen.repaint();
+            Player plr = Memory.player;
+            //increase stars 
+           plr.SetLevelData(Memory.Kitchen.GetLevel().GetRequirements(plr.getDifficulty(), plr.getScore()));
+          }
+          System.out.println("Ended");
          //end game
       });
       thread.start();
@@ -53,6 +67,8 @@ public class FinalProject {
         Memory.Kitchen.LoadLevel(level);
         Frame Clickable = Memory.Kitchen.getClickFrame();
         Player plr = Memory.player;
+        plr.setDifficulty(difficulty);
+        plr.Clear();//this would reset the players temporary data 
         Clickable.addMouseListener(new MouseAdapter() {
           // on input 
           public void mousePressed(MouseEvent me) { 
@@ -105,13 +121,13 @@ public class FinalProject {
         RemoveAllDesktop.Destroy();
 
         Player player = new Player("bob");   
-        ScreenGui screen = new ScreenGui("Under Cooked");
+        screen = new ScreenGui("Under Cooked");
         Kitchen kitchen = new Kitchen(screen);
         Memory.SetPlayer(player);
         Memory.SetKitchen(kitchen);
         screen.FullScreen();
         screen.setBackground(new Color(187, 255, 177));
-        StartLevel(1,1);
+        StartLevel(2,1);
     }
 }
 

@@ -78,7 +78,6 @@ public class Cookware implements Holdable{
                     added = null;
                     return false;
                 }else if(n != Inventory.size()-1){
-                    System.out.println("a");
                     x.getItems().add(itm);
                 }
                 added.add(itm);

@@ -13,7 +13,7 @@ public class Carrot extends Item{
     }};
     static HashMap<String, Double> maxProcessTime = new HashMap<String, Double>(){{
         put("Chop", 3.);
-        put("Cook", 5.);
+        put("Cook", 4.);
     }};
     public boolean canBeChopped(){ 
         return !isChopped();

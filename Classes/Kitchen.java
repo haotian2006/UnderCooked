@@ -13,22 +13,41 @@ public class Kitchen implements Serializable{
     public static int TileSize =70; // how many pixels per tile
     public static int ItemSize = 55; // how many pixels are the items.
     public static int MaxOrders =8; //how many orders should be on screen
-    public static int[] Rate = {
 
+    //1/x chance of order every .01 seconds  
+    public static int[] Rate = {
+        750,600,500
     };
     public static int[] OrderLasts = {
-
+        60,50,40
     };//how many seconds do orders last
 
-    public double[] maxBurnTime = {
-
+    //how long can something over cook
+    public static int[] maxBurnTime = {
+        15,10,7
     };
+    
+    //how much you should loose
+    public static int[] loseAmt ={
+        10,15,20
+    };
+    public static int GetLoseAmt(){
+        int i = Memory.player.getDifficulty();
+        return loseAmt[i];
+    }
     public static int GetRate(){
-        return 750;
+        int i = Memory.player.getDifficulty();
+        return Rate[i];
     }
     public static int GetMaxTime(){
-        return 60;
+        int i = Memory.player.getDifficulty();
+        return OrderLasts[i];
     }
+    public static int  GetMaxBurnTime(){
+        int i = Memory.player.getDifficulty();
+        return maxBurnTime[i];
+    }
+    private TAS Timer;
     private Grid grid;
     private TileElement[][] UiGrid;
     private Frame BackgroundFrame;
@@ -41,6 +60,7 @@ public class Kitchen implements Serializable{
 
 
     public Kitchen(ScreenGui x){
+        Clickable = new Frame("Clickable");
         display = x;
         Memory.SetKitchen(this);
     } 
@@ -49,6 +69,9 @@ public class Kitchen implements Serializable{
     }
     public void LoadLevel(Level x){
         if (BackgroundFrame != null) display.remove(BackgroundFrame);
+        if (Timer != null) display.remove(Timer);
+        Timer = new TAS();
+
         level = x;
         display.setBackground(new Color(0, 153, 0));
         grid = DeepCopy.copy(x.getGrid());
@@ -61,7 +84,6 @@ public class Kitchen implements Serializable{
         BackgroundFrame.setBackground(Color.DARK_GRAY);
         Holding = new HoldableElement();
         display.add(BackgroundFrame, 1);
-        Clickable = new Frame("Clickable");
         Clickable.setSize((x.getGrid().GetSize().width)*TileSize,(x.getGrid().GetSize().height)*TileSize);
         Clickable.setLocation(TileSize, TileSize);
         Clickable.setBackground(Color.LIGHT_GRAY);
@@ -70,6 +92,7 @@ public class Kitchen implements Serializable{
         BackgroundFrame.add(Holding,1);
         OrdersBar = new OrdersBar();
         Draw();
+        display.add(Timer,0);
         display.add(OrdersBar,1);
         display.repaint();
         
@@ -79,12 +102,6 @@ public class Kitchen implements Serializable{
     }
     public Frame getClickFrame(){
         return Clickable;
-    }
-    public double GetMaxBurnTime(int diff){
-        return 1;
-    }
-    public double GetMaxBurnTime(){
-        return 15;
     }
     public TileElement GetTileAt(Point loc){
         return UiGrid[loc.x+1][loc.y+1];
@@ -164,6 +181,11 @@ public class Kitchen implements Serializable{
                 c.Update();
             }
         }
+        Timer.Update(Memory.player);
     }
+    public void Reset(){
+        if (BackgroundFrame != null) display.remove(BackgroundFrame);
+        if (Timer != null) display.remove(Timer);
 
+    }
 }

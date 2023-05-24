@@ -18,9 +18,13 @@ public class Server extends Counter{
             for (int n = 0;n<player.getOrders().size();n++){
                 Recipe rp = player.getOrders().get(n);
                 if (rp.DishMatchesRecipe(dish) && !rp.IsDone ){
+                    int[] data = player.GetData();
                     rp.IsDone = true;
-
-                    //add to score
+                    double pr = rp.GetTime()/Kitchen.GetMaxTime();
+                    data[0] +=rp.GetScore();
+                    data[1] ++;
+                    data[2] += (int) (pr*10);
+                    player.setScore((int) (player.getScore() + rp.GetScore() + pr*10));
                     break;
                 }
             }
