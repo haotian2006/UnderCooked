@@ -21,7 +21,14 @@ public class Item implements Holdable{
     public Item(String Name,HashMap<String[], String> Image,HashMap<String,Double> MaxProcessTime){//super constructor 
         name = Name;
         Images = Image;
-        maxProcessTime = MaxProcessTime;
+        maxProcessTime = new HashMap<String,Double>();;
+
+        //lower cases everything
+        for (Map.Entry<String,Double> entry : MaxProcessTime.entrySet()) {
+            String key = entry.getKey();
+            Double value = entry.getValue();
+            maxProcessTime.put(key.toLowerCase(), value);
+        }
     }
     public Item(String Name,HashMap<String[], String> Image){//super constructor without MPT
         name = Name;
@@ -87,10 +94,10 @@ public class Item implements Holdable{
         x = x.toLowerCase();
         return
 
-        (x.equals("chop") && !isChopped())
-        || ((x.equals("fry") && !isFried())) 
-        || ((x.equals("cook") && !isCooked()))
-        || ((x.equals("dirty") && !isDirty()))  ;
+        (x.equals("chop") && isChopped())
+        || ((x.equals("fry") && isFried())) 
+        || ((x.equals("cook") && isCooked()))
+        || ((x.equals("dirty") && isDirty()))  ;
     }
     public String GetImage() {
         if (Images == null) return"";
@@ -134,7 +141,8 @@ public class Item implements Holdable{
         return NormalImage; 
     }
     public double getMaxProcessTime(String x) {
-        Double val = maxProcessTime.get(x);
+        if (x == null) return 0;
+        Double val = maxProcessTime.get(x.toLowerCase());
         LastAction= x;
         return val != null ? val :0;
     }

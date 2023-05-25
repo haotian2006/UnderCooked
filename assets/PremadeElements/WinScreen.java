@@ -4,6 +4,8 @@ import UiClasses.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import Classes.*;
 public class WinScreen extends Frame {
@@ -147,6 +149,27 @@ public class WinScreen extends Frame {
         
         TotalInfo.setForeground(new Color(0,0,0));
 
+        Frame retryFrame = new Frame();
+        retryFrame.setSize(180, 100);
+        retryFrame.setLocation(40, 580);
+        retryFrame.setOpaque(false);
+
+        Frame HomeFrame = new Frame();
+        HomeFrame.setSize(180, 100);
+        HomeFrame.setLocation(345, 580);
+        HomeFrame.setOpaque(false);
+
+        retryFrame.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("clicked");
+                Memory.player.Command = 1;
+                retryFrame.removeMouseListener(this);
+
+            }
+        });
+        add(HomeFrame);
+        add(retryFrame);
         add(Total);
         add(TotalInfo);
         add(Failed);

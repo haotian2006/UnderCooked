@@ -75,10 +75,15 @@ public class HoldableElement extends Frame{
             setVisible(false);
         }else{
             if(item.GetType() == "Dish"){
+                Plate.SetImage("assets/Images/Other/Plate.png");
+                Plate.setVisible(true);
+            }else if(item.GetType() == "Cookware" && ((Cookware)item).GetInventory().size() >= 1 ){
+                Plate.SetImage(((Cookware)item).GetImage(true));
                 Plate.setVisible(true);
             }else{
                 Plate.setVisible(false);
             }
+            
             setVisible(true);
             //ImageFrame.SetImage("assets/Images/Menu/LoadingScreen/Plate.png");
             ImageFrame.SetImage(item.GetImage());

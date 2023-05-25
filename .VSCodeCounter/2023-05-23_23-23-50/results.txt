@@ -1,0 +1,149 @@
+Date : 2023-05-23 23:23:50
+Directory : g:\My Drive\Java Project\Java Project
+Total : 104 files,  5065 codes, 158 comments, 770 blanks, all 5993 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |         72 |      3,910 |        126 |        411 |      4,447 |
+| Markdown |         31 |      1,117 |         29 |        356 |      1,502 |
+| HTML     |          1 |         38 |          3 |          3 |         44 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                   |        104 |      5,065 |        158 |        770 |      5,993 |
+| . (Files)                                                                           |          1 |        136 |          9 |         12 |        157 |
+| Classes                                                                             |         12 |      1,110 |         29 |        101 |      1,240 |
+| Documents                                                                           |         31 |      1,117 |         29 |        356 |      1,502 |
+| Documents (Files)                                                                   |          3 |        139 |          2 |         37 |        178 |
+| Documents\Classes                                                                   |         25 |        925 |         21 |        318 |      1,264 |
+| Documents\Classes (Files)                                                           |         14 |        652 |         13 |        212 |        877 |
+| Documents\Classes\UiLibrary                                                         |          9 |        224 |          6 |         88 |        318 |
+| Documents\Classes\easingTypes                                                       |          2 |         49 |          2 |         18 |         69 |
+| Documents\Reports                                                                   |          3 |         53 |          6 |          1 |         60 |
+| TestCases                                                                           |          6 |        157 |          3 |         17 |        177 |
+| UiClasses                                                                           |         10 |        801 |         45 |         42 |        888 |
+| assets                                                                              |         29 |      1,368 |         37 |        153 |      1,558 |
+| assets\Cookware                                                                     |          1 |         26 |          0 |          3 |         29 |
+| assets\Counters                                                                     |          9 |        308 |          8 |         28 |        344 |
+| assets\Items                                                                        |          3 |         89 |          0 |          3 |         92 |
+| assets\Levels                                                                       |          1 |         65 |          6 |         12 |         83 |
+| assets\PremadeElements                                                              |         11 |        825 |         23 |         99 |        947 |
+| assets\Recipes                                                                      |          4 |         55 |          0 |          8 |         63 |
+| easingTypes                                                                         |         15 |        376 |          6 |         89 |        471 |
++-------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                            | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| g:\My Drive\Java Project\Java Project\Classes\Cookware.java                         | Java     |        117 |          4 |         10 |        131 |
+| g:\My Drive\Java Project\Java Project\Classes\Counter.java                          | Java     |        141 |          3 |         14 |        158 |
+| g:\My Drive\Java Project\Java Project\Classes\DeepCopy.java                         | Java     |         23 |          2 |          0 |         25 |
+| g:\My Drive\Java Project\Java Project\Classes\Dish.java                             | Java     |         44 |          2 |          8 |         54 |
+| g:\My Drive\Java Project\Java Project\Classes\Grid.java                             | Java     |         45 |          2 |          3 |         50 |
+| g:\My Drive\Java Project\Java Project\Classes\Holdable.java                         | Java     |         10 |          0 |          3 |         13 |
+| g:\My Drive\Java Project\Java Project\Classes\Item.java                             | Java     |        192 |          4 |         23 |        219 |
+| g:\My Drive\Java Project\Java Project\Classes\Kitchen.java                          | Java     |        172 |          7 |         13 |        192 |
+| g:\My Drive\Java Project\Java Project\Classes\Level.java                            | Java     |        104 |          0 |          5 |        109 |
+| g:\My Drive\Java Project\Java Project\Classes\Memory.java                           | Java     |         11 |          0 |          2 |         13 |
+| g:\My Drive\Java Project\Java Project\Classes\Player.java                           | Java     |        164 |          2 |         14 |        180 |
+| g:\My Drive\Java Project\Java Project\Classes\Recipe.java                           | Java     |         87 |          3 |          6 |         96 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Cookware.md                 | Markdown |         55 |          1 |         21 |         77 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Counter.md                  | Markdown |         56 |          1 |         22 |         79 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\DeepCopy.md                 | Markdown |          2 |          0 |          2 |          4 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Dish.md                     | Markdown |         31 |          1 |         13 |         45 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\FinalProject.md             | Markdown |         27 |          1 |          9 |         37 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Grid.md                     | Markdown |         36 |          1 |          6 |         43 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Holdable.md                 | Markdown |         27 |          1 |          8 |         36 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Item.md                     | Markdown |        115 |          1 |         26 |        142 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Kitchen.md                  | Markdown |         65 |          1 |         24 |         90 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Level.md                    | Markdown |         81 |          1 |         25 |        107 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Memory.md                   | Markdown |         20 |          1 |         10 |         31 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Player.md                   | Markdown |         51 |          1 |         26 |         78 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Recipe.md                   | Markdown |         58 |          1 |         16 |         75 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\Tile.md                     | Markdown |         28 |          1 |          4 |         33 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\Frame.md          | Markdown |         19 |          0 |          6 |         25 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\ImageLable.md     | Markdown |         31 |          1 |         14 |         46 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\PremadeElement.md | Markdown |         18 |          1 |          4 |         23 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\ScreenGui.md      | Markdown |         25 |          0 |          4 |         29 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\ScreenSize.md     | Markdown |         14 |          0 |          5 |         19 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\TextBox.md        | Markdown |         23 |          1 |         13 |         37 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\TextLabel.md      | Markdown |         27 |          1 |         14 |         42 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\UiElement.md      | Markdown |         27 |          1 |         11 |         39 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\UiLibrary\UiTween.md        | Markdown |         40 |          1 |         17 |         58 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\easingTypes\Douccument.md   | Markdown |         11 |          1 |          2 |         14 |
+| g:\My Drive\Java Project\Java Project\Documents\Classes\easingTypes\Tween.md        | Markdown |         38 |          1 |         16 |         55 |
+| g:\My Drive\Java Project\Java Project\Documents\MainDocument.md                     | Markdown |         30 |          0 |          5 |         35 |
+| g:\My Drive\Java Project\Java Project\Documents\README.md                           | Markdown |         83 |          1 |         25 |        109 |
+| g:\My Drive\Java Project\Java Project\Documents\Reports\ReportWeek1.md              | Markdown |         19 |          2 |          1 |         22 |
+| g:\My Drive\Java Project\Java Project\Documents\Reports\ReportWeek2.md              | Markdown |         20 |          2 |          0 |         22 |
+| g:\My Drive\Java Project\Java Project\Documents\Reports\ReportWeek3.md              | Markdown |         14 |          2 |          0 |         16 |
+| g:\My Drive\Java Project\Java Project\Documents\Templet.md                          | Markdown |         26 |          1 |          7 |         34 |
+| g:\My Drive\Java Project\Java Project\FinalProject.java                             | Java     |        136 |          9 |         12 |        157 |
+| g:\My Drive\Java Project\Java Project\TestCases\KitchenTestCase.java                | Java     |         14 |          0 |          2 |         16 |
+| g:\My Drive\Java Project\Java Project\TestCases\Testcase.java                       | Java     |         19 |          1 |          2 |         22 |
+| g:\My Drive\Java Project\Java Project\TestCases\TestcaseR.java                      | Java     |         10 |          0 |          1 |         11 |
+| g:\My Drive\Java Project\Java Project\TestCases\UITest1.java                        | Java     |         72 |          2 |         10 |         84 |
+| g:\My Drive\Java Project\Java Project\TestCases\UiTest3.java                        | Java     |         17 |          0 |          2 |         19 |
+| g:\My Drive\Java Project\Java Project\TestCases\UiTesting.java                      | Java     |         25 |          0 |          0 |         25 |
+| g:\My Drive\Java Project\Java Project\UiClasses\Frame.java                          | Java     |         60 |         18 |          5 |         83 |
+| g:\My Drive\Java Project\Java Project\UiClasses\ImageLable.java                     | Java     |         89 |          0 |          2 |         91 |
+| g:\My Drive\Java Project\Java Project\UiClasses\ScreenGui.java                      | Java     |         68 |          1 |          4 |         73 |
+| g:\My Drive\Java Project\Java Project\UiClasses\ScreenSize.java                     | Java     |         17 |          2 |          2 |         21 |
+| g:\My Drive\Java Project\Java Project\UiClasses\TextBox.java                        | Java     |         61 |          0 |          3 |         64 |
+| g:\My Drive\Java Project\Java Project\UiClasses\TextLable.java                      | Java     |         82 |          0 |          3 |         85 |
+| g:\My Drive\Java Project\Java Project\UiClasses\TweenProperty.java                  | Java     |          7 |          0 |          2 |          9 |
+| g:\My Drive\Java Project\Java Project\UiClasses\UiClasses copy.java                 | Java     |        308 |         23 |         14 |        345 |
+| g:\My Drive\Java Project\Java Project\UiClasses\UiElement.java                      | Java     |         11 |          0 |          2 |         13 |
+| g:\My Drive\Java Project\Java Project\UiClasses\UiTween.java                        | Java     |         98 |          1 |          5 |        104 |
+| g:\My Drive\Java Project\Java Project\assets\Cookware\Pot.java                      | Java     |         26 |          0 |          3 |         29 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Carrot.java                   | Java     |         21 |          0 |          2 |         23 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\CleanDishCounter.java         | Java     |         36 |          0 |          4 |         40 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\CuttingBoard.java             | Java     |         36 |          3 |          3 |         42 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Receive.java                  | Java     |         36 |          0 |          2 |         38 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Server.java                   | Java     |         49 |          1 |          6 |         56 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Sink.java                     | Java     |         60 |          3 |          4 |         67 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Stove.java                    | Java     |         25 |          0 |          2 |         27 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\Trashcan.java                 | Java     |         27 |          0 |          3 |         30 |
+| g:\My Drive\Java Project\Java Project\assets\Counters\counter.java                  | Java     |         18 |          1 |          2 |         21 |
+| g:\My Drive\Java Project\Java Project\assets\Items\Carrot.java                      | Java     |         38 |          0 |          1 |         39 |
+| g:\My Drive\Java Project\Java Project\assets\Items\Plate.java                       | Java     |         19 |          0 |          1 |         20 |
+| g:\My Drive\Java Project\Java Project\assets\Items\Template.java                    | Java     |         32 |          0 |          1 |         33 |
+| g:\My Drive\Java Project\Java Project\assets\Levels\Template.java                   | Java     |         65 |          6 |         12 |         83 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\CookedPercentage.java  | Java     |         63 |          2 |          6 |         71 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\HoldableElement.java   | Java     |         84 |          1 |          5 |         90 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\ItemsElement.java      | Java     |         60 |          0 |          4 |         64 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\LoadingScreen.java     | Java     |         95 |          3 |         10 |        108 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\LoseScreen.java        | Java     |         29 |          0 |          6 |         35 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\OrderFrame.java        | Java     |        142 |          7 |         23 |        172 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\OrdersBar.java         | Java     |         54 |          8 |          7 |         69 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\StartScreen.java       | Java     |         31 |          0 |          5 |         36 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\TAS.java               | Java     |         53 |          1 |          9 |         63 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\TileElement.java       | Java     |         66 |          0 |          6 |         72 |
+| g:\My Drive\Java Project\Java Project\assets\PremadeElements\WinScreen.java         | Java     |        148 |          1 |         18 |        167 |
+| g:\My Drive\Java Project\Java Project\assets\Recipes\C.java                         | Java     |         14 |          0 |          2 |         16 |
+| g:\My Drive\Java Project\Java Project\assets\Recipes\CC.java                        | Java     |         13 |          0 |          2 |         15 |
+| g:\My Drive\Java Project\Java Project\assets\Recipes\Carrot.java                    | Java     |         13 |          0 |          2 |         15 |
+| g:\My Drive\Java Project\Java Project\assets\Recipes\CarrotSoup.java                | Java     |         15 |          0 |          2 |         17 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Back.java                         | Java     |         39 |          0 |          8 |         47 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Bounce.java                       | Java     |         21 |          0 |          6 |         27 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Circ.java                         | Java     |         23 |          0 |          9 |         32 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Cubic.java                        | Java     |         23 |          0 |          9 |         32 |
+| g:\My Drive\Java Project\Java Project\easingTypes\EaseFunc.java                     | Java     |         14 |          0 |          0 |         14 |
+| g:\My Drive\Java Project\Java Project\easingTypes\EaseType.java                     | Java     |          7 |          0 |          0 |          7 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Elastic.java                      | Java     |         69 |          0 |          8 |         77 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Expo.java                         | Java     |         27 |          0 |          9 |         36 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Linear.java                       | Java     |         15 |          0 |          7 |         22 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Quad.java                         | Java     |         13 |          0 |          6 |         19 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Quart.java                        | Java     |         13 |          0 |          6 |         19 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Quint.java                        | Java     |         13 |          0 |          6 |         19 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Sine.java                         | Java     |         12 |          0 |          6 |         18 |
+| g:\My Drive\Java Project\Java Project\easingTypes\Tween.java                        | Java     |         49 |          3 |          6 |         58 |
+| g:\My Drive\Java Project\Java Project\easingTypes\easing_terms_of_use.html          | HTML     |         38 |          3 |          3 |         44 |
+| Total                                                                               |          |      5,065 |        158 |        770 |      5,993 |
++-------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

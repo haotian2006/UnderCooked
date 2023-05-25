@@ -7,6 +7,8 @@ import PremadeElements.OrdersBar;
 
 import java.awt.Point;
 public class Player implements Serializable{
+    public int Command;
+
     private int score;
     private ArrayList<Recipe> orders;
     private String name;
@@ -26,6 +28,7 @@ public class Player implements Serializable{
         InteractingCounter = null;
         orders.clear();
         score = 0;
+        CurrentMouse = new Point(0, 0);
 
     }
     public int[] GetData(){

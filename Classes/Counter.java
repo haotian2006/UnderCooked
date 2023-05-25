@@ -23,6 +23,7 @@ public class Counter implements Serializable {
         }
         return null;
     }
+    
     public void SetFrame(TileElement x){
         CounterFrame = x;
     }
@@ -59,6 +60,7 @@ public class Counter implements Serializable {
         return new double[]{};
     }
 
+    //subclass method
     public void Update() {
 
     }

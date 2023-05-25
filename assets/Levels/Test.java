@@ -7,15 +7,15 @@ import java.util.HashMap;
 
 import Classes.*;
 
-public class Template extends Level {
-    private static String PreviewImage = "";
-    private static Integer TimeLimit = 120;
+public class Test extends Level {
+    private static String PreviewImage = "assets/Images/Levels/Test.png";
+    private static Integer TimeLimit = 60;
     private static String name = "Test";
     private static Grid GridLayout = new Grid(13,10){
         {
             put("Trashcan", 1, 1); // creates a counter at 1,1
             put("Stove", 2, 1,Cookware.newCookware("Pot"));
-            put("Stove", 3, 1,Cookware.newCookware("Pot"));
+            put("Stove", 3, 1,Cookware.newCookware("Pan"));
 
             put("Carrot", 1, 2);
             put("CuttingBoard", 1,3);
@@ -52,7 +52,7 @@ public class Template extends Level {
     };
 
     private static Color[] Colors = {
-        new Color(0, 153, 0),
+        new Color(109, 226, 125),
         new Color(182, 91, 0),
        // Color.white,
         //Color.black,
@@ -76,7 +76,7 @@ public class Template extends Level {
             }});
         }
     };
-    public Template(){
+    public Test(){
         super(name,PreviewImage, GridLayout, Orders, TimeLimit, StarRequirements,Colors,MaxIngredients);
     }
 }

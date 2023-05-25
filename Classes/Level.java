@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Level implements Serializable{
+
     private Grid GridLayout;
     private String[] Orders;
     private int TimeLimit;
@@ -26,6 +27,21 @@ public class Level implements Serializable{
         Color.black,
     };
     private ArrayList<HashMap<String,Integer>> MaxIngredients;
+
+    public static Level newLevel(String name){
+        try {
+            Class<?> myClass = Class.forName(("Levels."+name));//gets the class 
+            return (Level) myClass.getDeclaredConstructor().newInstance();//creates a new class and convert it to an Level   
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace(); 
+            System.exit(1);
+        }catch (NoSuchMethodException | InstantiationException | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        return null;
+    }
+
     public Level(String Name,String PreviewImage,Grid grid,String[] orders,int bg,int[][] startReq,Color[] Colors,ArrayList<HashMap<String,Integer>> MaxIng){//super constructor
         name = Name;
         this.Colors = Colors;

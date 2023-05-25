@@ -7,6 +7,10 @@ import java.nio.channels.Pipe;
 import Counters.counter;
 
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
 import UiClasses.*;
 import PremadeElements.*;
 public class Kitchen implements Serializable{
@@ -82,19 +86,21 @@ public class Kitchen implements Serializable{
         BackgroundFrame.setSize(xSize,ySize);
         BackgroundFrame.SetCenter(new ScreenSize().GetCenter());
         BackgroundFrame.setBackground(Color.DARK_GRAY);
+        BackgroundFrame.setVisible(false);
         Holding = new HoldableElement();
         display.add(BackgroundFrame, 1);
         Clickable.setSize((x.getGrid().GetSize().width)*TileSize,(x.getGrid().GetSize().height)*TileSize);
         Clickable.setLocation(TileSize, TileSize);
         Clickable.setBackground(Color.LIGHT_GRAY);
         Clickable.setOpaque(false);
+        Clickable.addMouseListener(MouseButton); 
+        Clickable.addMouseMotionListener(MouseMove);
         BackgroundFrame.add(Clickable, 0);
         BackgroundFrame.add(Holding,1);
         OrdersBar = new OrdersBar();
         Draw();
         display.add(Timer,0);
         display.add(OrdersBar,1);
-        display.repaint();
         
     }
     public OrdersBar getOrdersBar(){
@@ -118,7 +124,7 @@ public class Kitchen implements Serializable{
     }
     public void Draw(){
         //this defines the colors
-        Color Bg = level.GetColor(0);   Bg = Bg != null ?Bg : new Color(0, 153, 0);
+        Color Bg = level.GetColor(0);   Bg = Bg != null ?Bg : new Color(109, 226, 125);
         Color wall = level.GetColor(1); wall = wall != null ?wall : new Color(182, 91, 0);
         Color White = level.GetColor(2);White = White != null ?White : Color.WHITE;
         Color Black = level.GetColor(3);Black = Black != null ?Black : Color.black;
@@ -184,8 +190,64 @@ public class Kitchen implements Serializable{
         Timer.Update(Memory.player);
     }
     public void Reset(){
-        if (BackgroundFrame != null) display.remove(BackgroundFrame);
+        if (BackgroundFrame != null) {BackgroundFrame.removeAll(); display.remove(BackgroundFrame);}
         if (Timer != null) display.remove(Timer);
-
+        if (OrdersBar != null) display.remove(OrdersBar);
+        UiGrid = null;
+        if (Clickable != null){
+            Clickable.removeMouseListener(MouseButton); 
+            Clickable.removeMouseMotionListener(MouseMove);
+        }
     }
+
+    public static MouseAdapter MouseButton = new MouseAdapter() {
+        // on input 
+        public static Point GetGrid(Point loc){
+            return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
+        }
+        public void mousePressed(MouseEvent me) { 
+            Player plr = Memory.player;
+          if (!plr.GetInGame())return;
+          Point loc = GetGrid(me.getPoint());
+          TileElement counterEle = Memory.Kitchen.GetTileAt(loc);
+          if (counterEle == null){ return;}
+          Counter counter = counterEle.getCounter();
+          if (counter == null) {return;}
+          if (me.getButton() == MouseEvent.BUTTON1){
+              counter.OnInteract(plr,"Left");
+              Memory.Kitchen.UpdateHolding(plr);
+          }else if(me.getButton() == MouseEvent.BUTTON3){
+            plr.SetCounter(counter);
+            counter.OnInteract(plr,"Right");
+            Memory.Kitchen.UpdateHolding(plr);
+          }
+        }
+        // on input ended
+        public void mouseReleased(MouseEvent me) { 
+            Player plr = Memory.player;
+          if (!plr.GetInGame())return;
+          if (me.getButton() == MouseEvent.BUTTON1){
+          
+          }
+          else if(me.getButton() == MouseEvent.BUTTON3){
+            plr.SetCounter(null);
+          }
+      } 
+
+      };
+    public static MouseMotionListener MouseMove = new MouseMotionListener() {
+        public void mouseDragged(MouseEvent e) {
+            Player plr = Memory.player;
+          if (!plr.GetInGame())return;
+          plr.SetMouse(e.getPoint());
+          //Memory.Kitchen.Update(e.getPoint());
+        }
+        public void mouseMoved(MouseEvent e) {
+            Player plr = Memory.player;
+          if (!plr.GetInGame())return;
+          plr.SetMouse(e.getPoint());
+         //Memory.Kitchen.Update(e.getPoint());
+        }
+      };
+  
 }

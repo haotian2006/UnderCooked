@@ -10,16 +10,19 @@ public class Carrot extends Item{
     static HashMap<String[], String> Images = new HashMap<String[], String>(){{
         put(new String[]{}, "assets/Images/Items/Carrot/Carrot.png");
         put(new String[]{"Chop"}, "assets/Images/Items/Carrot/Sliced.png");
+        put(new String[]{"Chop","fry"}, "assets/Images/Items/Carrot/Sliced.png");
+        put(new String[]{"Cook"}, "assets/Images/Items/Carrot/Soup.png");
     }};
     static HashMap<String, Double> maxProcessTime = new HashMap<String, Double>(){{
-        put("Chop", 3.);
-        put("Cook", 4.);
+        put("chop", 3.);
+        put("cook", 4.);
+        put("fry", 4.);
     }};
     public boolean canBeChopped(){ 
         return !isChopped();
     }
-    public boolean CanBeFried(){ 
-        if (isChopped()){
+    public boolean canBeFried(){ 
+        if (isChopped() && !isFried()){
             return true;
         }
         return false;
@@ -28,7 +31,7 @@ public class Carrot extends Item{
         return !isChopped();
     }
     public boolean CanHold(){
-        if (isCooked()){
+        if (isCooked() || isFried()){
             return false;
         }
         return true;

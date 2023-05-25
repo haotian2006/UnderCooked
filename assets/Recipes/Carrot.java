@@ -5,6 +5,8 @@ import Classes.*;
 public class Carrot extends Recipe {
     static Item[] ingredients = new Item[] {
         Item.newItem("Carrot"),
+        Item.newItem("Carrot"),
+        Item.newItem("Carrot"),
     };
     static String Image = "assets/Images/Items/Carrot/Carrot.png";
     static String name = "Carrot";

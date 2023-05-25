@@ -10,6 +10,6 @@ public class KitchenTestCase {
         ui.FullScreen();
         ui.setBackground(new Color(187, 255, 177));
         Kitchen y = new Kitchen(ui);
-        y.LoadLevel(new Template());
+        y.LoadLevel(new Test());
     }
 }

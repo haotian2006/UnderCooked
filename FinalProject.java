@@ -1,23 +1,21 @@
+
 import Classes.*;
 import UiClasses.*;
-import Levels.*;
+
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.awt.Point;
 import PremadeElements.*;
-import java.io.File;
+import java.io.File; 
+
 public class FinalProject {
-    public static Point GetGrid(Point loc){
-        return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
-    }
+    public static boolean TestMode = false;
     public static ScheduledExecutorService MainLoop;
     public static ScreenGui screen;
+    public static WinScreen ws;
     public static void StartMainLoop(double seconds){
+      Player plr = Memory.player;
       Memory.player.first = false;
       // this creates a loop that will update every counter every .01 seconds 
       // using this type of loop because sleep has some yielding issue and weird delay
@@ -46,76 +44,54 @@ public class FinalProject {
           MainLoop.shutdown();
           Memory.player.SetInGame(false);
           if (Lost[0]){
-            LoseScreen ws = new LoseScreen();
+            ws = new LoseScreen();
             screen.add(ws,0);
             screen.repaint();
           }else{
-            WinScreen ws = new WinScreen();
+            ws = new WinScreen();
             screen.add(ws,0);
             screen.repaint();
-            Player plr = Memory.player;
+
             //increase stars 
            plr.SetLevelData(Memory.Kitchen.GetLevel().GetRequirements(plr.getDifficulty(), plr.getScore()));
+           while (plr.Command == 0) {try {Thread.sleep(500);} catch (Exception e) {} } // until the player inputs an command after game has ended 
+           switch(plr.Command){
+              case 1:
+               // retry 
+                StartLevel(plr.getDifficulty(), Memory.Kitchen.GetLevel().GetName());
+                break;
+              default:
+                break;
+           }
           }
-          System.out.println("Ended");
+          //System.out.println("Ended");
          //end game
       });
       thread.start();
-    }
-    public static void StartLevel(int difficulty, int levelNum){
-        Level level = new Template();
-        Memory.Kitchen.LoadLevel(level);
-        Frame Clickable = Memory.Kitchen.getClickFrame();
-        Player plr = Memory.player;
-        plr.setDifficulty(difficulty);
-        plr.Clear();//this would reset the players temporary data 
-        Clickable.addMouseListener(new MouseAdapter() {
-          // on input 
-          public void mousePressed(MouseEvent me) { 
-            if (!plr.GetInGame())return;
-            Point loc = GetGrid(me.getPoint());
-            TileElement counterEle = Memory.Kitchen.GetTileAt(loc);
-            if (counterEle == null){ return;}
-            Counter counter = counterEle.getCounter();
-            if (counter == null) {return;}
-            if (me.getButton() == MouseEvent.BUTTON1){
-                counter.OnInteract(plr,"Left");
-                Memory.Kitchen.UpdateHolding(plr);
-            }else if(me.getButton() == MouseEvent.BUTTON3){
-              plr.SetCounter(counter);
-              counter.OnInteract(plr,"Right");
-              Memory.Kitchen.UpdateHolding(plr);
-            }
-          }
-          // on input ended
-          public void mouseReleased(MouseEvent me) { 
-            if (!plr.GetInGame())return;
-            if (me.getButton() == MouseEvent.BUTTON1){
-            
-            }
-            else if(me.getButton() == MouseEvent.BUTTON3){
-              plr.SetCounter(null);
-            }
-        } 
 
-        }); 
-        Clickable.addMouseMotionListener(new MouseMotionListener() {
-          public void mouseDragged(MouseEvent e) {
-            if (!plr.GetInGame())return;
-            plr.SetMouse(e.getPoint());
-            //Memory.Kitchen.Update(e.getPoint());
-          }
-          public void mouseMoved(MouseEvent e) {
-            if (!plr.GetInGame())return;
-            plr.SetMouse(e.getPoint());
-           //Memory.Kitchen.Update(e.getPoint());
-          }
-        });
+
+    }
+    public static void StartLevel(int difficulty, String Level_){
+        if (ws != null) {screen.remove(ws); ws = null;}
+        Memory.Kitchen.Reset();
+        Player plr = Memory.player;
+        screen.repaint();
+        plr.Command = 0;
+        plr.setDifficulty(difficulty);
+        Level level = Level.newLevel(Level_);
+        LevelLoadScreen LL = new LevelLoadScreen(level);
+        screen.add(LL,0);
+        screen.repaint();
+        plr.Clear();//this would reset the players temporary data 
+        Memory.Kitchen.LoadLevel(level);
+        LL.WaitTillLoaded();
+        screen.remove(LL);
+        Memory.Kitchen.GetBackgroundFrame().setVisible(true);
+        Frame Clickable = Memory.Kitchen.getClickFrame();
+        screen.repaint();
         plr.SetInGame(true);
         StartMainLoop(level.GetTimeLimit());
-
     }
-
     
     public static void main(String[] args) {
         RemoveAllDesktop.Destroy();
@@ -127,7 +103,20 @@ public class FinalProject {
         Memory.SetKitchen(kitchen);
         screen.FullScreen();
         screen.setBackground(new Color(187, 255, 177));
-        StartLevel(2,1);
+        if (TestMode){
+          StartLevel(0,"Test");
+        }else{
+          LoadingScreen x = new LoadingScreen();
+          screen.setBackground(new Color(187, 255, 177));
+          screen.add(x);
+          screen.repaint();
+          x.WaitTillLoaded();
+          x.CloseAnimation();
+          StartScreen sS = new StartScreen();
+          screen.remove(x);
+          screen.add(sS);
+          screen.repaint();
+        }
     }
 }
 

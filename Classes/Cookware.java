@@ -45,7 +45,7 @@ public class Cookware implements Holdable{
         return false;
     }
     public boolean CanAdd(Item x){
-        if (GetInventory().size() == 0 ||GetInventory().get(0).getName() == x.getName() && GetInventory().size() < getMaxAmount()){
+        if ((GetInventory().size() == 0 ||GetInventory().get(0).getName().equals(x.getName())) && GetInventory().size() < getMaxAmount()){
             return x.canBeState(TypeOfCooking);
         }
         return false;
@@ -90,7 +90,13 @@ public class Cookware implements Holdable{
         return false;
 
     }
+    public String GetImage(boolean x){
+        return Image;
+    }
     public String GetImage(){
+        if (Inventory.size() > 0){
+            return Inventory.get(0).GetImage();
+        }
         return Image;
     }
     public String GetName(){
@@ -98,6 +104,9 @@ public class Cookware implements Holdable{
     }
     public void Update(){
         
+    }
+    public String getTypeOfCooking(){
+        return TypeOfCooking;
     }
     public Cookware(String Name,String Image,String TypeOfCooking){
         this.name = Name; this.Image = Image;

@@ -43,6 +43,23 @@ public class Recipe implements Serializable{
     public String GetImage(){
         return image;
     }
+    public static Recipe GetClosestRecipeFromDish(Dish d){
+           //if this is the first time then loop thru the recipes file, create the recipe object and insert them into the recipes arraylist
+        if (Recipes.size() == 0){
+            for (File file : new File("assets/Recipes").listFiles()) {
+                Recipe rp = newRecipe(file.getName().replace(".java", ""));
+                Recipes.add(rp);
+            }
+        }
+        //this will loop thru the arraylist checking if the recipe matches 
+        for (int n = 0;n<Recipes.size();n++){
+            Recipe rp = Recipes.get(n);
+            if (rp.DishAlmostMatchesRecipe(d)){     
+                return rp;
+            }
+        }
+        return null;
+    }
     public static Recipe GetRecipeFromDish(Dish d){
         //if this is the first time then loop thru the recipes file, create the recipe object and insert them into the recipes arraylist
         if (Recipes.size() == 0){
@@ -78,6 +95,24 @@ public class Recipe implements Serializable{
         Item[] y = x.getItems().toArray(new Item[x.getItems().size()]);
         Item[] z = (Item[]) ingredients.clone();
         if (y.length != z.length)return false; // if the lengths do not match
+        boolean found = true;
+        for (int yy =0;yy<y.length;yy++){
+            found = false;
+            for (int zz =0;zz<z.length;zz++){
+                if (y[yy] != null && y[yy].equals(z[zz])){ // if it equals but not equal to null then
+                    z[zz] = null; // set them to null so it won't be found again
+                    found = true; break;
+                }
+            }
+            if (!found) return false;
+        }
+        return found;
+    }
+
+    public boolean DishAlmostMatchesRecipe(Dish x){
+        //clones/converts them into arrays
+        Item[] y = x.getItems().toArray(new Item[x.getItems().size()]);
+        Item[] z = (Item[]) ingredients.clone();
         boolean found = true;
         for (int yy =0;yy<y.length;yy++){
             found = false;

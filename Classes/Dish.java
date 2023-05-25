@@ -4,6 +4,7 @@ public class Dish implements Holdable{
 
     private ArrayList<Item> items ;
     private String name;
+    private String image;
 
     //these three functions are here so that the interface is met 
     public void UpdateProcessedTime(double x){};
@@ -19,9 +20,17 @@ public class Dish implements Holdable{
     }
     public boolean AddItem(Item x) {
         items.add(x);
-        if (Recipe.GetRecipeFromDish(this) == null){
+        Recipe r = Recipe.GetRecipeFromDish(this);
+        if (Recipe.GetClosestRecipeFromDish(this) == null){
             items.remove(x);
             return false;
+        }
+        if (r == null){
+            if (items.size() == 1){
+                image=  items.get(0).GetImage();
+            }
+        }else{
+            image = r.GetImage();
         }
         return true;
     }
@@ -45,6 +54,17 @@ public class Dish implements Holdable{
     
     public String GetImage() {
         Recipe x = Recipe.GetRecipeFromDish(this);
+        if (image != null && x == null){
+            return image;
+        }
+        Recipe close = Recipe.GetClosestRecipeFromDish(this);
+        if (x == null){
+            if (items.size() == 1){
+                return items.get(0).GetImage();
+            }else if(close != null){
+                return close.GetImage();
+            }
+        };
         return x.GetImage();
     }
     public String GetType() {return "Dish";}
