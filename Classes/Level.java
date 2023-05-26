@@ -7,8 +7,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Level implements Serializable{
+import Levels.Test;
 
+public class Level implements Serializable{
     private Grid GridLayout;
     private String[] Orders;
     private int TimeLimit;

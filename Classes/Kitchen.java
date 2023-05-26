@@ -35,6 +35,16 @@ public class Kitchen implements Serializable{
     public static int[] loseAmt ={
         10,15,20
     };
+
+    //how much tips you should get
+    public static int[] Tips ={
+        10,12,15
+    };
+
+    public static int GetTips(){
+        int i = Memory.player.getDifficulty();
+        return Tips[i];
+    }
     public static int GetLoseAmt(){
         int i = Memory.player.getDifficulty();
         return loseAmt[i];
@@ -67,15 +77,14 @@ public class Kitchen implements Serializable{
         Clickable = new Frame("Clickable");
         display = x;
         Memory.SetKitchen(this);
+        Timer = new TAS();
+        Timer.setVisible(false);
     } 
     public ScreenGui GetDisplay(){
         return display;
     }
     public void LoadLevel(Level x){
         if (BackgroundFrame != null) display.remove(BackgroundFrame);
-        if (Timer != null) display.remove(Timer);
-        Timer = new TAS();
-
         level = x;
         display.setBackground(new Color(0, 153, 0));
         grid = DeepCopy.copy(x.getGrid());
@@ -88,6 +97,7 @@ public class Kitchen implements Serializable{
         BackgroundFrame.setBackground(Color.DARK_GRAY);
         BackgroundFrame.setVisible(false);
         Holding = new HoldableElement();
+        display.add(Timer,0);
         display.add(BackgroundFrame, 1);
         Clickable.setSize((x.getGrid().GetSize().width)*TileSize,(x.getGrid().GetSize().height)*TileSize);
         Clickable.setLocation(TileSize, TileSize);
@@ -99,9 +109,11 @@ public class Kitchen implements Serializable{
         BackgroundFrame.add(Holding,1);
         OrdersBar = new OrdersBar();
         Draw();
-        display.add(Timer,0);
         display.add(OrdersBar,1);
         
+    }
+    public void StartTimer(){
+        Timer.setVisible(true);
     }
     public OrdersBar getOrdersBar(){
         return OrdersBar;
@@ -191,7 +203,7 @@ public class Kitchen implements Serializable{
     }
     public void Reset(){
         if (BackgroundFrame != null) {BackgroundFrame.removeAll(); display.remove(BackgroundFrame);}
-        if (Timer != null) display.remove(Timer);
+        Timer.setVisible(false);
         if (OrdersBar != null) display.remove(OrdersBar);
         UiGrid = null;
         if (Clickable != null){
@@ -207,7 +219,7 @@ public class Kitchen implements Serializable{
         }
         public void mousePressed(MouseEvent me) { 
             Player plr = Memory.player;
-          if (!plr.GetInGame())return;
+          if (plr.GetInGame() != 1)return;
           Point loc = GetGrid(me.getPoint());
           TileElement counterEle = Memory.Kitchen.GetTileAt(loc);
           if (counterEle == null){ return;}
@@ -225,7 +237,7 @@ public class Kitchen implements Serializable{
         // on input ended
         public void mouseReleased(MouseEvent me) { 
             Player plr = Memory.player;
-          if (!plr.GetInGame())return;
+          if (plr.GetInGame() != 1 )return;
           if (me.getButton() == MouseEvent.BUTTON1){
           
           }
@@ -238,13 +250,13 @@ public class Kitchen implements Serializable{
     public static MouseMotionListener MouseMove = new MouseMotionListener() {
         public void mouseDragged(MouseEvent e) {
             Player plr = Memory.player;
-          if (!plr.GetInGame())return;
+          if (plr.GetInGame() != 1)return;
           plr.SetMouse(e.getPoint());
           //Memory.Kitchen.Update(e.getPoint());
         }
         public void mouseMoved(MouseEvent e) {
             Player plr = Memory.player;
-          if (!plr.GetInGame())return;
+          if (plr.GetInGame() != 1)return;
           plr.SetMouse(e.getPoint());
          //Memory.Kitchen.Update(e.getPoint());
         }

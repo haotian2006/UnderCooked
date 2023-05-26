@@ -1,14 +1,16 @@
 package PremadeElements;
-//TAS = TIMER AND SCORE
-import UiClasses.Frame;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import Classes.Player;
+//TAS = TIMER AND SCORE
 import UiClasses.*;
-
+import Classes.*;
 public class TAS extends Frame {
     TextLable Timer;
     TextLable Score;
@@ -16,10 +18,13 @@ public class TAS extends Frame {
         super("Timer");
         double scale =1;
         Dimension size = new Dimension(((int)(367/scale)), ((int)(73/scale)));
-        setLocation(new ScreenSize().Get().x-((int) (367/scale)), 0);
-        setSize(size);
+        setSize(new ScreenSize().Get().x,new ScreenSize().Get().y);
         setOpaque(false);
-        
+        Frame Fbg = new Frame();
+        Fbg.setSize(size);
+        Fbg.setOpaque(false);
+        Fbg.setLocation(new ScreenSize().Get().x-((int) (367/scale)), 0);
+        add(Fbg);
         ImageLable bg = new ImageLable("assets/Images/Other/TimerAndScore.png");
         bg.setSize(size);
         bg.SetImageSize(size);
@@ -40,15 +45,61 @@ public class TAS extends Frame {
         Timer.setForeground(Color.white);
         Timer.setFont(new Font("Comic Sans MS", 1, 20));
 
+        ImageLable RTH = new ImageLable("assets/Images/Other/RTH.png");
+        RTH.setSize(232, 107);
+        RTH.SetImageSize(232, 107);
+        RTH.SetCenter(new ScreenSize().GetCenter());
+
+        Frame RThB = new Frame();
+        RThB.setSize(190, 70);
+        RThB.SetCenter(new Point(new ScreenSize().GetCenter().x-10, new ScreenSize().GetCenter().y+10));
+        RThB.setOpaque(false);
+
+        Frame ExitA = new Frame();
+        ExitA.setSize(30, 30);
+        ExitA.SetCenter(new Point(new ScreenSize().GetCenter().x+100, new ScreenSize().GetCenter().y-40));
+        ExitA.setOpaque(false);
+        ExitA.setVisible(false);
+        RThB.setVisible(false);
+        RTH.setVisible(false);
+        
+        RThB.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                ExitA.setVisible(false);
+                RThB.setVisible(false);
+                RTH.setVisible(false);
+                setVisible(false);
+                new Thread(()->{
+                    Memory.game.Hub();
+                }).start();
+            }
+        }); 
+        ExitA.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                ExitA.setVisible(false);
+                RThB.setVisible(false);
+                RTH.setVisible(false);
+            }
+        }); 
+        add(ExitA);
+        add(RThB);
+        add(RTH);
         Frame Button = new Frame();
         Button.setSize(40, 40);
         Button.setLocation(367-40, 20);
         Button.setOpaque(false);
+        Button.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                ExitA.setVisible(!ExitA.isVisible());
+                RThB.setVisible(!RThB.isVisible());
+                RTH.setVisible(!RTH.isVisible());
+            }
+        }); 
 
-        add(Button);
-        add(Score);
-        add(Timer);
-        add(bg);
+        Fbg .add(Button);
+        Fbg. add(Score);
+        Fbg. add(Timer);
+        Fbg. add(bg);
     }   
     public void Update(Player plr){
         Score.setText(""+plr.getScore());

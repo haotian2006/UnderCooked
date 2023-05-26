@@ -7,10 +7,10 @@ import java.util.HashMap;
 
 import Classes.*;
 
-public class Test extends Level {
-    private static String PreviewImage = "assets/Images/Levels/Test.png";
-    private static Integer TimeLimit = 10;
-    private static String name = "Test";
+public class Test2 extends Level {
+    private static String PreviewImage = "assets/Images/Levels/Test2.png";
+    private static Integer TimeLimit = 60;
+    private static String name = "Test2";
     private static Grid GridLayout = new Grid(13,10){
         {
             put("Trashcan", 1, 1); // creates a counter at 1,1
@@ -46,9 +46,9 @@ public class Test extends Level {
     };
     
     private static int[][] StarRequirements = {
-        {10,20,30}, 
-        {10,20,30},
-        {10,20,30}
+        {120,200,240}, 
+        {140,240,300},
+        {160,240,330}
     };
 
     private static Color[] Colors = {
@@ -76,7 +76,7 @@ public class Test extends Level {
             }});
         }
     };
-    public Test(){
+    public Test2(){
         super(name,PreviewImage, GridLayout, Orders, TimeLimit, StarRequirements,Colors,MaxIngredients);
     }
 }

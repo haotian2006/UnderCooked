@@ -24,7 +24,7 @@ public class Server extends Counter{
                     data[0] +=rp.GetScore();
                     data[1] ++;
                     data[2] += (int) (pr*10);
-                    player.setScore((int) (player.getScore() + rp.GetScore() + pr*10));
+                    player.setScore((int) (player.getScore() + rp.GetScore() + pr*Kitchen.GetTips()));
                     break;
                 }
             }

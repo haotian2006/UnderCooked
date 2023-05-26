@@ -3,6 +3,7 @@ package Classes;
 import java.io.Serializable;
 import java.util.*;
 
+import Levels.*;
 import PremadeElements.OrdersBar;
 
 import java.awt.Point;
@@ -17,10 +18,18 @@ public class Player implements Serializable{
     private int difficulty;
     private Holdable holding;
     private Counter InteractingCounter;
-    private Boolean InGame;
+    private int InGame;
     private Point CurrentMouse = new Point(0, 0);
     private int[] Data;
-    private HashMap<String, Integer[]> LevelData;
+    private HashMap<String,Integer[]> LevelData ;
+
+    public static int[] StarRequirement = {
+        0,5
+    };
+    public static Level[] LevelOrder = {
+        new Test(),
+        new Test2(),
+    };
 
     public void Clear(){
         Data = new int[5];
@@ -34,13 +43,32 @@ public class Player implements Serializable{
     public int[] GetData(){
         return Data;
     }
-
+    public static Level GetLevelFromStage(int stage){
+        if (stage < LevelOrder.length && stage >-1){
+            return LevelOrder[stage];
+        }
+        return null;
+    }
+    public static int GetReqFromStage(int stage){
+        if (stage < StarRequirement.length && stage >-1){
+            return StarRequirement[stage];
+        }
+        return -100;
+    }
+    public int GetStars(String name){
+        if (LevelData.containsKey(name) ){
+            Integer value = LevelData.get(name)[difficulty];
+            return value == null?0:value;
+        }
+        return 0;
+    }
     public void SetLevelData(int stars){
         String level = Memory.Kitchen.GetLevel().GetName();
         if (LevelData.containsKey(level) ){
             Integer[] d =LevelData.get(level);
-            if (d[difficulty] < stars) d[difficulty] = stars; // if the new stars is higher then old one
-            LevelData.put(level, d);
+            Integer value = d[difficulty];
+            value = value == null?0:value;
+            if (value < stars) d[difficulty] = stars; // if the new stars is higher then old one
         }else{
             // if the entry does not exist 
             Integer[] d = new Integer[3];
@@ -48,11 +76,14 @@ public class Player implements Serializable{
             LevelData.put(level, d);
         }
     }
-    public int getTotalStarts(){
+    public int getTotalStars(){
         int total = 0;
         for (String key : LevelData.keySet()) {//loops the hashmap
             Integer[] value = LevelData.get(key); // loops the difficulties 
-            for (int x : value){
+            for (Integer x : value){
+                if (x  == null){
+                    continue;
+                }
                 total += x;
             }
         }
@@ -66,10 +97,14 @@ public class Player implements Serializable{
     }
     public Point GetMouse(){ return CurrentMouse;}
 
-    public void SetInGame(boolean x){
+    public void SetInGame(int x){
+        //0 = not in game
+        //1 = in game
+        //2 = burned
+        //3 = went to hub
         InGame = x;
     }
-    public boolean GetInGame(){ return InGame;}
+    public int GetInGame(){ return InGame;}
 
     public void SetTimer(double x){
         timer = x;
@@ -82,13 +117,6 @@ public class Player implements Serializable{
     }
     public Counter GetCounter(){
         return InteractingCounter;
-    }
-    public Player(String n){
-        name = n;
-        Data = new int[5];
-        orders = new ArrayList<Recipe>();
-
-        LevelData = new HashMap<String,Integer[]>();
     }
     public void setHolding(Holdable x){
         holding = x;
@@ -178,5 +206,16 @@ public class Player implements Serializable{
             }
         }
         oB.Update();
+    }
+    public Player(String n){
+        name = n;
+        Data = new int[5];
+        orders = new ArrayList<Recipe>();
+
+        LevelData = new HashMap<String,Integer[]>();
+        if (n.equals("TEST_MODE")){
+            LevelData.put("Test", new Integer[]{100,1,1});
+        }
+
     }
 }

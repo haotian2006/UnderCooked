@@ -93,7 +93,7 @@ public class UiTween implements Serializable{
             }, 
             0, interval, TimeUnit.MILLISECONDS);
             try {
-                executor.awaitTermination((long)(time*1000), TimeUnit.MILLISECONDS);
+                executor.awaitTermination((long)(time*1000+100), TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {}
             executor.shutdown();
         });

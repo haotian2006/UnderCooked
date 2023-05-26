@@ -60,7 +60,7 @@ public class CookedPercentage extends Frame{
             }else if(percent >= 1.99999){
                 Caution.SetImage("assets/Images/Other/Fire.png");
                 Caution.setVisible( CaVisible = true);
-                Memory.player.SetInGame(false);
+                Memory.player.SetInGame(2);
             }
         }
 

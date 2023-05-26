@@ -3,7 +3,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;
+import java.lang.reflect.Field;
+import java.util.EventListener;
+import javax.swing.event.EventListenerList;
+import java.lang.reflect.Field;
+import java.util.EventListener;
 import javax.swing.*;
+import javax.swing.event.EventListenerList;
+
 import easingTypes.*;
 public class Frame extends JPanel implements UiElement {
     /* 

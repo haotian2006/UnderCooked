@@ -162,9 +162,16 @@ public class WinScreen extends Frame {
         retryFrame.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("clicked");
                 Memory.player.Command = 1;
                 retryFrame.removeMouseListener(this);
+
+            }
+        });
+        HomeFrame.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Memory.player.Command = 2;
+                HomeFrame.removeMouseListener(this);
 
             }
         });
