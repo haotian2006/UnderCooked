@@ -9,7 +9,7 @@ import Classes.*;
 
 public class Test extends Level {
     private static String PreviewImage = "assets/Images/Levels/Test.png";
-    private static Integer TimeLimit = 10;
+    private static Integer TimeLimit = 240;
     private static String name = "Test";
     private static Grid GridLayout = new Grid(13,10){
         {
@@ -25,11 +25,14 @@ public class Test extends Level {
             put("counter", 5, 1,dirtyPlate);
             put("counter", 6, 1,DeepCopy.copy(dirtyPlate));
 
-            put("counter", 1, 4);
-            put("counter", 1, 5);
-            put("counter", 1, 6);
-            put("counter", 1, 7);
-
+            put("Cheese", 1, 4);
+            put("Meat", 1, 5);
+            put("Potato", 1, 6);
+            put("Lettuce", 1, 7);
+            put("Tomato", 1, 8);
+            put("Bread", 2, 4);
+            put("counter", 2, 3);
+            put("counter", 3, 3);
 
             put("Sink", 7, 1);
 
@@ -40,9 +43,14 @@ public class Test extends Level {
         }
     };
     private static String[] Orders = {
-          "CarrotSoup"
-          ,"CC"
-          ,"C"
+        //   "Burger"
+        //   ,"BigBurger"
+        //   ,"LBurger"
+        //   ,"CheeseBurger" 
+        //   ,"TBurger"
+        "Salad",
+        "MashP",
+        "SteakM"
     };
     
     private static int[][] StarRequirements = {
@@ -62,21 +70,7 @@ public class Test extends Level {
     //1 - wall 
     //2 - white tile
     //3 black tile
-
-    private static ArrayList<HashMap<String,Integer>> MaxIngredients= new ArrayList<HashMap<String,Integer>>(){
-        {
-            add(new HashMap<String,Integer>(){{ //easy
-                put("Item1", 100);
-            }});
-            add(new HashMap<String,Integer>(){{ // normal
-                put("Item1", 50);
-            }});
-            add(new HashMap<String,Integer>(){{ // hard
-                put("Item1", 20);
-            }});
-        }
-    };
     public Test(){
-        super(name,PreviewImage, GridLayout, Orders, TimeLimit, StarRequirements,Colors,MaxIngredients);
+        super(name,PreviewImage, GridLayout, Orders, TimeLimit, StarRequirements,Colors);
     }
 }

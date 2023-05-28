@@ -211,12 +211,11 @@ public class Kitchen implements Serializable{
             Clickable.removeMouseMotionListener(MouseMove);
         }
     }
-
+    public static Point GetGrid(Point loc){
+        return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
+    }
     public static MouseAdapter MouseButton = new MouseAdapter() {
         // on input 
-        public static Point GetGrid(Point loc){
-            return new Point(loc.x/Kitchen.TileSize, loc.y/Kitchen.TileSize);
-        }
         public void mousePressed(MouseEvent me) { 
             Player plr = Memory.player;
           if (plr.GetInGame() != 1)return;

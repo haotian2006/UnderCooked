@@ -24,11 +24,13 @@ public class Player implements Serializable{
     private HashMap<String,Integer[]> LevelData ;
 
     public static int[] StarRequirement = {
-        0,5
+        0,3,6,9
     };
     public static Level[] LevelOrder = {
-        new Test(),
-        new Test2(),
+        new Training(),
+        new FastFood(),
+        new SteakHouse(),
+        new BurgerPlace(),
     };
 
     public void Clear(){
@@ -211,10 +213,10 @@ public class Player implements Serializable{
         name = n;
         Data = new int[5];
         orders = new ArrayList<Recipe>();
-
         LevelData = new HashMap<String,Integer[]>();
+        LevelData.put("Test", new Integer[]{100,0,0});
         if (n.equals("TEST_MODE")){
-            LevelData.put("Test", new Integer[]{100,1,1});
+            LevelData.put("Test", new Integer[]{100,0,0});
         }
 
     }

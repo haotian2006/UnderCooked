@@ -75,7 +75,7 @@ public class StartScreen extends Frame{
         HTP.setSize(30, 30);
         HTP.SetImageSize(30, 30);
         HTP.setLocation(10, new ScreenSize().Get().y-40);
-        add(HTP);
+       // add(HTP);
 
         Star1 = new ImageLable("assets/Images/Winscreen/Star.png");
         Star1.setSize(50, 50);
@@ -323,8 +323,8 @@ public class StartScreen extends Frame{
             ThisScreen.Update();
         }
     };
+    public static long time = System.currentTimeMillis();
     public MouseAdapter playEvent = new MouseAdapter(){
-        public static long time = System.currentTimeMillis();
         public void mouseClicked(MouseEvent e) {
             Player plr = game.plr;
             if (plr.getTotalStars() >=Player.GetReqFromStage(CurrentStage) && System.currentTimeMillis() - time >= 1000){

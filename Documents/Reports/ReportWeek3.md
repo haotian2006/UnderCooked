@@ -8,9 +8,10 @@ Period 5
 * Xinya Wen
 ```diff
 !Last week accomplishments:
->
+>All classes and ui classes done
 !Next weeks goals:
->
+>Finish game
+>finish assets 
 -Challenges/Concerns:
 >
 ```

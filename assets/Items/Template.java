@@ -15,13 +15,13 @@ class Template extends Item{
         put("Chopping", 3.);//should take 3 seconds to chop
         put("Frying", 4.);//should take 4 second to fry
     }};
-    public boolean CanBeFried(){ // if its chopped then it can be fried 
+    public boolean canBeFried(){ // if its chopped then it can be fried 
         if (isChopped()){
             return true;
         }
         return false;
     }
-    public boolean CanHold(){//  if its been cooked(soup form) then you can't hold it without a plate
+    public boolean canHold(){//  if its been cooked(soup form) then you can't hold it without a plate
         if (isCooked()){
             return false;
         }

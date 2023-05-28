@@ -19,6 +19,8 @@ Period 5
 5/23/2023 - made a few more counters
 5/23/2023 - you can play the game | still need to work on the timer ui and score
 5/23/2023 - Updated some docs for some classes
+5/27/2023 - all classes done 
+
 ```
 ### <span style="color:lightgreen;">Tasks:</span>
 ```diff

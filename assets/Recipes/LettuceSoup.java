@@ -8,7 +8,7 @@ public class LettuceSoup extends Recipe {
         Item.newItem("Lettuce",true,false,false),
         Item.newItem("Lettuce",true,false,false)
     };
-    static String Image = "assets/Images/Items/Carrot/Carrot.png";
+    static String Image = "assets/Images/Recipes/LettuceSoup.png";
     static String name = "Lettuce Soup";
     static int Coins = 20;
     public LettuceSoup(){

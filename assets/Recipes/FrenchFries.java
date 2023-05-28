@@ -6,9 +6,9 @@ public class FrenchFries extends Recipe {
     static Item[] ingredients = new Item[] {
         Item.newItem("Potato",false,true,true),
     };
-    static String Image = "assets/Images/Items/Carrot/Carrot.png";
+    static String Image = "assets/Images/Items/Potato/Fries.png";
     static String name = "French Fries";
-    static int Coins = 20;
+    static int Coins = 10;
     public FrenchFries(){
      super(name,Image,ingredients, Coins);   
     }

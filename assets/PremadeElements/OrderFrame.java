@@ -124,8 +124,8 @@ public class OrderFrame extends Frame {
 
         //Display the ingredients
         Frame ingF = new Frame();
-        ingF.setSize(110, 100);
-        ingF.setLocation(120, 30);
+        ingF.setSize(110, 125);
+        ingF.setLocation(120, 10);
         ingF.setBackground(Color.BLACK);
         ingF.setOpaque(false);
 

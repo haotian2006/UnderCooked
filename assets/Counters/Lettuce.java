@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 import Classes.*;
 public class Lettuce extends Counter{
     static String name = "Lettuce";
-    static String ImagePath = "assets/Images/Counters/CarrotCrate.jpg";
+    static String ImagePath = "assets/Images/Counters/LettuceCrate.png";
     static Holdable holding;
     public void LeftClick(Player plr){
         if (plr.getHolding() == null){

@@ -12,7 +12,7 @@ public class Plate extends Item{
         put(new String[]{"Dirty"}, "assets/Images/Items/DirtyPlate.png");
     }};
     static HashMap<String, Double> maxProcessTime = new HashMap<String, Double>(){{
-        put("Dirty", 3.);
+        put("Dirty", 2.3);
     }};
     public Plate(){
         super(name, Images,maxProcessTime);

@@ -65,10 +65,9 @@ public class LevelLoadScreen extends Frame{
         Diff.setForeground(new Color(0,0,0));
 
         TextLable levT = new TextLable("Level: "+lev.GetName());
-        levT.setSize(160, 40);
+        levT.setSize(300, 40);
         levT.setLocation(520, 210);
         levT.setFont(new Font("Comic Sans MS", 1, 20));
-        levT.CenterText();
         levT.setOpaque(false);
         levT.setForeground(new Color(0,0,0));
 
@@ -87,7 +86,7 @@ public class LevelLoadScreen extends Frame{
                     LoadBar.TweenSize(new Dimension(0, 20), new Dimension(385*2, 20), i);
                     Loading.setForeground(LoadBar.TweenBackgroundColor(new Color(226, 255, 192), new Color(255,179,0), i));
                     try{
-                        Thread.sleep(2);
+                        Thread.sleep(1);
                     }catch (InterruptedException e) {
                     }
                     

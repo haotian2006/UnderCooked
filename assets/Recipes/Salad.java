@@ -8,9 +8,9 @@ public class Salad extends Recipe {
         Item.newItem("Tomato",false,false,true),
         Item.newItem("Lettuce",false,false,true)
     };
-    static String Image = "assets/Images/Items/Carrot/Carrot.png";
+    static String Image = "assets/Images/Recipes/Salad.png";
     static String name = "Salad";
-    static int Coins = 30;
+    static int Coins = 20;
     public Salad(){
      super(name,Image,ingredients,Coins);   
     }
