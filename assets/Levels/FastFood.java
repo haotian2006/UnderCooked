@@ -51,8 +51,8 @@ public class FastFood extends Level {
     };
     private static int[][] StarRequirements = {
         {120,200,240}, 
-        {140,240,300},
-        {160,240,330}
+        {140,180,220},
+        {100,140,180}
     };
 
     private static Color[] Colors = {

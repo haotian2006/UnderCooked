@@ -10,7 +10,7 @@ import PremadeElements.*;
 import java.io.File; 
 
 public class FinalProject {
-    public static boolean TestMode = true;
+    public static boolean TestMode = false;
     
     public static void main(String[] args) {
         RemoveAllDesktop.Destroy();
@@ -29,7 +29,7 @@ public class FinalProject {
         screen.FullScreen();
         screen.setBackground(new Color(187, 255, 177));
         if (TestMode){
-          game.StartLevel(2,"BurgerPlace");
+          game.StartLevel(2,"FancyRestaurant");
         }else{
           game.Start();
         }

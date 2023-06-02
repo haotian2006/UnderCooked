@@ -7,12 +7,12 @@ import Classes.*;
 public class Training extends Level {
     private static String PreviewImage = "assets/Images/Levels/Train.png";
     private static Integer TimeLimit = 90;
-    private static String name = "Training";
-    private static Grid GridLayout = new Grid(13,7){
+    private static String name = "Soup Place";
+    private static Grid GridLayout = new Grid(8,4){
         {
             put("Trashcan", 1, 1); // creates a counter at 1,1
-            put("Sink", 7, 1);
-            put("CleanDishCounter",8,1);
+            put("Sink", 1, 2);
+            put("CleanDishCounter",1,3);
 
             put("Stove", 2, 1,Cookware.newCookware("Pot"));
             put("Stove", 3, 1,Cookware.newCookware("Pot"));
@@ -25,22 +25,22 @@ public class Training extends Level {
             put("counter", 10, 1,Item.newItem("Plate"));
             put("counter", 11, 1,Item.newItem("Plate"));
 
-            put("counter", 1, 2);
-            put("counter", 1, 3);
-            put("counter", 1, 4);
-            put("counter", 1, 5);
-            put("counter", 1, 6);
-            put("counter", 1, 7);
+            put("counter", 1, 4,Item.newItem("Plate"));
+            put("counter", 1, 4,Item.newItem("Plate"));
+            put("counter", 2, 4,Item.newItem("Plate"));
+            put("counter", 3, 4,Item.newItem("Plate"));
+            put("counter", 4, 4,Item.newItem("Plate"));
+            put("counter", 5, 4,Item.newItem("Plate"));
 
-            put("Carrot", 11, 7);
-            put("Tomato", 12, 7);
-            put("Lettuce", 13, 7);
+            put("Carrot", 6, 4);
+            put("Tomato", 7, 4);
+            put("Lettuce", 8, 4);
 
 
              
 
-            put("Receive", 12, 1);
-            put("Server",13,1);
+            put("Receive", 7, 1);
+            put("Server",8,1);
         }
     };
     private static String[] Orders = {

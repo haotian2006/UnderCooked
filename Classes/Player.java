@@ -24,13 +24,14 @@ public class Player implements Serializable{
     private HashMap<String,Integer[]> LevelData ;
 
     public static int[] StarRequirement = {
-        0,3,6,9
+        0,3,6,9,16
     };
     public static Level[] LevelOrder = {
         new Training(),
         new FastFood(),
         new SteakHouse(),
         new BurgerPlace(),
+        new FancyRestaurant(),
     };
 
     public void Clear(){

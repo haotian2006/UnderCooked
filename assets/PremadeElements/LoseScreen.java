@@ -10,12 +10,12 @@ import Classes.*;
 public class LoseScreen extends WinScreen {
     public LoseScreen() {
         super();
-        ImageLable Fired = new ImageLable("assets/Images/Winscreen/FiredStamp.png");
+        ImageLabel Fired = new ImageLabel("assets/Images/Winscreen/FiredStamp.png");
         Fired.setSize(449, 342);
         Fired.SetImageSize(449, 342);
         Fired.setLocation(75, 250);
 
-        ImageLable FiredTxt = new ImageLable("assets/Images/Winscreen/txtN.png");
+        ImageLabel FiredTxt = new ImageLabel("assets/Images/Winscreen/txtN.png");
         Dimension size = new Dimension(((int) (422/1.5)), ((int) (58/1.5)));
         FiredTxt.setSize(size);
         FiredTxt.SetImageSize(size);

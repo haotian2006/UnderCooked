@@ -12,7 +12,7 @@ public class Sink extends Counter{
     }
     public void LeftClick(Player player){
         Holdable plrHolding = player.getHolding();
-        if (!plrHolding.GetType().equals("Item")) {return;}
+        if (plrHolding == null || !plrHolding.GetType().equals("Item")) {return;}
         Item item = (Item) plrHolding;
         Kitchen kit = Memory.Kitchen;
         if (((plrHolding != null && plrHolding.GetType().equals("Item")) && item.getName().equals("Plate")) && item.isDirty()){

@@ -3,7 +3,6 @@ package Classes;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
-
  
 public class Item implements Holdable{
     private String name;
@@ -36,32 +35,39 @@ public class Item implements Holdable{
         maxProcessTime = new HashMap<String,Double>();
         
     }
-    public boolean equals(Item obj){
+
+    public boolean equals(Item obj) {
         if (obj == null) return false;
         return (
             cooked == obj.isCooked() &&
             fried == obj.isFried() &&
             chopped == obj.isChopped() &&
             dirty == obj.isDirty() &&
-            name == obj.getName() 
+            name == obj.getName()
         );
     }
+
     public String getName() {
         return name;
     }
-    public void UpdateProcessedTime(double x){
+
+    public void UpdateProcessedTime(double x) {
         ProcessedTime = x;
     }
-    public double GetProcessedTime(){
+
+    public double GetProcessedTime() {
         return ProcessedTime;
     }
+
     public double[] GetPercentage() {
         return new double[]{ProcessedTime,getMaxProcessTime(LastAction)};
     }
+
     public boolean isModified(){
         return (isChopped()||isCooked()||isFried());
     }
-    public boolean canBeState(String x){
+
+    public boolean canBeState(String x) {
         x = x.toLowerCase();
         switch (x){
             case "chop":
@@ -74,7 +80,8 @@ public class Item implements Holdable{
                 return false;
         }
     }
-    public void setState(String x,boolean y){
+
+    public void setState(String x,boolean y) {
         x = x.toLowerCase();
         switch (x){
             case "chop":
@@ -90,7 +97,8 @@ public class Item implements Holdable{
                 return;
         }
     }
-    public boolean isState(String x){
+
+    public boolean isState(String x) {
         x = x.toLowerCase();
         return
 
@@ -99,6 +107,7 @@ public class Item implements Holdable{
         || ((x.equals("cook") && isCooked()))
         || ((x.equals("dirty") && isDirty()))  ;
     }
+
     public String GetImage() {
         if (Images == null) return"";
         String NormalImage = "";
@@ -127,6 +136,7 @@ public class Item implements Holdable{
         }
         return NormalImage;
     }
+
     //returns the default image instead of a modified one if given a boolean
     public String GetImage(boolean x) {
         if (Images == null) return"";
@@ -140,12 +150,14 @@ public class Item implements Holdable{
         }
         return NormalImage; 
     }
+
     public double getMaxProcessTime(String x) {
         if (x == null) return 0;
         Double val = maxProcessTime.get(x.toLowerCase());
         LastAction= x;
         return val != null ? val :0;
     }
+
     public boolean isPlate() {
         return this.plate;    
     }
@@ -196,7 +208,6 @@ public class Item implements Holdable{
         return true;
     }
 
-
     public static Item newItem(String name){
         try {
             Class<?> myClass = Class.forName(("Items."+name));//gets the class in assets/Items/name
@@ -211,6 +222,7 @@ public class Item implements Holdable{
         }
         return null;
     }
+
     public static Item newItem(String name,boolean Cooked,boolean Fried, boolean Chopped){
         Item x = newItem(name);
         if (x == null) return null;
@@ -219,8 +231,5 @@ public class Item implements Holdable{
         x.chopped = Chopped;
         return x;
     }
-    public String GetType() {return "Item";}
-
-
-    
+    public String GetType() {return "Item";}    
 }

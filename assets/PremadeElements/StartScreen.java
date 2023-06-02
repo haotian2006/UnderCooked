@@ -10,23 +10,23 @@ import Classes.*;
 import UiClasses.*;
 import easingTypes.*;; 
 public class StartScreen extends Frame{
-    private ImageLable i1;
-    private ImageLable i2;
-    private ImageLable i3;
+    private ImageLabel i1;
+    private ImageLabel i2;
+    private ImageLabel i3;
     private TextLable Total;
     private TextLable LevelName;
     private TextLable Stage;
     private TextLable TotalStars;
     private TextLable Difficulty;
-    private ImageLable Title;
-    private ImageLable By;
-    private ImageLable Stars;
-    private ImageLable Choose;  
-    private ImageLable X; 
+    private ImageLabel Title;
+    private ImageLabel By;
+    private ImageLabel Stars;
+    private ImageLabel Choose;  
+    private ImageLabel X; 
 
-    private ImageLable Star1;
-    private ImageLable Star2;
-    private ImageLable Star3;  
+    private ImageLabel Star1;
+    private ImageLabel Star2;
+    private ImageLabel Star3;  
     private Game game;
     public static StartScreen ThisScreen;
     
@@ -41,24 +41,24 @@ public class StartScreen extends Frame{
         setSize(ScreenSize.Get().x,ScreenSize.Get().y);
         setOpaque(false);
         
-        Title = new ImageLable("assets/Images/Menu/LoadingScreen/LargeTitle.png");
+        Title = new ImageLabel("assets/Images/Menu/LoadingScreen/LargeTitle.png");
         Title.setSize(395*2+60, 39*2+10);
         Title.SetImageSize(395*2+50, 39*2);
         Title.SetCenter(new Point(Center.x, Center.y-400));
         add(Title);
 
-        By = new ImageLable("assets/Images/Menu/Title/By.png");
+        By = new ImageLabel("assets/Images/Menu/Title/By.png");
         By.setSize(1000/2, 200);
         By.SetImageSize(1000/2, 77/2);
         By.SetCenter(new Point(Center.x, Center.y-330));
         By.setVisible(true);
         
-        Choose = new ImageLable("assets/Images/Menu/Title/Choose.png");
+        Choose = new ImageLabel("assets/Images/Menu/Title/Choose.png");
         Choose.setSize(1209, 550);
         Choose.SetImageSize(1209, 550);
         Choose.SetCenter(new Point(Center.x, Center.y+100));
 
-        Stars = new ImageLable("assets/Images/Menu/Title/Stars.png");
+        Stars = new ImageLabel("assets/Images/Menu/Title/Stars.png");
         Stars.setSize(648, 62);
         Stars.SetImageSize(648, 62);
         Stars.SetCenter(new Point(new ScreenSize().GetCenter().x+5, 340));
@@ -71,42 +71,42 @@ public class StartScreen extends Frame{
         TotalStars.RightAlignText();
         TotalStars.setForeground(Color.white);
         add(TotalStars);
-        ImageLable HTP = new ImageLable("assets/Images/Menu/Title/HTP.png");
+        ImageLabel HTP = new ImageLabel("assets/Images/Menu/Title/HTP.png");
         HTP.setSize(30, 30);
         HTP.SetImageSize(30, 30);
         HTP.setLocation(10, new ScreenSize().Get().y-40);
        // add(HTP);
 
-        Star1 = new ImageLable("assets/Images/Winscreen/Star.png");
+        Star1 = new ImageLabel("assets/Images/Winscreen/Star.png");
         Star1.setSize(50, 50);
         Star1.SetImageSize(50, 50);
         Star1.setLocation(1138, 838);
         add(Star1);
 
-        Star2 = new ImageLable("assets/Images/Winscreen/Star.png");
+        Star2 = new ImageLabel("assets/Images/Winscreen/Star.png");
         Star2.setSize(50, 50);
         Star2.SetImageSize(50, 50);
         Star2.setLocation(1138+42, 838);
         add(Star2);
 
-        Star3 = new ImageLable("assets/Images/Winscreen/Star.png");
+        Star3 = new ImageLabel("assets/Images/Winscreen/Star.png");
         Star3.setSize(50, 50);
         Star3.SetImageSize(50, 50);
         Star3.setLocation(1138+43+40, 838);
         add(Star3);
 
-        i1 = new ImageLable("assets/Images/Levels/Test.png");
+        i1 = new ImageLabel("assets/Images/Levels/Test.png");
         i1.setSize(260, 190);
         i1.SetImageSize(260, 190);
         i1.SetCenter(new Point(Center.x-469, +615));
         add(i1);
 
-        i2 = new ImageLable("assets/Images/Levels/Test.png");
+        i2 = new ImageLabel("assets/Images/Levels/Test.png");
         i2.setSize(551, 410);
         i2.SetImageSize(551, 410);
         i2.SetCenter(new Point(Center.x, +620));
 
-        i3 = new ImageLable("assets/Images/Levels/Test.png");
+        i3 = new ImageLabel("assets/Images/Levels/Test.png");
         i3.setSize(260, 190);
         i3.SetImageSize(260, 190);
         i3.SetCenter(new Point(Center.x+469, +615));
@@ -134,7 +134,7 @@ public class StartScreen extends Frame{
         LevelName.setFont(new Font("Comic Sans MS", 1, 20));
         LevelName.setOpaque(false);
         LevelName.CenterText();
-        LevelName.setForeground(Color.black);
+        LevelName.setForeground(Color.white);
         add(LevelName);
         add(i2);
 
@@ -166,7 +166,7 @@ public class StartScreen extends Frame{
         PlayButton.addMouseListener(playEvent);
         add(PlayButton);
 
-        X = new ImageLable("assets/Images/Menu/Title/x.png");
+        X = new ImageLabel("assets/Images/Menu/Title/x.png");
         X.setSize(180, 70);
         X.SetCenter(new Point(DCent.x+257, DCent.y-5));
         X.setOpaque(false);

@@ -20,14 +20,14 @@ public class ItemsElement extends Frame {
     public void UpdatePosition(){
         setLocation(0, 0);
     }
-    public ImageLable newIcon(Item it){
-        ImageLable x = new ImageLable(it.GetImage(true));
+    public ImageLabel newIcon(Item it){
+        ImageLabel x = new ImageLabel(it.GetImage(true));
         x.setSize(sizeOfIcon, sizeOfIcon);
         x.SetImageSize(sizeOfIcon,sizeOfIcon);
         return x;
     }
     public void AddIcon(Item x){
-        ImageLable it = newIcon(x);
+        ImageLabel it = newIcon(x);
         add(it);
         int col = DisplayItems.size()/3;
         it.setLocation((DisplayItems.size()%3)*sizeOfIcon, col*sizeOfIcon);

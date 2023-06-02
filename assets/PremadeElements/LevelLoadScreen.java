@@ -20,13 +20,13 @@ public class LevelLoadScreen extends Frame{
         setSize(ScreenSize.Get().x,ScreenSize.Get().y);
         setOpaque(false);
         
-        ImageLable image = new ImageLable(lev.GetImage());
+        ImageLabel image = new ImageLabel(lev.GetImage());
         image.setSize(700,500);
         image.SetImageSize(700,500);
         image.SetCenter(Center);
         add(image);
 
-        ImageLable ll = new ImageLable("assets/Images/Other/LoadingLevel.png");
+        ImageLabel ll = new ImageLabel("assets/Images/Other/LoadingLevel.png");
         Dimension size = new Dimension(((int) (718*1.3)), ((int) (527*1.3)));
         ll.setSize(size);
         ll.SetImageSize(size);

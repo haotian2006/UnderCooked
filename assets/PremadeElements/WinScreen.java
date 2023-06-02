@@ -14,7 +14,7 @@ public class WinScreen extends Frame {
         double scale =1;
         setOpaque(false);
         Dimension size = new Dimension(((int)(585/scale)), ((int)(737/scale)));
-        ImageLable bg = new ImageLable("assets/Images/Winscreen/Screen.png");
+        ImageLabel bg = new ImageLabel("assets/Images/Winscreen/Screen.png");
         setSize(size);
         bg.setSize(size);
         bg.SetImageSize(size);
@@ -67,21 +67,21 @@ public class WinScreen extends Frame {
         s3.setForeground(new Color(255, 204, 0));
 
         if (1 <= stars){
-            ImageLable star = new ImageLable("assets/Images/Winscreen/Star.png");
+            ImageLabel star = new ImageLabel("assets/Images/Winscreen/Star.png");
             star.setSize(128, 128);
             star.SetImageSize(128, 128);
             star.setLocation(90, 85);
             add(star);
         }
         if (2 <= stars){
-            ImageLable star = new ImageLable("assets/Images/Winscreen/Star.png");
+            ImageLabel star = new ImageLabel("assets/Images/Winscreen/Star.png");
             star.setSize(128, 128);
             star.SetImageSize(128, 128);
             star.setLocation(90+140, 85);
             add(star);
         }
         if (3 <= stars){
-            ImageLable star = new ImageLable("assets/Images/Winscreen/Star.png");
+            ImageLabel star = new ImageLabel("assets/Images/Winscreen/Star.png");
             star.setSize(128, 128);
             star.SetImageSize(128, 128);
             star.setLocation(90+140*2, 85);

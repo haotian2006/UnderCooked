@@ -19,7 +19,7 @@ public class LoadingScreen extends Frame{
         setSize(ScreenSize.Get().x,ScreenSize.Get().y);
         setOpaque(false);
         
-        ImageLable Title = new ImageLable("assets/Images/Menu/LoadingScreen/LargeTitlev1.png");
+        ImageLabel Title = new ImageLabel("assets/Images/Menu/LoadingScreen/LargeTitlev1.png");
         Title.setSize(385*2, 39*2);
         Title.SetImageSize(385*2, 39*2);
 
@@ -45,7 +45,7 @@ public class LoadingScreen extends Frame{
         Loading.CenterText();        
         add(Loading);
 
-        ImageLable Plate = new ImageLable("assets/Images/Menu/LoadingScreen/Plate.png");
+        ImageLabel Plate = new ImageLabel("assets/Images/Menu/LoadingScreen/Plate.png");
         Plate.setSize(1000, 1000);
         Plate.SetImageSize(1000, 1000);
         Plate.SetCenter(new Point(Center.x, Center.y-20));

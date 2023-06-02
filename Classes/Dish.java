@@ -11,13 +11,15 @@ public class Dish implements Holdable{
     public double GetProcessedTime(){return 0;};
     public double[] GetPercentage(){return new double[2];}
 
-    public String getName(){
+    public String getName() {
         return name;
     }
+
     public Dish(String name) {
         this.name = name;
         items = new ArrayList<Item>();
     }
+
     public boolean AddItem(Item x) {
         items.add(x);
         Recipe r = Recipe.GetRecipeFromDish(this);
@@ -25,16 +27,18 @@ public class Dish implements Holdable{
             items.remove(x);
             return false;
         }
-        if (r == null){
-            if (items.size() == 1){
+        if (r == null) {
+            if (items.size() == 1) {
                 image=  items.get(0).GetImage();
             }
-        }else{
+        }
+        else {
             image = r.GetImage();
         }
         return true;
     }
-    public ArrayList<Item> getItems(){
+
+    public ArrayList<Item> getItems() {
         return this.items;
     }
 
@@ -54,20 +58,20 @@ public class Dish implements Holdable{
     
     public String GetImage() {
         Recipe x = Recipe.GetRecipeFromDish(this);
-        if (image != null && x == null){
+        if (image != null && x == null) {
             return image;
         }
         Recipe close = Recipe.GetClosestRecipeFromDish(this);
         if (x == null){
-            if (items.size() == 1){
+            if (items.size() == 1) {
                 return items.get(0).GetImage();
-            }else if(close != null){
+            }
+            else if(close != null) {
                 return close.GetImage();
             }
         };
         return x.GetImage();
     }
+    
     public String GetType() {return "Dish";}
-
-
 }

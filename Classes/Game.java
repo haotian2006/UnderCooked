@@ -59,7 +59,7 @@ public class Game {
                     switch(plr.Command){
                         case 1:
                         // retry 
-                        StartLevel(plr.getDifficulty(), kit.GetLevel().GetName());
+                        StartLevel(plr.getDifficulty(), kit.GetLevel().getClass().getSimpleName());
                         break;
                     case 2:
                     // home 

@@ -68,8 +68,8 @@ public class BurgerPlace extends Level {
     };
     private static int[][] StarRequirements = {
         {120,200,240}, 
-        {140,240,300},
-        {160,240,330}
+        {100,120,140},
+        {40,70,100}
     };
 
     private static Color[] Colors = {

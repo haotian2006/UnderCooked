@@ -12,7 +12,7 @@ public class BigBurger extends Recipe {
     };
     static String Image = "assets/Images/Recipes/Burgers/BigBurger.png";
     static String name = "Big Burger";
-    static int Coins = 30;
+    static int Coins = 35;
     public BigBurger(){
      super(name,Image,ingredients,Coins);   
     }

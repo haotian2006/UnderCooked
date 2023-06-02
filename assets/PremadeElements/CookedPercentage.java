@@ -12,7 +12,7 @@ import java.nio.channels.Pipe;
 import easingTypes.*;
 public class CookedPercentage extends Frame{
     private Frame SubBar;
-    private ImageLable Caution;
+    private ImageLabel Caution;
     private double time;
     private boolean CaVisible;
     public CookedPercentage(){
@@ -24,7 +24,7 @@ public class CookedPercentage extends Frame{
         SubBar = new Frame("SubBar");
         SubBar.setBackground(Color.GREEN);
         SubBar.setLocation(0, Kitchen.TileSize/2+Kitchen.TileSize/3+2);
-        Caution = new ImageLable("assets/Images/Other/Caution.png");
+        Caution = new ImageLabel("assets/Images/Other/Caution.png");
         Caution.setSize(Kitchen.TileSize/2, Kitchen.TileSize/2);
         Caution.SetImageSize(Kitchen.TileSize/2, Kitchen.TileSize/2);
         Caution.setVisible(false);

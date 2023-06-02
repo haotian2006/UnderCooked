@@ -68,7 +68,7 @@ public class SteakHouse extends Level {
     private static int[][] StarRequirements = {
         {120,200,240}, 
         {140,240,300},
-        {160,240,330}
+        {100,150,200}
     };
 
     private static Color[] Colors = {

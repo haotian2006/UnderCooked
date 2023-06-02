@@ -12,7 +12,7 @@ public class Bread extends Item{
         put(new String[]{"chop"}, "assets/Images/Items/Bread/SlicedBread.png");
     }};
     static HashMap<String, Double> maxProcessTime = new HashMap<String, Double>(){{
-        put("chop", 3.);
+        put("chop", 1.);
     }};
     public boolean canBeChopped(){ 
         return !isChopped();

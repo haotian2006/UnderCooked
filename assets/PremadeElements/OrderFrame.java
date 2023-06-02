@@ -28,7 +28,7 @@ class ItemFrame extends Frame{
         itemBg.setLocation(0, 0);
         itemBg.setBackground(new Color(197, 196, 202));
 
-        ImageLable item = new ImageLable(x.GetImage(true));
+        ImageLabel item = new ImageLabel(x.GetImage(true));
         item.setSize(26, 26);
         item.SetImageSize(26, 26);
         item.setLocation(0, 0);
@@ -39,7 +39,7 @@ class ItemFrame extends Frame{
 
         int size =0;
         if (x.isChopped()){
-            ImageLable itm = new ImageLable("assets/Images/Other/ChoppingBoard.png");
+            ImageLabel itm = new ImageLabel("assets/Images/Other/ChoppingBoard.png");
             itm.setSize(23, 23);
             itm.SetImageSize(23, 23);
             itm.setLocation(25*(size+1)+2, 1);
@@ -47,7 +47,7 @@ class ItemFrame extends Frame{
             size++;
         }
         if (x.isCooked()){
-            ImageLable itm = new ImageLable("assets/Images/Other/Pot.png");
+            ImageLabel itm = new ImageLabel("assets/Images/Other/Pot.png");
             itm.setSize(23, 23);
             itm.SetImageSize(23, 23);
             itm.setLocation(25*(size+1)+2, -1);
@@ -55,7 +55,7 @@ class ItemFrame extends Frame{
             size++;
         }
         if (x.isFried()){
-            ImageLable itm = new ImageLable("assets/Images/Other/Pan.png");
+            ImageLabel itm = new ImageLabel("assets/Images/Other/Pan.png");
             itm.setSize(23, 23);
             itm.SetImageSize(23, 23);
             itm.setLocation(25*(size+1)+2, 0);
@@ -73,7 +73,7 @@ public class OrderFrame extends Frame {
     private Recipe rp;
     private Frame Percent;
     private int amt;
-    private ImageLable checkmark;
+    private ImageLabel checkmark;
     private Frame bg;
     public OrderFrame(Recipe x){
         super("Frame");
@@ -81,13 +81,13 @@ public class OrderFrame extends Frame {
         setSize(230,130);
         setOpaque(false);
         setLocation(0, 2100);
-        ImageLable Plate = new ImageLable();
+        ImageLabel Plate = new ImageLabel();
         Plate.setSize(100,100);
         Plate.SetImage("assets/Images/Other/Plate.png");
         Plate.SetImageSize(100,100);
         Plate.setLocation(10, 30);
 
-        ImageLable icon = new ImageLable(x.GetImage());
+        ImageLabel icon = new ImageLabel(x.GetImage());
         icon.setSize(100, 100);
         icon.SetImageSize(100, 100);
         icon.setLocation(10, 30);
@@ -106,7 +106,7 @@ public class OrderFrame extends Frame {
         bg.setLocation(0, 30);
         bg.setBackground(new Color(158, 229, 232));
 
-        checkmark = new ImageLable("");
+        checkmark = new ImageLabel("");
         checkmark.setSize(120, 100);
         checkmark.setLocation(0, 30);
         checkmark.SetImageSize(120, 100);

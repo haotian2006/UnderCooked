@@ -25,7 +25,7 @@ public class TAS extends Frame {
         Fbg.setOpaque(false);
         Fbg.setLocation(new ScreenSize().Get().x-((int) (367/scale)), 0);
         add(Fbg);
-        ImageLable bg = new ImageLable("assets/Images/Other/TimerAndScore.png");
+        ImageLabel bg = new ImageLabel("assets/Images/Other/TimerAndScore.png");
         bg.setSize(size);
         bg.SetImageSize(size);
 
@@ -45,7 +45,7 @@ public class TAS extends Frame {
         Timer.setForeground(Color.white);
         Timer.setFont(new Font("Comic Sans MS", 1, 20));
 
-        ImageLable RTH = new ImageLable("assets/Images/Other/RTH.png");
+        ImageLabel RTH = new ImageLabel("assets/Images/Other/RTH.png");
         RTH.setSize(232, 107);
         RTH.SetImageSize(232, 107);
         RTH.SetCenter(new ScreenSize().GetCenter());
@@ -108,6 +108,8 @@ public class TAS extends Frame {
         Timer.setText(String.format("%02d:%02d", minutes, seconds));
         if (plr.GetTimer() <=30){
             Timer.setForeground(Color.red);
+        }else{
+            Timer.setForeground(Color.white);
         }
     }
 }

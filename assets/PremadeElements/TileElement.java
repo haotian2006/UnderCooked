@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 public class TileElement extends Frame {
     private Counter counter;
-    private ImageLable Counter;
+    private ImageLabel Counter;
     private HoldableElement Item;
     public TileElement(){
         super("TileElement");
@@ -24,7 +24,7 @@ public class TileElement extends Frame {
         setSize(size);
         setBackground(new Color(255, 208, 137));
 
-        Counter = new ImageLable();
+        Counter = new ImageLabel();
         Counter.setSize(size);
         Counter.SetImage(x.GetImage());
         Counter.SetImageSize(size);

@@ -14,12 +14,12 @@ import javax.swing.SpringLayout.Constraints;
 
 import Classes.*;
 public class HoldableElement extends Frame{
-   private ImageLable ImageFrame;
+   private ImageLabel ImageFrame;
    private Holdable item;
    private CookedPercentage bar;
    private TileElement Parent;
    private ItemsElement elements; 
-   private ImageLable Plate;
+   private ImageLabel Plate;
     public HoldableElement(Holdable x){
         UpdateItem(x);
     }
@@ -31,13 +31,13 @@ public class HoldableElement extends Frame{
         setBackground(Color.red);
         bar = new CookedPercentage();
         add(bar);
-        Plate = new ImageLable();
+        Plate = new ImageLabel();
         Plate.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));;
         Plate.SetImage("assets/Images/Other/Plate.png");
         Plate.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         Plate.SetCenter(GetCenterRelativeToFrame());
         Plate.setVisible(false);
-        ImageFrame = new ImageLable();
+        ImageFrame = new ImageLabel();
         ImageFrame.setSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         ImageFrame.SetImageSize(new Dimension(Kitchen.ItemSize, Kitchen.ItemSize));
         ImageFrame.SetCenter(GetCenterRelativeToFrame());

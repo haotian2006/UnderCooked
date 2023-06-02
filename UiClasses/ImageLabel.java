@@ -8,7 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-public class ImageLable extends JLabel  implements UiElement{
+public class ImageLabel extends JLabel  implements UiElement{
     public Point GetCenterRelativeToFrame(){//deprecated 
         Dimension size = getSize();
         return new Point(size.width/2, size.height/2);
@@ -31,10 +31,10 @@ public class ImageLable extends JLabel  implements UiElement{
     }
     private ImageIcon image;
     private int sizex,sizey;
-    public ImageLable(String image){
+    public ImageLabel(String image){
        SetImage(image);
     }
-    public ImageLable(){// makes it so sending an image is optional 
+    public ImageLabel(){// makes it so sending an image is optional 
     }
     public void SetImage(String imagePath) {
         if (imagePath.equals("") || imagePath == null){return;}
@@ -78,8 +78,8 @@ public class ImageLable extends JLabel  implements UiElement{
         y = (int) (y*t);
         setLocation(x,y);
     }
-    public ImageLable Clone(){// creates a new imagelable with similar properties 
-        ImageLable newI = new ImageLable();
+    public ImageLabel Clone(){// creates a new imagelable with similar properties 
+        ImageLabel newI = new ImageLabel();
         newI.setBackground(getBackground());
         newI.setBounds(getBounds());
         newI.setIcon(image);
