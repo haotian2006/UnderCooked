@@ -138,6 +138,11 @@ public class StartScreen extends Frame{
         add(LevelName);
         add(i2);
 
+        TextLable dylan = new TextLable("Dylan was here");
+        dylan.setOpaque(false);
+        dylan.setLocation(10, 80);
+        add(dylan);
+
         
         Difficulty = new TextLable("Difficulty: Normal");
         Difficulty.setSize(110, 40);

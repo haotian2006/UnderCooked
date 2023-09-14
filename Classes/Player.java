@@ -215,7 +215,6 @@ public class Player implements Serializable{
         Data = new int[5];
         orders = new ArrayList<Recipe>();
         LevelData = new HashMap<String,Integer[]>();
-        LevelData.put("Test", new Integer[]{100,0,0});
         if (n.equals("TEST_MODE")){
             LevelData.put("Test", new Integer[]{100,0,0});
         }

@@ -15,7 +15,7 @@ public class FancyRestaurant extends Level {
         {
             put("Trashcan", 1, 8); 
             
-            put("counter", 1, 1);
+            put("Potato", 1, 1);
             put("Stove", 1, 2,Cookware.newCookware("Pan"));
             put("counter", 1, 3);
             put("Stove", 1, 4,Cookware.newCookware("Pan"));
